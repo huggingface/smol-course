@@ -10,7 +10,7 @@ Il s'agit d'un cours pratique sur l'alignement des modèles linguistiques pour v
 
 <div style="background: linear-gradient(to right, #e0f7fa, #e1bee7, orange); padding: 20px; border-radius: 5px; margin-bottom: 20px; color: purple;">
     <h2>La participation est ouverte, gratuite et immédiate!</h2>
-    <p>Ce cours est ouvert et évalué par les pairs. Pour participer au cours <strong>ouvrir une demande de pull request</strong> t soumettez votre travail pour examen. Voici la marche à suivre :</p>
+    <p>Ce cours est ouvert et évalué par les pairs. Pour participer au cours <strong>ouvrir une demande de pull request</strong> et soumettez votre travail pour examen. Voici la marche à suivre :</p>
     <ol>
         <li>Fork le repo <a href="https://github.com/huggingface/smol-course/fork">ici</a></li>
         <li>Lisez le matériel, apportez des modifications, faites les exercices, ajoutez vos propres exemples.</li>
