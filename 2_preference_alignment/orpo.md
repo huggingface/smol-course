@@ -4,17 +4,14 @@ ORPO (Odds Ratio Preference Optimization) is a novel fine-tuning technique that 
 
 ## Understanding ORPO
 
-Traditional alignment methods typically involve two separate steps: supervised fine-tuning to adapt the model to a domain, followed by preference alignment to align with human preferences. While SFT effectively adapts models to target domains, it can inadvertently increase the probability of generating both desirable and undesirable responses, as shown in the graph below:
-
-![SFT Probability Distribution](https://argilla.io/images/blog/mantisnlp-rlhf/part-8-sft.png)
-*Log probabilities for chosen and rejected responses during model fine-tuning*
-
-ORPO addresses this limitation by integrating both steps into a single process, as illustrated in the comparison below:
+Alignment with methods like DPO typically involve two separate steps: supervised fine-tuning to adapt the model to a domain and format, followed by preference alignment to align with human preferences. While SFT effectively adapts models to target domains, it can inadvertently increase the probability of generating both desirable and undesirable responses. ORPO addresses this limitation by integrating both steps into a single process, as illustrated in the comparison below:
 
 ![Alignment Techniques Comparison](https://argilla.io/images/blog/mantisnlp-rlhf/part-8-alignments.png)
 *Comparison of different model alignment techniques*
 
 ## How ORPO Works
+
+The training process leverages a preference dataset similar to what we used for DPO, where each training example contains an input prompt along with two responses: one that is preferred, and another that is rejected. Unlike other alignment methods that require separate stages and reference models, ORPO integrates preference alignment directly into the supervised fine-tuning process. This monolithic approach makes it reference model-free, computationally more efficient, and memory efficient with fewer FLOPs.
 
 ORPO creates a new objective by combining two main components:
 
@@ -22,19 +19,7 @@ ORPO creates a new objective by combining two main components:
 
 2. **Odds Ratio Loss**: A novel component that penalizes undesirable responses while rewarding preferred ones. This loss function uses odds ratios to effectively contrast between favored and disfavored responses at the token level.
 
-Together, these components guide the model to adapt to desired generations for the specific domain while actively discouraging generations from the set of rejected responses. The odds ratio mechanism provides a natural way to measure and optimize the model's preference between chosen and rejected outputs.
-
-### Training Process
-
-The training process uses a preference dataset containing:
-- Input prompts
-- Chosen (preferred) responses
-- Rejected (disfavored) responses
-
-Unlike traditional methods that require separate stages and reference models, ORPO integrates preference alignment directly into the supervised fine-tuning process. This monolithic approach makes it:
-- Reference model-free
-- Computationally more efficient
-- Memory efficient (fewer FLOPs)
+Together, these components guide the model to adapt to desired generations for the specific domain while actively discouraging generations from the set of rejected responses. The odds ratio mechanism provides a natural way to measure and optimize the model's preference between chosen and rejected outputs. If you want to deep dive into the math, you can read the [ORPO paper](https://arxiv.org/abs/2402.01714). If you want to learn about ORPO from the implementation perspective, you should check out how loss for ORPO is calculated in the [TRL library](https://github.com/huggingface/trl/blob/b02189aaa538f3a95f6abb0ab46c0a971bfde57e/trl/trainer/orpo_trainer.py#L660).
 
 ## Performance and Results
 
@@ -50,9 +35,9 @@ When compared to other alignment methods, ORPO shows superior performance on Alp
 
 Compared to SFT+DPO, ORPO reduces computational requirements by eliminating the need for a reference model and halving the number of forward passes per batch. Also, the training process is more stable across different model sizes and datasets, requiring fewer hyperparameters to tune. Performance-wise, ORPO matches larger models while showing better alignment with human preferences.
 
-## Implementation Considerations
+## Implementation 
 
-Successful implementation of ORPO depends heavily on high-quality preference data. The training data should follow clear annotation guidelines and provide a balanced representation of preferred and rejected responses across diverse scenarios. During training, it's crucial to carefully balance the OR loss weighting and monitor gradient behavior to prevent overfitting while maintaining effective preference learning.
+Successful implementation of ORPO depends heavily on high-quality preference data. The training data should follow clear annotation guidelines and provide a balanced representation of preferred and rejected responses across diverse scenarios. 
 
 ### Implementation with TRL
 
@@ -60,11 +45,6 @@ ORPO can be implemented using the Transformers Reinforcement Learning (TRL) libr
 
 ```python
 from trl import ORPOConfig, ORPOTrainer
-from transformers import AutoModelForCausalLM, AutoTokenizer
-
-# Load model and tokenizer
-model = AutoModelForCausalLM.from_pretrained("your_base_model")
-tokenizer = AutoTokenizer.from_pretrained("your_base_model")
 
 # Configure ORPO training
 orpo_config = ORPOConfig(
@@ -80,25 +60,12 @@ orpo_config = ORPOConfig(
 trainer = ORPOTrainer(
     model=model,
     args=orpo_config,
-    train_dataset=your_dataset,
+    train_dataset=dataset,
     tokenizer=tokenizer,
 )
 
 # Start training
 trainer.train()
-```
-
-The training data should be formatted as pairs of chosen and rejected responses for each prompt:
-
-```python
-dataset = [
-    {
-        "prompt": "What is machine learning?",
-        "chosen": "Machine learning is a field of AI...",
-        "rejected": "Machine learning is when computers..."
-    },
-    # More examples...
-]
 ```
 
 Key parameters to consider:
@@ -107,13 +74,9 @@ Key parameters to consider:
 - `learning_rate`: Should be relatively small to prevent catastrophic forgetting
 - `gradient_accumulation_steps`: Helps with training stability
 
-### Limitations
-
-ORPO's current limitations primarily relate to scale and specificity. The method is less explored for models larger than 7B parameters and may require careful validation for specialized domains. High OR loss weights can lead to overfitting, necessitating careful monitoring of the balance between preference learning and general capabilities.
-
 ## Next Steps
 
-Try the [ORPO Tutorial](./notebooks/orpo_tutorial.ipynb) to implement this unified approach to preference alignment.
+⏩ Try the [ORPO Tutorial](./notebooks/orpo_tutorial.ipynb) to implement this unified approach to preference alignment.
 
 ## Resources
 - [ORPO Paper](https://arxiv.org/abs/2402.01714)
