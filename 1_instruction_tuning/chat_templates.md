@@ -1,18 +1,18 @@
-# Chat Templates
+# Modèles de conversation
 
-Chat templates are essential for structuring interactions between language models and users. They provide a consistent format for conversations, ensuring that models understand the context and role of each message while maintaining appropriate response patterns.
+Les modèles de conversation sont essentiels pour structurer les interactions entre les modèles linguistiques et les utilisateurs. Ils fournissent un format cohérent pour les conversations, garantissant que les modèles comprennent le contexte et le rôle de chaque message tout en maintenant des modèles de réponse appropriés.
 
-## Base Models vs Instruct Models
+## Modèles de base et modèles d'apprentissage
 
-A base model is trained on raw text data to predict the next token, while an instruct model is fine-tuned specifically to follow instructions and engage in conversations. For example, `SmolLM2-135M` is a base model, while `SmolLM2-135M-Instruct` is its instruction-tuned variant.
+Un modèle de base(base model) est entraîné sur des données textuelles brutes pour prédire le prochain élément, tandis qu'un modèle d'instruction(instruct model) est affiné spécifiquement pour suivre des instructions et engager des conversations. Par exemple, `SmolLM2-135M` est un modèle de base, tandis que `SmolLM2-135M-Instruct` est sa variante adaptée aux instructions.
 
-To make a base model behave like an instruct model, we need to format our prompts in a consistent way that the model can understand. This is where chat templates come in. ChatML is one such template format that structures conversations with clear role indicators (system, user, assistant).
+Pour qu'un modèle de base se comporte comme un modèle d'instruction, nous devons formater nos invites d'une manière cohérente que le modèle peut comprendre. C'est là qu'interviennent les modèles de chat(chat templates). ChatML est un de ces modèles qui structure les conversations avec des indicateurs de rôle clairs (système, utilisateur, assistant).
 
-It's important to note that a base model could be fine-tuned on different chat templates, so when we're using an instruct model we need to make sure we're using the correct chat template.
+Il est important de noter qu'un modèle de base peut être affiné sur différents modèles de conversation, de sorte que lorsque nous utilisons un modèle d'instruction, nous devons nous assurer que nous utilisons le bon modèle de conversation.
 
-## Understanding Chat Templates
+## Comprendre les modèles de conversation
 
-At their core, chat templates define how conversations should be formatted when communicating with a language model. They include system-level instructions, user messages, and assistant responses in a structured format that the model can understand. This structure helps maintain consistency across interactions and ensures the model responds appropriately to different types of inputs. Below is an example of a chat template:
+À la base, les modèles de conversation définissent la manière dont les conversations doivent être formatées lors de la communication avec un modèle linguistique. Ils incluent les instructions au niveau du système, les messages de l'utilisateur et les réponses de l'assistant dans un format structuré que le modèle peut comprendre. Cette structure permet de maintenir la cohérence entre les interactions et de s'assurer que le modèle répond de manière appropriée aux différents types d'entrées. Vous trouverez ci-dessous un exemple de modèle de chat :
 
 ```sh
 <|im_start|>user
@@ -24,7 +24,7 @@ Can I ask a question?<|im_end|>
 <|im_start|>assistant
 ```
 
-The `transformers` library will take care of chat templates for you in relation to the model's tokenizer. Read more about how transformers builds chat templates [here](https://huggingface.co/docs/transformers/en/chat_templating#how-do-i-use-chat-templates). All we have to do is structure our messages in the correct way and the tokenizer will take care of the rest. Here's a basic example of a conversation:
+La bibliothèque `transformers` s'occupera des modèles de chat pour vous en relation avec le tokenizer du modèle. Pour en savoir plus sur la façon dont transformers construit les modèles de chat [ici](https://huggingface.co/docs/transformers/en/chat_templating#how-do-i-use-chat-templates). Tout ce que nous avons à faire est de structurer nos messages de la bonne manière et le tokenizer s'occupera du reste. Voici un exemple basique de conversation :
 
 ```python
 messages = [
@@ -34,11 +34,11 @@ messages = [
 ]
 ```
 
-Let's break down the above example, and see how it maps to the chat template format.
+Décomposons l'exemple ci-dessus et voyons comment il correspond au format du modèle de chat.
 
-## System Messages
+## Messages du système
 
-System messages set the foundation for how the model should behave. They act as persistent instructions that influence all subsequent interactions. For example:
+Les messages système posent les bases du comportement du modèle. Ils agissent comme des instructions persistantes qui influencent toutes les interactions ultérieures. Par exemple :
 
 ```python
 system_message = {
@@ -49,7 +49,7 @@ system_message = {
 
 ## Conversations
 
-Chat templates maintain context through conversation history, storing previous exchanges between users and the assistant. This allows for more coherent multi-turn conversations:
+Les modèles de conversation conservent le contexte grâce à l'historique des conversations, en stockant les échanges précédents entre les utilisateurs et l'assistant. Cela permet d'avoir des conversations plus cohérentes à plusieurs tours :
 
 ```python
 conversation = [
@@ -59,9 +59,9 @@ conversation = [
 ]
 ```
 
-## Implementation with Transformers
+## Mise en œuvre avec les transformateurs
 
-The transformers library provides built-in support for chat templates. Here's how to use them:
+La bibliothèque de transformateurs fournit un support intégré pour les modèles de chat. Voici comment les utiliser :
 
 ```python
 from transformers import AutoTokenizer
@@ -81,8 +81,8 @@ formatted_chat = tokenizer.apply_chat_template(
 )
 ```
 
-## Custom Formatting
-You can customize how different message types are formatted. For example, adding special tokens or formatting for different roles:
+## Formatage personnalisé
+Vous pouvez personnaliser le formatage des différents types de messages. Par exemple, en ajoutant des jetons spéciaux ou un formatage pour différents rôles :
 
 ```python
 template = """
@@ -92,9 +92,9 @@ template = """
 """.lstrip()
 ```
 
-## Multi-Turn Support
+## Prise en charge des conversations à plusieurs tours
 
-Templates can handle complex multi-turn conversations while maintaining context:
+Les modèles peuvent gérer des conversations complexes à plusieurs tours tout en conservant le contexte :
 
 ```python
 messages = [
@@ -105,7 +105,7 @@ messages = [
 ]
 ```
 
-⏭️ [Next: Supervised Fine-Tuning](./supervised_fine_tuning.md)
+⏭️ [Suivant: Fine-Tuning Supervisé](./supervised_fine_tuning.md)
 
 ## Resources
 
