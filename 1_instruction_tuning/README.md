@@ -1,23 +1,23 @@
 # Instruction Tuning
 
-This module will guide you through instruction tuning language models. Instruction tuning involves adapting pre-trained models to specific tasks by further training them on task-specific datasets. This process helps models improve their performance on targeted tasks. 
+Ce module vous guidera dans la mise au point des modèles linguistiques. L'ajustement des instructions consiste à adapter des modèles pré-entraînés à des tâches spécifiques en les entraînant de nouveau sur des ensembles de données spécifiques à ces tâches. Ce processus permet aux modèles d'améliorer leurs performances sur les tâches ciblées. 
 
-In this module, we will explore two topics: 1) Chat Templates and 2) Supervised Fine-Tuning.
+Dans ce module, nous allons explorer deux sujets : 1) les modèles de conversation et 2) le réglage fin supervisé.
 
-## 1️⃣ Chat Templates
+## 1️⃣ Modèles de conversation
 
-Chat templates structure interactions between users and AI models, ensuring consistent and contextually appropriate responses. They include components like system prompts and role-based messages. For more detailed information, refer to the [Chat Templates](./chat_templates.md) section.
+Les modèles de conversation structurent les interactions entre les utilisateurs et les modèles d'IA, garantissant des réponses cohérentes et adaptées au contexte. Ils comprennent des éléments tels que les invites du système et les messages basés sur le rôle. Pour plus d'informations, consultez le site [Chat Templates](./chat_templates.md) section.
 
-## 2️⃣ Supervised Fine-Tuning
+## 2️⃣ Fine-Tuning Supervisé
 
-Supervised Fine-Tuning (SFT) is a critical process for adapting pre-trained language models to specific tasks. It involves training the model on a task-specific dataset with labeled examples. For a detailed guide on SFT, including key steps and best practices, see the [Supervised Fine-Tuning](./supervised_fine_tuning.md) page.
+Le réglage fin supervisé (SFT) est un processus essentiel pour adapter les modèles linguistiques pré-entraînés à des tâches spécifiques. Il s'agit d'entraîner le modèle sur un ensemble de données spécifiques à une tâche, avec des exemples étiquetés. Pour un guide détaillé sur le SFT, y compris les étapes clés et les meilleures pratiques, voir le document [Supervised Fine-Tuning](./supervised_fine_tuning.md).
 
-## Exercise Notebooks
+## Cahiers d'exercices
 
-| Title | Description | Exercise | Link | Colab |
+| Titre | Description | Exercice | Lien | Colab |
 |-------|-------------|----------|------|-------|
-| Chat Templates | Learn how to use chat templates with SmolLM2 and process datasets into chatml format | 🐢 Convert the `HuggingFaceTB/smoltalk` dataset into chatml format <br> 🐕 Convert the `openai/gsm8k` dataset into chatml format | [Notebook](./notebooks/chat_templates_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/1_instruction_tuning/notebooks/chat_templates_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-| Supervised Fine-Tuning | Learn how to fine-tune SmolLM2 using the SFTTrainer | 🐢 Use the `HuggingFaceTB/smoltalk` dataset<br>🐕 Try out the `bigcode/the-stack-smol` dataset<br>🦁 Select a dataset for a real world use case | [Notebook](./notebooks/sft_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/1_instruction_tuning/notebooks/sft_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| Modèles de conversation | Apprenez à utiliser les modèles de chat avec SmolLM2 et à traiter les ensembles de données au format chatml. | 🐢 Convertir le jeu de données(dataset) `HuggingFaceTB/smoltalk` dans un format chatml <br> 🐕 Convertir le dataset `openai/gsm8k` dans un format chatml | [Notebook](./notebooks/chat_templates_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/1_instruction_tuning/notebooks/chat_templates_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| Fine-Tuning Supervisé | Apprenez à affiner(fine-tune) SmolLM2 à l'aide du SFTTrainer | 🐢 Utilisez le dataset `HuggingFaceTB/smoltalk` <br>🐕 Essayez le dataset `bigcode/the-stack-smol` <br>🦁 Sélectionner un jeu de données(dataset) pour un cas d'utilisation réel | [Notebook](./notebooks/sft_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/1_instruction_tuning/notebooks/sft_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
 
 ## References
 
