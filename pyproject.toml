@@ -1,0 +1,12 @@
+[project]
+name = "smol-course"
+version = "0.1.0"
+description = "a smol course on llms"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "datasets>=3.1.0",
+    "huggingface-hub>=0.26.3",
+    "transformers>=4.46.3",
+    "trl>=0.12.1",
+]

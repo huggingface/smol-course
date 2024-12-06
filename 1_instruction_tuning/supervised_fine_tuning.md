@@ -12,7 +12,7 @@ SFT is effective because it uses the foundational knowledge acquired during pre-
 
 The decision to use SFT often comes down to the gap between your model's current capabilities and your specific requirements. SFT becomes particularly valuable when you need precise control over the model's outputs or when working in specialized domains.
 
-For example, if you're developing a customer service application, you might want your model to consistently follow company guidelines and handle technical queries in a standardized way. Similarly, in medical or legal applications, accuracy and adherence to domain-specific terminology become crucial. In these cases, SFT can help align the model's responses with professional standards and domain expertise.
+For example, if you're developing a customer service application, you might want your model to consistently follow company guidelines and handle technical queries in a standardized way. Similarly, in medical or legal applications, accuracy and adherence to domain-specific terminology becomes crucial. In these cases, SFT can help align the model's responses with professional standards and domain expertise.
 
 ## The Fine-Tuning Process
 
@@ -26,15 +26,15 @@ Throughout the process, continuous evaluation is essential. You'll want to monit
 
 SFT plays a fundamental role in aligning language models with human preferences. Techniques such as Reinforcement Learning from Human Feedback (RLHF) and Direct Preference Optimization (DPO) rely on SFT to form a base level of task understanding before further aligning the model’s responses with desired outcomes. Pre-trained models, despite their general language proficiency, may not always generate outputs that match human preferences. SFT bridges this gap by introducing domain-specific data and guidance, which improves the model’s ability to generate responses that align more closely with human expectations.
 
-## Supervised Fine-Tuning With Transform Reinforcement Learning
+## Supervised Fine-Tuning With Transformer Reinforcement Learning
 
-A key software package for Supervised Fine-Tuning is Transformers Reinforcement Learning (TRL). TRL is a toolkit used to train transformer language models models using reinforcement learning (RL).
+A key software package for Supervised Fine-Tuning is Transformer Reinforcement Learning (TRL). TRL is a toolkit used to train transformer language models models using reinforcement learning (RL).
 
 Built on top of the Hugging Face Transformers library, TRL allows users to directly load pretrained language models and supports most decoder and encoder-decoder architectures. The library facilitates major processes of RL used in language modelling, including supervised fine-tuning (SFT), reward modeling (RM), proximal policy optimization (PPO), and Direct Preference Optimization (DPO). We will use TRL in a number of modules throughout this repo.
 
 # Next Steps
 
-Try out the  to get hands on experience with SFT using TRL.
+Try out the following tutorials to get hands on experience with SFT using TRL:
 
 ⏭️ [Chat Templates Tutorial](./notebooks/chat_templates_example.ipynb)
 

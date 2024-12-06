@@ -24,7 +24,7 @@ Can I ask a question?<|im_end|>
 <|im_start|>assistant
 ```
 
-The `transformers` libaray will take care of chat templates for you in relation to the model's tokenizer. Read more about how transformers builds chat templates [here](https://huggingface.co/docs/transformers/en/chat_templating#how-do-i-use-chat-templates). All we have to do is structure our messages in the correct way and the tokenizer will take care of the rest. Here's a basic example of a conversation:
+The `transformers` library will take care of chat templates for you in relation to the model's tokenizer. Read more about how transformers builds chat templates [here](https://huggingface.co/docs/transformers/en/chat_templating#how-do-i-use-chat-templates). All we have to do is structure our messages in the correct way and the tokenizer will take care of the rest. Here's a basic example of a conversation:
 
 ```python
 messages = [

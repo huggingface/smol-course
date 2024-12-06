@@ -1,8 +1,12 @@
-# a smol course
-
 ![smolcourse image](./banner.png)
 
+# a smol course
+
 This is a practical course on aligning language models for your specific use case. It's a handy way to get started with aligning language models, because everything runs on most local machines. There are minimal GPU requirements and no paid services. The course is based on the [SmolLM2](https://github.com/huggingface/smollm/tree/main) series of models, but you can transfer the skills you learn here to larger models or other small language models.
+
+<a href="http://hf.co/join/discord">
+<img src="https://img.shields.io/badge/Discord-7289DA?&logo=discord&logoColor=white"/>
+</a>
 
 <div style="background: linear-gradient(to right, #e0f7fa, #e1bee7, orange); padding: 20px; border-radius: 5px; margin-bottom: 20px; color: purple;">
     <h2>Participation is open, free, and now!</h2>
@@ -54,16 +58,33 @@ Before starting, ensure you have the following:
 
 ## Installation
 
-All the examples run in the same **python 3.10** environment, so you need to install the dependencies once like this:
+We maintain the course as a package so you can install dependencies easily via a package manager. We recommend [uv](https://github.com/astral-sh/uv) for this purpose, but you could use alternatives like `pip` or `pdm`.
+
+### Using `uv`
+
+With `uv` installed, you can install the course like this:
 
 ```bash
+uv venv --python 3.11.0
+uv sync
+```
+
+### Using `pip`
+
+All the examples run in the same **python 3.11** environment, so you should create an environment and install dependencies like this:
+
+```bash
+# python -m venv .venv
+# source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-**From Google Colab** you can reference the requirements like this
+### Google Colab
+
+**From Google Colab** you will need to install dependencies flexibly based on the hardware you're using. Like this:
 
 ```bash
-pip install -r https://raw.githubusercontent.com/huggingface/smol-course/refs/heads/main/requirements.txt
+pip install -r transformers trl datasets huggingface_hub
 ```
 
 ## Engagement
