@@ -76,7 +76,7 @@ Key parameters to consider:
 
 ## Next Steps
 
-⏩ Try the [ORPO Tutorial](./notebooks/orpo_tutorial.ipynb) to implement this unified approach to preference alignment.
+⏩ Try the [ORPO Tutorial](./notebooks/orpo_finetuning_example) to implement this unified approach to preference alignment.
 
 ## Resources
 - [ORPO Paper](https://arxiv.org/abs/2402.01714)
