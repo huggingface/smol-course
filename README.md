@@ -84,7 +84,7 @@ pip install -r requirements.txt
 **From Google Colab** you will need to install dependencies flexibly based on the hardware you're using. Like this:
 
 ```bash
-pip install -r transformers trl datasets huggingface_hub
+pip install transformers trl datasets huggingface_hub
 ```
 
 ## Engagement
