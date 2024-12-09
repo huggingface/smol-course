@@ -8,6 +8,21 @@ LoRA (Low-Rank Adaptation) is a parameter-efficient fine-tuning technique that f
 
 LoRA works by adding pairs of rank decomposition matrices to transformer layers, typically focusing on attention weights. During inference, these adapter weights can be merged with the base model, resulting in no additional latency overhead. LoRA is particularly useful for adapting large language models to specific tasks or domains while keeping resource requirements manageable.
 
+## Loading LoRA Adapters
+
+Adapters can be loaded onto a pretrained model with load_adapter(), which is useful for trying out different adapters whose weights aren’t merged. Set the active adapter weights with the set_adapter() function. To return the base model, you could use unload() to unload all of the LoRA modules. This makes it easy to switch between different task-specific weights.
+
+```python
+from transformers import AutoModelForCausalLM
+from peft import PeftModel
+
+base_model = AutoModelForCausalLM.from_pretrained("<base_model_name>")
+peft_model_id = "<peft_adapter_id>"
+model = PeftModel.from_pretrained(base_model, peft_model_id)
+```
+
+![lora_load_adapter](./images/lora_adapter.png)
+
 ## Merging LoRA Adapters
 
 After training with LoRA, you might want to merge the adapter weights back into the base model for easier deployment. This creates a single model with the combined weights, eliminating the need to load adapters separately during inference.
@@ -21,6 +36,10 @@ Adapters are also be convenient for switching between different tasks or domains
 The `notebooks/` directory contains practical tutorials and exercises for implementing different PEFT methods. Begin with `load_lora_adapter_example.ipynb` for a basic introduction, then explore `lora_finetuning.ipynb` for a more detailed look at how to fine-tune a model with LoRA and SFT.
 
 When implementing PEFT methods, start with small rank values (4-8) for LoRA and monitor training loss. Use validation sets to prevent overfitting and compare results with full fine-tuning baselines when possible. The effectiveness of different methods can vary by task, so experimentation is key.
+
+## OLoRA
+
+[OLoRA](https://arxiv.org/abs/2406.01775) utilizes QR decomposition to initialize the LoRA adapters. OLoRA translates the base weights of the model by a factor of their QR decompositions, i.e., it mutates the weights before performing any training on them. This approach significantly improves stability, accelerates convergence speed, and ultimately achieves superior performance.
 
 ## Using TRL with PEFT
 
