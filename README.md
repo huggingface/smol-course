@@ -28,14 +28,13 @@ This course provides a practical, hands-on approach to working with small langua
 
 | Module | Description | Status | Release Date |
 |--------|-------------|---------|--------------|
-| [Instruction Tuning](./1_instruction_tuning) | Learn supervised fine-tuning, chat templating, and basic instruction following | ✅ Complete | Dec 3, 2024 |
-| [Preference Alignment](./2_preference_alignment) | Explore DPO and ORPO techniques for aligning models with human preferences | 🚧 In Progress  | Dec 6, 2024 |
-| [Parameter-efficient Fine-tuning](./3_parameter_efficient_finetuning) | Learn LoRA, prompt tuning, and efficient adaptation methods | 🚧 In Progress | Dec 9, 2024 |
-| [Evaluation](./4_evaluation) | Use automatic benchmarks and create custom domain evaluations | 🚧 In Progress | Dec 16, 2024 |
-| [Vision-language Models](./5_vision_language_models) | Adapt multimodal models for vision-language tasks | 📝 Planned | Dec 20, 2024 |
-| [Synthetic Datasets](./6_synthetic_datasets) | Create and validate synthetic datasets for training | 📝 Planned | Dec 23, 2024 |
-| [Inference](./7_inference) | Infer with models efficiently | 📝 Planned | Dec 27, 2024 |
-| [Deployment](./8_deplyment) | Deploy and serve models at scale | 📝 Planned | Dec 30, 2024 |
+| [Instruction Tuning](./1_instruction_tuning) | Learn supervised fine-tuning, chat templating, and basic instruction following | ✅ Ready | Dec 3, 2024 |
+| [Preference Alignment](./2_preference_alignment) | Explore DPO and ORPO techniques for aligning models with human preferences | ✅ Ready  | Dec 6, 2024 |
+| [Parameter-efficient Fine-tuning](./3_parameter_efficient_finetuning) | Learn LoRA, prompt tuning, and efficient adaptation methods | ✅ Ready | Dec 9, 2024 |
+| [Evaluation](./4_evaluation) | Use automatic benchmarks and create custom domain evaluations | [🚧 WIP](https://github.com/huggingface/smol-course/issues/42) | Dec 13, 2024 |
+| [Vision-language Models](./5_vision_language_models) | Adapt multimodal models for vision-language tasks | [🚧 WIP](https://github.com/huggingface/smol-course/issues/49) | Dec 16, 2024 |
+| [Synthetic Datasets](./6_synthetic_datasets) | Create and validate synthetic datasets for training | 📝 Planned | Dec 20, 2024 |
+| [Inference](./7_inference) | Infer with models efficiently | 📝 Planned | Dec 23, 2024 |
 
 ## Why Small Language Models?
 
