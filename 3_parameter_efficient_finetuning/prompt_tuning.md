@@ -1,10 +1,18 @@
-# Prompt and Prefix Tuning
+# Prompt Tuning
 
 Prompt tuning is a parameter-efficient approach that modifies input representations rather than model weights. Unlike traditional fine-tuning that updates all model parameters, prompt tuning adds and optimizes a small set of trainable tokens while keeping the base model frozen.
 
 ## Understanding Prompt Tuning
 
-Prompt tuning works by prepending trainable "soft prompts" to the input. These soft prompts are continuous vectors that get optimized during training to help the model generate better outputs for specific tasks. This approach offers benefits in terms of efficiency: it maintains a minimal memory footprint by only storing prompt vectors, preserves the model's general capabilities, and allows easy switching between tasks by changing prompts rather than loading entire model copies.
+Prompt tuning is a parameter-efficient alternative to model fine-tuning that prepends trainable continuous vectors (soft prompts) to the input text. Unlike discrete text prompts, these soft prompts are learned through backpropagation while keeping the language model frozen. The method was introduced in ["The Power of Scale for Parameter-Efficient Prompt Tuning"](https://arxiv.org/abs/2104.08691) (Lester et al., 2021), which demonstrated that prompt tuning becomes more competitive with model fine-tuning as model size increases. Within the paper, at around 10 billion parameters, prompt tuning matches the performance of model fine-tuning while only modifying a few hundred parameters per task.
+
+These soft prompts are continuous vectors in the model's embedding space that get optimized during training. Unlike traditional discrete prompts that use natural language tokens, soft prompts have no inherent meaning but learn to elicit the desired behavior from the frozen model through gradient descent. The technique is particularly effective for multi-task scenarios since each task requires storing only a small prompt vector (typically a few hundred parameters) rather than a full model copy. This approach not only maintains a minimal memory footprint but also enables rapid task switching by simply swapping prompt vectors without any model reloading.
+
+## Training Process
+
+Soft prompts typically number between 8 and 32 tokens and can be initialized either randomly or from existing text. The initialization method plays a crucial role in the training process, with text-based initialization often performing better than random initialization.
+
+During training, only the prompt parameters are updated while the base model remains frozen. This focused approach uses standard training objectives but requires careful attention to the learning rate and gradient behavior of the prompt tokens.
 
 ## Implementation with PEFT
 
@@ -31,13 +39,7 @@ peft_config = PromptTuningConfig(
 model = get_peft_model(model, peft_config)
 ```
 
-## Key Components
-
-The core of prompt tuning revolves around virtual tokens, which are trainable embeddings added to the input. These typically number between 8 and 32 tokens and can be initialized either randomly or from existing text. The initialization method plays a crucial role in the training process, with text-based initialization often performing better than random initialization.
-
-During training, only the prompt parameters are updated while the base model remains frozen. This focused approach uses standard training objectives but requires careful attention to the learning rate and gradient behavior of the prompt tokens.
-
-## Comparison with Other Methods
+## Comparison to Other Methods
 
 When compared to other PEFT approaches, prompt tuning stands out for its efficiency. While LoRA offers low parameter counts and memory usage but requires loading adapters for task switching, prompt tuning achieves even lower resource usage and enables immediate task switching. Full fine-tuning, in contrast, demands significant resources and requires separate model copies for different tasks.
 
@@ -51,13 +53,20 @@ When implementing prompt tuning, start with a small number of virtual tokens (8-
 
 Training requires slightly different considerations than full fine-tuning. Higher learning rates often work well, but careful monitoring of prompt token gradients is essential. Regular validation on diverse examples helps ensure robust performance across different scenarios.
 
-## Applications
+## Application
 
-Prompt tuning excels in several scenarios, particularly for classification tasks and simple generation tasks. Its minimal resource requirements make it ideal for environments with limited computational resources. The ability to quickly switch between tasks also makes it valuable for multi-task applications where different behaviors are needed at different times.
+Prompt tuning excels in several scenarios:
+
+1. Multi-task deployment
+2. Resource-constrained environments
+3. Rapid task adaptation
+4. Privacy-sensitive applications
+
+As models get smaller, prompt tuning becomes less competitive compared to full fine-tuning. For example, on models like SmolLM2 scales prompt tuning is less relevant than full fine-tuning. 
 
 ## Next Steps
 
-To get hands-on experience with prompt tuning, try the [Prompt Tuning Tutorial](./notebooks/prompt_tuning_example.ipynb). This practical guide will walk you through implementing the technique with your own model and data.
+⏭️ Move on to the [LoRA Adapters Tutorial](./notebooks/finetune_sft_peft.ipynb) to learn how to fine-tune a model with LoRA adapters.
 
 ## Resources
 - [PEFT Documentation](https://huggingface.co/docs/peft)
