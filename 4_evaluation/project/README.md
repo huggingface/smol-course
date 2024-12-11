@@ -45,7 +45,7 @@ python annotate_dataset.py --dataset_path path/to/distiset --output_dataset_name
 
 This will create an Argilla dataset that can be used for manual review and annotation.
 
-![argilla_dataset](../images/domain_eval_argilla_view.png)
+![argilla_dataset](./images/domain_eval_argilla_view.png)
 
 If you're not using Argilla, deploy it locally or on spaces following this [quickstart guide](https://docs.argilla.io/latest/getting_started/quickstart/).
 
@@ -60,7 +60,7 @@ python create_dataset.py --dataset_path argilla_dataset_name --dataset_repo_id y
 
 This will push the dataset to the Hugging Face Hub under the specified repository. You can view the sample dataset on the hub [here](https://huggingface.co/datasets/burtenshaw/exam_questions/viewer/default/train), and a preview of the dataset looks like this:
 
-![hf_dataset](../images/domain_eval_dataset_viewer.png)
+![hf_dataset](./images/domain_eval_dataset_viewer.png)
 
 ### 4. Evaluation Task
 
