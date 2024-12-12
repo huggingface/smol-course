@@ -33,7 +33,7 @@ ORPO giới thiệu một phương pháp kết hợp cả 2 giai đoạn *tinh c
 
 - [Tài liệu thư viện TRL](https://huggingface.co/docs/trl/index) - Tài liệu cho thư viện Transformers Reinforcement Learning (TRL), triển khai nhiều kỹ thuật căn chỉnh bao gồm DPO và ORPO.
 - [Bài báo nghiên cứu DPO](https://arxiv.org/abs/2305.18290) - bài nghiên cứu gốc giới thiệu *tối ưu hóa ưu tiên trực tiếp* như một giải pháp thay thế đơn giản hơn cho RLHF.
-- [Bài báo nghiên cứu ORPO](https://arxiv.org/abs/2402.01714) - Giới thiệu Odds Ratio Preference Optimization, một phương pháp mới kết hợp *tinh chỉnh theo chỉ thị* và *tinh chỉnh theo sự ưu tiên* thành 1
+- [Bài báo nghiên cứu ORPO](https://arxiv.org/abs/2403.07691) - Giới thiệu Odds Ratio Preference Optimization, một phương pháp mới kết hợp *tinh chỉnh theo chỉ thị* và *tinh chỉnh theo sự ưu tiên* thành 1
 - [Bài hướng dẫn của Argilla](https://argilla.io/blog/mantisnlp-rlhf-part-8/) - Hướng dẫn giải thích các kỹ thuật căn chỉnh khác nhau bao gồm RLHF, DPO và cách triển khai thực tế.
 - [Blog về DPO](https://huggingface.co/blog/dpo-trl) - Hướng dẫn thực hành về triển khai DPO sử dụng thư viện TRL với các ví dụ code và phương pháp tốt nhất.
 - [Code mẫu cho DPO trong thư viên TRL](https://github.com/huggingface/trl/blob/main/examples/scripts/dpo.py) - Code mẫu về cách triển khai tinh chỉnh DPO sử dụng thư viện TRL.

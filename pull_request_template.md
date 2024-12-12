@@ -18,7 +18,7 @@ Describe what you've done in this PR:
 
 ## Notebooks Added/Modified
 List any notebooks you've added or modified:
-- [ ] Added new example in `module_name/students/my_example.ipynb`
+- [ ] Added new example in `module_name/student_examples/my_example.ipynb`
 - [ ] Modified existing notebook with additional examples
 - [ ] Added documentation or comments
 

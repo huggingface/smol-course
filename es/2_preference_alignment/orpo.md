@@ -19,7 +19,7 @@ ORPO crea un nuevo objetivo combinando dos componentes principales:
 
 2. **Pérdida de Odds Ratio**: Un componente novedoso que penaliza respuestas no deseadas mientras recompensa las preferidas. Esta función de pérdida utiliza odds ratios para contrastar eficazmente entre respuestas favorecidas y desfavorecidas a nivel de token.
 
-Juntos, estos componentes guían al modelo para adaptarse a las generaciones deseadas para el dominio específico mientras desalienta activamente las generaciones del conjunto de respuestas rechazadas. El mecanismo de odds ratio proporciona una manera natural de medir y optimizar las preferencias del modelo entre respuestas elegidas y rechazadas. Si deseas profundizar en las matemáticas, puedes leer el [artículo de ORPO](https://arxiv.org/abs/2402.01714). Si deseas aprender sobre ORPO desde la perspectiva de implementación, puedes revisar cómo se calcula la pérdida de ORPO en la [biblioteca TRL](https://github.com/huggingface/trl/blob/b02189aaa538f3a95f6abb0ab46c0a971bfde57e/trl/trainer/orpo_trainer.py#L660).
+Juntos, estos componentes guían al modelo para adaptarse a las generaciones deseadas para el dominio específico mientras desalienta activamente las generaciones del conjunto de respuestas rechazadas. El mecanismo de odds ratio proporciona una manera natural de medir y optimizar las preferencias del modelo entre respuestas elegidas y rechazadas. Si deseas profundizar en las matemáticas, puedes leer el [artículo de ORPO](https://arxiv.org/abs/2403.07691). Si deseas aprender sobre ORPO desde la perspectiva de implementación, puedes revisar cómo se calcula la pérdida de ORPO en la [biblioteca TRL](https://github.com/huggingface/trl/blob/b02189aaa538f3a95f6abb0ab46c0a971bfde57e/trl/trainer/orpo_trainer.py#L660).
 
 ## Rendimiento y Resultados
 
@@ -79,6 +79,6 @@ Parámetros clave a considerar:
 ⏩ Prueba el [Tutorial de ORPO](./notebooks/orpo_tutorial.ipynb) para implementar este enfoque unificado de alineación de preferencias.
 
 ## Recursos
-- [Artículo de ORPO](https://arxiv.org/abs/2402.01714)
+- [Artículo de ORPO](https://arxiv.org/abs/2403.07691)
 - [Documentación de TRL](https://huggingface.co/docs/trl/index)
 - [Guía de RLHF de Argilla](https://argilla.io/blog/mantisnlp-rlhf-part-8/)
