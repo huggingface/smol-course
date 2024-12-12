@@ -38,4 +38,4 @@ Try out the following tutorials to get hands on experience with SFT using TRL:
 
 ⏭️ [Chat Templates Tutorial](./notebooks/chat_templates_example.ipynb)
 
-⏭️ [Supervised Fine-Tuning Tutorial](./notebooks/supervised_fine_tuning_tutorial.ipynb)
+⏭️ [Supervised Fine-Tuning Tutorial](./notebooks/sft_finetuning_example.ipynb)
