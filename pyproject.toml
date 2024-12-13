@@ -11,4 +11,6 @@ dependencies = [
     "ipywidgets>=8.1.5",
     "transformers>=4.46.3",
     "trl>=0.12.1",
+    "ipykernel>=6.29.5",
+    "python-dotenv>=1.0.1",
 ]
