@@ -19,14 +19,14 @@ Direct Preference Optimization (DPO) simplifies preference alignment by directly
 
 ### 2️⃣ Odds Ratio Preference Optimization (ORPO)
 
-ORPO introduces a combined approach to instruction tuning and preference alignment in a single process. It modifies the standard language modeling objective by combining negative log-likelihood loss with an odds ratio term on a token level. The approach features a unified single-stage training process, reference model-free architecture, and improved computational efficiency. ORPO has shown impressive results across various benchmarks, demonstrating better performance on AlpacaEval compared to traditional methods. For more details, you can refer to the [Odds Ratio Preference Optimization (ORPO) documentation](./orpo.md).
+ORPO introduces a combined approach to instruction tuning and preference alignment in a single process. It modifies the standard language modelling objective by combining negative log-likelihood loss with an odds ratio term on a token level. The approach features a unified single-stage training process, reference model-free architecture, and improved computational efficiency. ORPO has shown impressive results across various benchmarks, demonstrating better performance on AlpacaEval compared to traditional methods. For more details, you can refer to the [Odds Ratio Preference Optimization (ORPO) documentation](./orpo.md).
 
 ## Exercise Notebooks
 
 | Title | Description | Exercise | Link | Colab |
 |-------|-------------|----------|------|-------|
 | DPO Training | Learn how to train models using Direct Preference Optimization | 🐢 Train a model using the Anthropic HH-RLHF dataset<br>🐕 Use your own preference dataset<br>🦁 Experiment with different preference datasets and model sizes | [Notebook](./notebooks/dpo_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/2_preference_alignment/notebooks/dpo_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-| ORPO Training | Learn how to train models using Odds Ratio Preference Optimization | 🐢 Train a model using instruction and preference data<br>🐕 Experiment with different loss weightings<br>🦁 Compare ORPO results with DPO | [Notebook](./notebooks/orpo_training_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/2_preference_alignment/notebooks/orpo_training_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| ORPO Training | Learn how to train models using Odds Ratio Preference Optimization | 🐢 Train a model using instruction and preference data<br>🐕 Experiment with different loss weightings<br>🦁 Compare ORPO results with DPO | [Notebook](./notebooks/orpo_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/2_preference_alignment/notebooks/orpo_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
 
 
 ## Resources
