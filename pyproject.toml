@@ -13,4 +13,5 @@ dependencies = [
     "trl>=0.12.1",
     "ipykernel>=6.29.5",
     "python-dotenv>=1.0.1",
+    "bitsandbytes>=0.45.0",
 ]
