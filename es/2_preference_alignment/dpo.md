@@ -10,7 +10,7 @@ Este enfoque ha demostrado ser altamente efectivo en la práctica, utilizándose
 
 ## Cómo Funciona DPO
 
-El proceso de DPO requiere un ajuste fino supervisado (SFT) para adaptar el modelo al dominio objetivo. Esto crea una base para el aprendizaje de preferencias mediante el entrenamiento en conjuntos de datos estándar de seguimiento de instrucciones. El modelo aprende a completar tareas básicas mientras mantiene sus capacidades generales.
+El proceso de DPO requiere un fine-tuning supervisado (SFT) para adaptar el modelo al dominio objetivo. Esto crea una base para el aprendizaje de preferencias mediante el entrenamiento en conjuntos de datos estándar de seguimiento de instrucciones. El modelo aprende a completar tareas básicas mientras mantiene sus capacidades generales.
 
 Luego viene el aprendizaje de preferencias, donde el modelo se entrena con pares de salidas: una preferida y una no preferida. Los pares de preferencias ayudan al modelo a entender qué respuestas se alinean mejor con los valores y expectativas humanas.
 

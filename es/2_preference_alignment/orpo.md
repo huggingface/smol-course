@@ -1,17 +1,17 @@
 **Optimización por Ratios de Probabilidad de Preferencias (ORPO)**
 
-ORPO (Odds Ratio Preference Optimization) es una técnica novedosa de ajuste fino que combina el ajuste fino y la alineación de preferencias en un único proceso unificado. Este enfoque combinado ofrece ventajas en términos de eficiencia y rendimiento en comparación con métodos tradicionales como RLHF o DPO.
+ORPO (Odds Ratio Preference Optimization) es una técnica novedosa de fine-tuning que combina el fine-tuning y la alineación de preferencias en un único proceso unificado. Este enfoque combinado ofrece ventajas en términos de eficiencia y rendimiento en comparación con métodos tradicionales como RLHF o DPO.
 
 ## Entendiendo ORPO
 
-Los métodos de alineación como DPO suelen involucrar dos pasos separados: ajuste fino supervisado para adaptar el modelo a un dominio y formato, seguido de la alineación de preferencias para alinearse con las preferencias humanas. Mientras que el ajuste fino supervisado (SFT) adapta eficazmente los modelos a los dominios objetivo, puede aumentar inadvertidamente la probabilidad de generar tanto respuestas deseables como indeseables. ORPO aborda esta limitación integrando ambos pasos en un solo proceso, como se ilustra en la siguiente comparación:
+Los métodos de alineación como DPO suelen involucrar dos pasos separados: fine-tuning supervisado para adaptar el modelo a un dominio y formato, seguido de la alineación de preferencias para alinearse con las preferencias humanas. Mientras que el fine-tuning fino supervisado (SFT) adapta eficazmente los modelos a los dominios objetivo, puede aumentar inadvertidamente la probabilidad de generar tanto respuestas deseables como indeseables. ORPO aborda esta limitación integrando ambos pasos en un solo proceso, como se ilustra en la siguiente comparación:
 
 ![Comparación de Técnicas de Alineación](https://argilla.io/images/blog/mantisnlp-rlhf/part-8-alignments.png)
 *Comparación de diferentes técnicas de alineación de modelos*
 
 ## Cómo Funciona ORPO
 
-El proceso de entrenamiento de ORPO utiliza un conjunto de datos de preferencias similar al que usamos para DPO, donde cada ejemplo de entrenamiento contiene un prompt de entrada junto con dos respuestas: una preferida y otra rechazada. A diferencia de otros métodos de alineación que requieren etapas separadas y modelos de referencia, ORPO integra la alineación de preferencias directamente en el proceso de ajuste fino supervisado. Este enfoque monolítico lo hace libre de modelos de referencia, computacionalmente más eficiente y eficiente en memoria, con menos FLOPs.
+El proceso de entrenamiento de ORPO utiliza un conjunto de datos de preferencias similar al que usamos para DPO, donde cada ejemplo de entrenamiento contiene un prompt de entrada junto con dos respuestas: una preferida y otra rechazada. A diferencia de otros métodos de alineación que requieren etapas separadas y modelos de referencia, ORPO integra la alineación de preferencias directamente en el proceso de fine-tuning supervisado. Este enfoque monolítico lo hace libre de modelos de referencia, computacionalmente más eficiente y eficiente en memoria, con menos FLOPs.
 
 ORPO crea un nuevo objetivo combinando dos componentes principales:
 
