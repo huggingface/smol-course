@@ -1,86 +1,60 @@
 # Automatic Benchmarks
 
-Automatic benchmarks provide a standardized way to evaluate language models across different tasks and capabilities. These benchmarks use predefined datasets and metrics to assess model performance.
+Automatic benchmarks serve as standardized tools for evaluating language models across different tasks and capabilities. While they provide a useful starting point for understanding model performance, it's important to recognize that they represent only one piece of a comprehensive evaluation strategy.
 
-The advantage of automatic benchmarks is that they are standardized and can be used to compare models across different domains. The disadvantage is that they may not cover all the capabilities of your use case.
+## Understanding Automatic Benchmarks
 
-## Key Components
+Automatic benchmarks typically consist of curated datasets with predefined tasks and evaluation metrics. These benchmarks aim to assess various aspects of model capability, from basic language understanding to complex reasoning. The key advantage of using automatic benchmarks is their standardization - they allow for consistent comparison across different models and provide reproducible results.
 
-1. **Tasks**: Predefined problems the model needs to solve
-   - **Multiple Choice**
-     - Question answering with predefined options
-     - Subject knowledge testing (e.g., MMLU)
-     - Common sense reasoning (e.g., WinoGrande)
-   
-   - **Text Generation**
-     - Open-ended question answering
-     - Summarization
-     - Translation
-     - Story completion
-   
-   - **Classification**
-     - Sentiment analysis
-     - Topic classification
-     - Natural language inference
-     - Toxicity detection
-   
-   - **Question Answering**
-     - Extractive QA (finding answers in context)
-     - Generative QA (formulating new answers)
-     - Multi-hop reasoning
-     - Math word problems
+However, it's crucial to understand that benchmark performance doesn't always translate directly to real-world effectiveness. A model that excels at academic benchmarks may still struggle with specific domain applications or practical use cases.
 
-2. **Metrics**: Quantitative measures of performance
-   - **Accuracy-based**
-     - Exact match accuracy
-     - Multiple choice accuracy
-     - F1 score for partial matches
-     - Matthews correlation coefficient
-   
-   - **Generation Quality**
-     - ROUGE (Recall-Oriented Understudy for Gisting Evaluation)
-     - BLEU (Bilingual Evaluation Understudy)
-     - METEOR (for machine translation)
-     - BERTScore for semantic similarity
-   
-   - **Specialized Metrics**
-     - Perplexity for language modeling
-     - Code execution accuracy
-     - Factual consistency scores
-     - Toxicity measures
+## Benchmarks and Their Limitations
 
-3. **Evaluation Settings**
-   - Zero-shot: No examples provided
-   - Few-shot: Limited examples in prompt
-   - Fine-tuned: Model adapted to task
-   - Chain-of-thought: Reasoning steps included
+### General Knowledge Benchmarks
 
-## Common Benchmarks
+MMLU (Massive Multitask Language Understanding) tests knowledge across 57 subjects, from science to humanities. While comprehensive, it may not reflect the depth of expertise needed for specific domains. TruthfulQA evaluates a model's tendency to reproduce common misconceptions, though it can't capture all forms of misinformation.
 
-LightEval supports various established benchmarks that test the main capabilities of LLMs. Here is a non-exhaustive list:
-
-### General Knowledge
-- **MMLU** (Massive Multitask Language Understanding): Tests knowledge across 57 subjects including science, humanities, math, and more
-- **TruthfulQA**: Evaluates model's ability to avoid common misconceptions and false statements
-- **ARC**: Grade-school level science questions requiring reasoning
-
-### Reasoning
-- **BBH** (Big Bench Hard): Tests complex reasoning including logic, planning, and common sense
-- **GSM8K**: Grade school math word problems requiring multi-step reasoning
+### Reasoning Benchmarks
+BBH (Big Bench Hard) and GSM8K focus on complex reasoning tasks. BBH tests logical thinking and planning, while GSM8K specifically targets mathematical problem-solving. These benchmarks help assess analytical capabilities but may not capture the nuanced reasoning required in real-world scenarios.
 
 ### Language Understanding
-- **HELM**: Holistic evaluation framework covering multiple capabilities
-- **WinoGrande**: Tests common sense reasoning through pronoun disambiguation
+HELM provides a holistic evaluation framework, while WinoGrande tests common sense through pronoun disambiguation. These benchmarks offer insights into language processing capabilities but may not fully represent the complexity of natural conversation or domain-specific terminology.
 
-### Code and Math
-- **HumanEval**: Programming problems testing code generation capabilities
-- **MATH**: High school and competition level mathematics problems
+## Alternative Evaluation Approaches
 
-For a comprehensive list of evaluation datasets and their detailed descriptions, see the [Evaluation Datasets Catalog](https://github.com/huggingface/evaluation-guidebook/blob/main/contents/automated-benchmarks/some-evaluation-datasets.md) in the Evaluation Guidebook.
+Many organizations have developed alternative evaluation methods to address the limitations of standard benchmarks:
 
-## Using LightEval
+### LLM-as-Judge
+Using one language model to evaluate another's outputs has become increasingly popular. This approach can provide more nuanced feedback than traditional metrics, though it comes with its own biases and limitations.
 
-### Task Structure
+### Evaluation Arenas
+Platforms like Anthropic's Constitutional AI Arena allow models to interact and evaluate each other in controlled environments. This can reveal strengths and weaknesses that might not be apparent in traditional benchmarks.
+
+### Custom Benchmark Suites
+Organizations often develop internal benchmark suites tailored to their specific needs and use cases. These might include domain-specific knowledge tests or evaluation scenarios that mirror actual deployment conditions.
+
+## Creating Your Own Evaluation Strategy
+
+Remember that while LightEval makes it easy to run standard benchmarks, you should also invest time in developing evaluation methods specific to your use case.
+
+While standard benchmarks provide a useful baseline, they shouldn't be your only evaluation method. Here's how to develop a more comprehensive approach:
+
+1. Start with relevant standard benchmarks to establish a baseline and enable comparison with other models.
+
+2. Identify the specific requirements and challenges of your use case. What tasks will your model actually perform? What kinds of errors would be most problematic?
+
+3. Develop custom evaluation datasets that reflect your actual use case. This might include:
+   - Real user queries from your domain
+   - Common edge cases you've encountered
+   - Examples of particularly challenging scenarios
+
+4. Consider implementing a multi-layered evaluation strategy:
+   - Automated metrics for quick feedback
+   - Human evaluation for nuanced understanding
+   - Domain expert review for specialized applications
+   - A/B testing in controlled environments
+
+## Using LightEval for Benchmarking
 
 LightEval tasks are defined using a specific format:
 ```
@@ -96,7 +70,7 @@ Example: `"mmlu|abstract_algebra|0|0"` evaluates on MMLU's abstract algebra task
 
 ### Example Evaluation Pipeline
 
-Here's a complete example of setting up and running an evaluation:
+Here's a complete example of setting up and running an evaluation on automatic benchmarks relevant to one specific domain:
 
 ```python
 from lighteval.tasks import Task, Pipeline
@@ -140,8 +114,6 @@ results = pipeline.get_results()
 pipeline.show_results()
 ```
 
-### Show Results
-
 Results are displayed in a tabular format showing:
 ```
 |                  Task                  |Version|Metric|Value |   |Stderr|
@@ -156,5 +128,4 @@ You can also handle the results in a pandas DataFrame and visualise or represent
 
 # Next Steps
 
-- [Custom Evaluation](./custom_evaluation.md)
-- [Domain Evaluation Project](./project/README.md)
+⏩ Explore [Custom Domain Evaluation](./custom_evaluation.md) to learn how to create evaluation pipelines tailored to your specific needs

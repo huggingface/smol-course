@@ -106,7 +106,7 @@ messages = [
 ]
 ```
 
-⏭️ [Siguiente: Ajuste Supervisado](./supervised_fine_tuning.md)
+⏭️ [Siguiente: Fine-tuning Supervisado](./supervised_fine_tuning.md)
 
 ## Recursos
 
