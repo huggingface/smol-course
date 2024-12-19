@@ -38,7 +38,7 @@ Este curso fornece uma abordagem prática para trabalhar com pequenos modelos de
 
 ## Por Que Pequenos Modelos de Linguagem?
 
-Embora os grandes modelos de linguagem tenham mostrado recursos e capacidades impressionantes, eles geralmente exigem recursos computacionais significativos e podem ser exagerados para aplicativos focados.Os pequenos modelos de linguagem oferecem várias vantagens para aplicativos de domínios específicos:
+Embora os grandes modelos de linguagem tenham mostrado recursos e capacidades impressionantes, eles geralmente exigem recursos computacionais significativos e podem ser exagerados para aplicativos focados. Os pequenos modelos de linguagem oferecem várias vantagens para aplicativos de domínios específicos:
 
 - **Eficiência**: Requer significativamente menos recursos computacionais para treinar e implantar
 - **Personalização**: Mais fácil de ajustar e se adaptar a domínios específicos
