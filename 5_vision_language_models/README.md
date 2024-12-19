@@ -29,7 +29,9 @@ For detailed guidance on fine-tuning VLMs, visit the [VLM Fine-Tuning](./vlm_fin
 
 
 ## References  
-- [Hugging Face Learn: Supervised Fine-Tuning VLMs](https://huggingface.co/learn/cookbook/fine_tuning_vlm_trl)  
+- [Hugging Face Learn: Supervised Fine-Tuning VLMs](https://huggingface.co/learn/cookbook/fine_tuning_vlm_trl)
+- [Hugging Face Learn: Supervised Fine-Tuning SmolVLM](https://huggingface.co/learn/cookbook/fine_tuning_smol_vlm_sft_trl)  
+- [Hugging Face Learn: Preference Optimization Fine-Tuning SmolVLM](https://huggingface.co/learn/cookbook/fine_tuning_vlm_dpo_smolvlm_instruct)  
 - [Hugging Face Blog: Preference Optimization for VLMs](https://huggingface.co/blog/dpo_vlm)
 - [Hugging Face Blog: Vision Language Models](https://huggingface.co/blog/vlms)
 - [Hugging Face Blog: SmolVLM](https://huggingface.co/blog/smolvlm)  
