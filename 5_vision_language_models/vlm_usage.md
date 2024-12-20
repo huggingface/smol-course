@@ -6,11 +6,11 @@ Visual Language Models (VLMs) bridge the gap between images and text, enabling a
 
 VLMs combine image-processing components with text-generation models to achieve a unified understanding. The primary elements of their architecture are:
 
-![VLM Architecture](VLM_Architecture.png)
+![VLM Architecture](./images/VLM_Architecture.png)
 
 - **Image Encoder**: Transforms raw images into compact numerical representations. Pretrained encoders such as CLIP or vision transformers (ViT) are commonly used.
 - **Embedding Projector**: Maps image features into a space compatible with textual embeddings, often using dense layers or linear transformations.
-- **Text Decoder**: Acts as the language-generation component, translating fused multimodal information into coherent text. Examples include generative models like LLaMA or Vicuna.
+- **Text Decoder**: Acts as the language-generation component, translating fused multimodal information into coherent text. Examples include generative models like Llama or Vicuna.
 - **Multimodal Projector**: Provides an additional layer to blend image and text representations. It is critical for models like LLaVA to establish stronger connections between the two modalities.
 
 Most VLMs leverage pretrained image encoders and text decoders and align them through additional fine-tuning on paired image-text datasets. This approach makes training efficient while allowing the models to generalize effectively.
