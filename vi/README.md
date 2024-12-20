@@ -1,4 +1,4 @@
-![smolcourse image](./banner.png)
+![smolcourse image](../banner.png)
 
 # Khoá học Mô hình ngôn ngữ cơ bản
 
@@ -6,7 +6,7 @@
 
 *Lưu ý: Vì khóa học được dịch từ bản gốc tiếng Anh, chúng tôi sẽ giữ lại một số thuật ngữ gốc nhằm tránh gây hiểu lầm.*
 
-<a href="http://hf.co/join/discord">
+<a href="http://hf.co/join/discord">s
 <img src="https://img.shields.io/badge/Discord-7289DA?&logo=discord&logoColor=white"/>
 </a>
 
