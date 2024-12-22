@@ -2,13 +2,32 @@
 
 ## 1. Overview of RAG  
 
-Retrieval-Augmented Generation (RAG) integrates retrieval mechanisms with generative models to produce context-aware responses by accessing external knowledge dynamically. This architecture is highly modular, allowing for customization and optimization based on task requirements. 
+Large Language Models (LLMs) have revolutionized natural language processing and generation. However, their reliance on static training data presents significant challenges. Retrieval-Augmented Generation (RAG) addresses these limitations by combining dynamic retrieval with generative capabilities.  
 
-A typical RAG pipeline involves:
-- **Retriever**: Fetches relevant documents.
-- **Chunker**: Splits documents for efficient retrieval.
-- **Generator**: Generates responses based on retrieved context.
-- **Orchestrator**: Manages interactions between these components.
+### Why RAG is Needed  
+
+- **Reducing Hallucination**  
+RAG grounds responses in external knowledge, ensuring accuracy by dynamically fetching relevant context instead of relying solely on static, memorized information.
+
+- **Real-Time Knowledge**  
+Unlike static models, RAG can integrate live data, making it ideal for fast-changing domains like finance, news, and research.
+
+- **Automation and Scalability**  
+RAG simplifies complex workflows by dynamically accessing and integrating diverse information sources, enabling scalable applications such as customer support, enterprise search, and workflow automation.
+
+- **Domain-Specific Adaptability**  
+With tailored retrievers and modular design, RAG excels in specialized applications such as legal, healthcare, or education, offering flexibility and precision.
+
+- **Cost Efficiency**  
+By offloading retrieval tasks to external systems, RAG reduces computational costs and eliminates the need for frequent model fine-tuning.
+
+### RAG Architecture  
+
+RAG's modular architecture allows for customization and optimization based on task requirements. A typical RAG pipeline involves the following components:  
+- **Retriever**: Fetches relevant documents or chunks of information.  
+- **Chunker**: Splits documents into manageable segments for efficient retrieval.  
+- **Generator**: Generates responses using the retrieved context.  
+- **Orchestrator**: Manages interactions between these components to ensure seamless workflow.  
 
 
 ## 2. Types of RAG Architectures  
@@ -101,13 +120,14 @@ Evaluation involves measuring retrieval quality and response generation accuracy
 | Orchestrator     | **LangChain**, **Hugging Face Agents** |
 | Evaluation       | **RAGAs**, **BLEU**, **ROUGE**, **MRR** |
 
-
+ 
 ## Exercise Notebooks  
 
-| Title         | Description | Exercise | Link | Colab |
-|---------------|-------------|----------|------|-------|
-| RAG Basics    | Learn how to construct a RAG pipeline | 🐢 Use a simple retriever and generator<br>🐕 Try vector database integration<br>🦁 Explore hybrid retrieval | [Notebook](./notebooks/rag_basics.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/smol-course/rag_basics.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-| RAG Evaluation | Learn how to evaluate retrieval and generation | 🐢 Evaluate a simple RAG system<br>🐕 Use RAGAs for advanced metrics<br>🦁 Analyze retrieval and generation alignment | [Notebook](./notebooks/rag_evaluation.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/smol-course/rag_evaluation.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| Title            | Description | Exercise | Link | Colab |
+|-------------------|-------------|----------|------|-------|
+| RAG Basics       | Learn how to construct a RAG pipeline | 🐢 Use a simple retriever and generator<br>🐕 Try vector database integration<br>🦁 Explore hybrid retrieval | [Notebook](./notebooks/rag_basics.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/smol-course/rag_basics.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| RAG Evaluation   | Learn how to evaluate retrieval and generation | 🐢 Evaluate a simple RAG system<br>🐕 Use RAGAs for advanced metrics<br>🦁 Analyze retrieval and generation alignment | [Notebook](./notebooks/rag_evaluation.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/smol-course/rag_evaluation.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| Agentic RAG      | Learn how to set up and use multi-agent RAG for task automation | 🐢 Create a database query react-agent<br>🐕 Build an agent for solving math/coding problems<br>🦁 Integrate multiple tools for workflow automation | [Notebook](./notebooks/agent_rag.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/smol-course/agent_rag.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
 
 
 ## References  
