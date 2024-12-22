@@ -33,7 +33,7 @@ This course provides a practical, hands-on approach to working with small langua
 | [Parameter-efficient Fine-tuning](./3_parameter_efficient_finetuning) | Learn LoRA, prompt tuning, and efficient adaptation methods | ✅ Ready | Dec 9, 2024 |
 | [Evaluation](./4_evaluation) | Use automatic benchmarks and create custom domain evaluations | ✅ Ready | Dec 13, 2024 |
 | [Vision-language Models](./5_vision_language_models) | Adapt multimodal models for vision-language tasks | ✅ Ready | Dec 16, 2024 |
-| [Synthetic Datasets](./6_synthetic_datasets) | Create and validate synthetic datasets for training | [🚧 WIP](https://github.com/huggingface/smol-course/issues/83) | Dec 20, 2024 |
+| [Synthetic Datasets](./6_synthetic_datasets) | Create and validate synthetic datasets for training | ✅ Ready | Dec 20, 2024 |
 | [Inference](./7_inference) | Infer with models efficiently | 📝 Planned | Dec 23, 2024 |
 | Capstone Project | Use what you've learnt to climb the leaderboard! | [🚧 WIP](https://github.com/huggingface/smol-course/pull/97) | Dec 23, 2024 |
 
