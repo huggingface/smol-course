@@ -61,3 +61,56 @@ Extends the router architecture by involving multiple agents that interact dynam
 - **Advantages**: Flexible and supports integration with external systems.  
 - **Use Cases**: Workflow automation, enterprise search systems.  
 
+
+## 3. Components of RAG  
+
+### 3.1 Retriever  
+Handles fetching of relevant documents or information from a knowledge base. Popular frameworks include:
+- **Vector Databases**: Tools like **Qdrant**, **Weaviate**, and **Pinecone**.
+- **Hybrid Retrieval**: Combines keyword and vector search.
+
+
+### 3.2 Chunker  
+Splits documents into smaller chunks for effective retrieval. Tools like **LangChain Text Splitters** are commonly used.
+
+
+### 3.3 Generator  
+Generates responses by processing the retrieved context.  
+- **Options**: GPT models, multimodal models (e.g., GPT-4 Vision).  
+
+In this course we will use the Smol-family models as generator.
+
+### 3.4 Orchestrator  
+Manages interaction between components and workflows.  
+- **Tools**: **LangChain**, **HayStack**.  
+
+
+## 4. Evaluation  
+
+Evaluation involves measuring retrieval quality and response generation accuracy.  
+- **Frameworks**: **RAGAs** for integrated evaluation, **BLEU**, **ROUGE**, and **MRR** for detailed metrics.
+
+
+## 5. Tools and Frameworks  
+
+| Component       | Tools/Frameworks                      |
+|------------------|---------------------------------------|
+| Retriever        | **DPR**, **BM25**, **Qdrant**, **Pinecone** |
+| Chunker          | **LangChain Text Splitters**          |
+| Generator        | **OpenAI GPT-4**, **Hugging Face Transformers** |
+| Orchestrator     | **LangChain**, **Hugging Face Agents** |
+| Evaluation       | **RAGAs**, **BLEU**, **ROUGE**, **MRR** |
+
+
+## Exercise Notebooks  
+
+| Title         | Description | Exercise | Link | Colab |
+|---------------|-------------|----------|------|-------|
+| RAG Basics    | Learn how to construct a RAG pipeline | 🐢 Use a simple retriever and generator<br>🐕 Try vector database integration<br>🦁 Explore hybrid retrieval | [Notebook](./notebooks/rag_basics.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/smol-course/rag_basics.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| RAG Evaluation | Learn how to evaluate retrieval and generation | 🐢 Evaluate a simple RAG system<br>🐕 Use RAGAs for advanced metrics<br>🦁 Analyze retrieval and generation alignment | [Notebook](./notebooks/rag_evaluation.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/smol-course/rag_evaluation.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+
+
+## References  
+
+- [LangChain Documentation](https://docs.langchain.com)  
+- [RAGAs Toolkit](https://github.com/ragas-toolkit)  
