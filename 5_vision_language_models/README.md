@@ -24,12 +24,14 @@ For detailed guidance on fine-tuning VLMs, visit the [VLM Fine-Tuning](./vlm_fin
 
 | Title | Description | Exercise | Link | Colab |
 |-------|-------------|----------|------|-------|
-| VLM Usage | Learn how to load and use a pre-trained VLM for various tasks | 🐢 Process an image<br>🐕 Process multiple images with batch handling <br>🦁 Process a full video| [Notebook](./notebooks/vlm_usage_sample.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/user/project/vlm_usage_sample.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-| VLM Fine-Tuning | Learn how to fine-tune a pre-trained VLM for task-specific datasets | 🐢 Use a basic dataset for fine-tuning<br>🐕 Try a new dataset<br>🦁 Experiment with alternative fine-tuning methods | [Notebook](./notebooks/vlm_finetune_sample.ipynb)| <a target="_blank" href="https://colab.research.google.com/github/user/project/vlm_finetune_sample.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> | 
+| VLM Usage | Learn how to load and use a pre-trained VLM for various tasks | 🐢 Process an image<br>🐕 Process multiple images with batch handling <br>🦁 Process a full video| [Notebook](./notebooks/vlm_usage_sample.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/5_vision_language_models/notebooks/vlm_usage_sample.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| VLM Fine-Tuning | Learn how to fine-tune a pre-trained VLM for task-specific datasets | 🐢 Use a basic dataset for fine-tuning<br>🐕 Try a new dataset<br>🦁 Experiment with alternative fine-tuning methods | [Notebook](./notebooks/vlm_sft_sample.ipynb)| <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/5_vision_language_models/notebooks/vlm_sft_sample.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> | 
 
 
 ## References  
-- [Hugging Face Learn: Supervised Fine-Tuning VLMs](https://huggingface.co/learn/cookbook/fine_tuning_vlm_trl)  
+- [Hugging Face Learn: Supervised Fine-Tuning VLMs](https://huggingface.co/learn/cookbook/fine_tuning_vlm_trl)
+- [Hugging Face Learn: Supervised Fine-Tuning SmolVLM](https://huggingface.co/learn/cookbook/fine_tuning_smol_vlm_sft_trl)  
+- [Hugging Face Learn: Preference Optimization Fine-Tuning SmolVLM](https://huggingface.co/learn/cookbook/fine_tuning_vlm_dpo_smolvlm_instruct)  
 - [Hugging Face Blog: Preference Optimization for VLMs](https://huggingface.co/blog/dpo_vlm)
 - [Hugging Face Blog: Vision Language Models](https://huggingface.co/blog/vlms)
 - [Hugging Face Blog: SmolVLM](https://huggingface.co/blog/smolvlm)  
