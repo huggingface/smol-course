@@ -32,6 +32,12 @@ A key software package for Supervised Fine-Tuning is Transformer Reinforcement L
 
 Built on top of the Hugging Face Transformers library, TRL allows users to directly load pretrained language models and supports most decoder and encoder-decoder architectures. The library facilitates major processes of RL used in language modelling, including supervised fine-tuning (SFT), reward modeling (RM), proximal policy optimization (PPO), and Direct Preference Optimization (DPO). We will use TRL in a number of modules throughout this repo.
 
+## Prompt Masking
+
+Prompt masking in SFT involves setting the loss contribution of prompt tokens to -100, making the model only learn from completion tokens. While TRL's SFTTrainer by default trains on both prompts and completions, it provides the `DataCollatorForCompletionOnlyLM` class to enable prompt masking. This approach can reduce training time since the model only needs to learn the completion patterns. With prompt masking, the model still processes the input tokens during both training and inference - it just doesn't update its weights based on predicting the prompt tokens during training. However, there is ongoing debate about whether masking prompts leads to better model performance compared to training on the full sequence. To explore this further, check out the documentation for [`DataCollatorForCompletionOnlyLM`](https://huggingface.co/docs/trl/en/sft_trainer) in the TRL library.
+
+
+
 # Next Steps
 
 Try out the following tutorials to get hands on experience with SFT using TRL:
