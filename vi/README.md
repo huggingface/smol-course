@@ -1,4 +1,4 @@
-![smolcourse image](./banner.png)
+![smolcourse image](../banner.png)
 
 # Khoá học Mô hình ngôn ngữ cơ bản
 
@@ -6,7 +6,7 @@
 
 *Lưu ý: Vì khóa học được dịch từ bản gốc tiếng Anh, chúng tôi sẽ giữ lại một số thuật ngữ gốc nhằm tránh gây hiểu lầm.*
 
-<a href="http://hf.co/join/discord">
+<a href="http://hf.co/join/discord">s
 <img src="https://img.shields.io/badge/Discord-7289DA?&logo=discord&logoColor=white"/>
 </a>
 
@@ -88,7 +88,7 @@ Nếu dùng **Google Colab** bạn sẽ cần cài đặt dependencies một cá
 pip install -r transformers trl datasets huggingface_hub
 ```
 
-## Tham gia
+## Tham gia và chia sẻ
 
 Hãy chia sẻ khoá học này, để cùng nhau phát triển cộng đồng AI Việt Nam.
 
