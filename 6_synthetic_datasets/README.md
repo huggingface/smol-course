@@ -1,6 +1,6 @@
 # Synthetic Datasets
 
-Synthetic data is artificially generated data that mimics real-world usage. It allows overcoming data limitations by expanding or enhancing datasets. Even though synthetic data was already used for some usescases, large language models have made synthetic datasets more popular for pre- and post-training, and the evaluation of language models.
+Synthetic data is artificially generated data that mimics real-world usage. It allows overcoming data limitations by expanding or enhancing datasets. Even though synthetic data was already used for some use cases, large language models have made synthetic datasets more popular for pre- and post-training, and the evaluation of language models.
 
 We'll use [`distilabel`](https://distilabel.argilla.io/latest/), a framework for synthetic data and AI feedback for engineers who need fast, reliable and scalable pipelines based on verified research papers. For a deeper dive into the package and best practices, check out the [documentation](https://distilabel.argilla.io/latest/).
 
