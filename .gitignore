@@ -162,4 +162,17 @@ sft_output/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
-.DS_Store
+i.DS_Store
+# My experiment files and folders
+1_instruction_tuning/notebooks/SmolLM2-135M-FT/
+1_instruction_tuning/notebooks/SmolLM2-135M-FT2/
+1_instruction_tuning/notebooks/processed_chat_template_dataset/
+2_preference_alignment/notebooks/SmolLM2-FT-DPO-argilla/
+2_preference_alignment/notebooks/SmolLM2-FT-DPO-argilla1/
+2_preference_alignment/notebooks/SmolLM2-FT-DPO-argilla2/
+2_preference_alignment/notebooks/SmolLM2-FT-DPO-argilla3/
+2_preference_alignment/notebooks/SmolLM2-FT-DPO-argilla3b/
+2_preference_alignment/notebooks/SmolLM2-FT-DPO-trl-lib/
+2_preference_alignment/notebooks/results_trl-lib/
+config.yaml
+
