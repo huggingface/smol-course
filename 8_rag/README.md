@@ -4,7 +4,7 @@
 
 Large Language Models (LLMs) have revolutionized natural language processing and generation. However, their reliance on static training data presents significant challenges. Retrieval-Augmented Generation (RAG) addresses these limitations by combining dynamic retrieval with generative capabilities.  
 
-### Why RAG is Needed  
+### Why RAG is Needed
 
 - **Reducing Hallucination**  
 RAG grounds responses in external knowledge, ensuring accuracy by dynamically fetching relevant context instead of relying solely on static, memorized information.
@@ -21,106 +21,94 @@ With tailored retrievers and modular design, RAG excels in specialized applicati
 - **Cost Efficiency**  
 By offloading retrieval tasks to external systems, RAG reduces computational costs and eliminates the need for frequent model fine-tuning.
 
-### RAG Architecture  
+## 2. Stages of RAG  
 
-RAG's modular architecture allows for customization and optimization based on task requirements. A typical RAG pipeline involves the following components:  
-- **Retriever**: Fetches relevant documents or chunks of information.  
-- **Chunker**: Splits documents into manageable segments for efficient retrieval.  
-- **Generator**: Generates responses using the retrieved context.  
-- **Orchestrator**: Manages interactions between these components to ensure seamless workflow.  
+Although there are many RAG variants, the main workflow can often be divided into three key stages:
+
+| **Stage**                | **Sub-Components**              |
+| ------------------------- | ------------------------------- |
+| **Index**                | Ingest, Chunk, Embed, Store     |
+| **Retrieve + Generate**     | Retrieve, Generate, Orchestrate |
+| **(Optional) Evaluation**| Evaluate responses              |
+
+### 2.1 Index Stage  
+The **Index** stage prepares the knowledge base for efficient retrieval by processing and organizing documents. This stage often involves:  
+- **Ingesting Documents**: Extracting text from raw documents (e.g., PDFs, HTML).  
+- **Chunking**: Splitting documents into smaller, manageable pieces.  
+- **Embedding**: Converting chunks into vector representations using embedding models.  
+- **Storing**: Indexing the embeddings into a vector database for efficient search.  
+
+- **Tools/Frameworks**:  
+  - **Ingesting**: OCR tools, document processors.  
+  - **Chunking**: **LangChain Text Splitters**, **HayStack Preprocessors**.  
+  - **Embedding**: **OpenAI Embeddings**, **Hugging Face Transformers**.  
+  - **Vector Database**: **Qdrant**, **ElasticSearch**, **Pinecone**.  
+
+### 2.2 Retrieve + Generate Stage  
+The **Retrieve + Generate** stage retrieves relevant context and generates responses based on it:  
+
+#### **Retrieve**  
+Fetches the most relevant chunks of information using:  
+- **Retrieval Methods**: Dense vector search, hybrid retrieval (vector + keyword).  
+- **Advanced Techniques**: Re-ranking models, custom tools (web search integration, agents, etc.).  
+
+#### **Generate**  
+Uses retrieved chunks as input to generate responses:  
+- **Generating Methods**: OpenAI, Anthropic, etc. (vision language models for image+text tasks).
+
+#### **(Optional) Orchestrate**  
+Manages interactions between retrieval and generation for complex workflows such as in advanced retrival techniques. For example:
+
+- **Prompt Augmentation**: Prepares the final input for the generator by formatting and enriching retrieved chunks (e.g., adding context, query reformulation, or applying templates).  
+- **Dynamic Query Refinement**: Iteratively adjusts the query or retrieval parameters based on feedback or partial results to improve the quality of retrieved information.
+- **Tool Invocation**: Dynamically calls external tools or APIs (e.g., search engines, databases, or calculators) as part of the response generation process.  
+
+### 2.3. (Optional) Evaluation
+
+Evaluation measures retrieval quality and response generation accuracy.
+- **Metrics**: BLEU, ROUGE, MRR.
+- **Frameworks**:  Frameworks like RAGAs for evaluation..
+
+ ## 3. Types of RAG Architectures
+
+The architecture of a RAG system defines its capabilities and enhancements over the naive RAG approach. Below are common RAG architectures:
+
+### 3.1 Naive RAG
+A simple architecture where the query is sent to a retriever, and the retrieved chunks are passed directly to the generator for response generation.  
+- **Features**: Most rudimentary pipeline with no intermediate steps.  
+- **Effect**: Easy to implement with low complexity, suitable for general-purpose question answering and quick prototyping due to the straightforward design.  
+
+### 3.2 Retrieve-and-Rerank RAG
+This architecture incorporates a reranker to prioritize retrieved results based on relevance.  
+- **Features**: Addition of a reranking model that scores and reorders retrieved documents before passing them to the generator.  
+- **Effect**: Improves relevance and precision by filtering out less relevant information, making it more effective for tasks requiring high retrieval accuracy, such as customer support and legal document search.  
+
+### 3.3 Multimodal RAG
+Combines text and visual inputs for tasks that require reasoning across multiple data modalities.  
+- **Features**: Includes a multimodal retriever, an image encoder, and a text generator capable of handling both text and visual data.  
+- **Effect**: Enables tasks such as visual question answering and image captioning by integrating diverse data types. 
+
+### 3.4 Graph RAG
+Uses graph databases or graph neural networks (GNNs) to model relationships between entities and retrieve structured knowledge.  
+- **Features**: Incorporates a graph retriever and node representation model to leverage entity relationships within a graph structure.  
+- **Effect**: Provides enhanced reasoning capabilities over structured data such as knowledge graphs, making it highly effective for tasks like scientific research, complex entity reasoning, and technical documentation.  
+
+### 3.5 Hybrid RAG
+Integrates multiple retrieval mechanisms to combine the strengths of different search methods.  
+- **Features**: Utilizes both dense vector search and keyword-based retrieval methods in a multi-retriever setup.  
+- **Effect**: Balances precision and recall by integrating complementary retrieval approaches, which can be useful for handling diverse or multilingual datasets in domain-specific retrieval tasks.  
+
+### 3.6 Agentic RAG (Router)
+Routes queries to specialized retrievers or tools based on their type using an agent-based approach.  
+- **Features**: Includes a router agent that dynamically assigns queries to the most appropriate retriever or processing tool.  
+- **Effect**: Scales effectively across diverse query types. This allows for adaptability in systems requiring varied query handling, such as customer support across multiple domains.  
+
+### 3.7 Agentic RAG (Multi-Agent RAG)
+Expands the router architecture by involving multiple agents that collaborate to solve tasks dynamically.  
+- **Features**: Comprises multiple agents, each capable of interacting with retrievers, external tools (e.g., Slack, Gmail), and generators.  
+- **Effect**: Enables complex workflows and dynamic task-solving by leveraging agent collaboration. This supports integration with external systems, making it suitable for enterprise-level workflow automation and advanced search systems.  
 
 
-## 2. Types of RAG Architectures  
-
-The architecture of a RAG system defines how components are organized and interact. Below are the most common RAG architectures:
-
-### 2.1 Naive RAG  
-The simplest architecture where the query is sent to a retriever, and the retrieved chunks are passed directly to the generator for response generation.  
-- **Advantages**: Easy to implement, low complexity.  
-- **Use Cases**: General-purpose question answering, quick prototypes.  
-
-
-### 2.2 Retrieve-and-Rerank RAG  
-Enhances the naive architecture by incorporating a reranker to prioritize retrieved results.  
-- **Components**: Retriever, reranker, generator.  
-- **Advantages**: Improves relevance and precision of retrieved context.  
-- **Use Cases**: Customer support systems, legal document search.  
-
-
-### 2.3 Multimodal RAG  
-Combines text and visual inputs for tasks that require multimodal reasoning. The retriever handles multimodal datasets, and the generator processes both text and image contexts.  
-- **Components**: Multimodal retriever, image encoder, text generator.  
-- **Use Cases**: Visual question answering, image captioning, multimodal search.  
-
-
-### 2.4 Graph RAG  
-Leverages graph databases or graph neural networks (GNNs) to model relationships between entities and retrieve structured knowledge.  
-- **Components**: Graph retriever, node representation model, generator.  
-- **Advantages**: Ideal for reasoning over structured data like knowledge graphs.  
-- **Use Cases**: Scientific research, complex entity reasoning, technical documentation.  
-
-
-### 2.5 Hybrid RAG  
-Combines multiple retrieval mechanisms, such as dense vector search and keyword-based search, to ensure robust and diverse retrieval.  
-- **Components**: Multi-retriever setup, generator.  
-- **Advantages**: Balances precision and recall by integrating complementary retrieval methods.  
-- **Use Cases**: Multilingual search, domain-specific retrieval.  
-
-
-### 2.6 Agentic RAG (Router)  
-Uses an agent-based approach to route queries to specialized retrievers or tools based on query type.  
-- **Components**: Router agent, multiple retrievers, generator.  
-- **Advantages**: Scalable and adaptable to different query types.  
-- **Use Cases**: Customer support with diverse query domains.  
-
-
-### 2.7 Agentic RAG (Multi-Agent RAG)  
-Extends the router architecture by involving multiple agents that interact dynamically to solve tasks collaboratively.  
-- **Components**: Multiple agents, retrievers, external tools (e.g., Slack, Gmail), generator.  
-- **Advantages**: Flexible and supports integration with external systems.  
-- **Use Cases**: Workflow automation, enterprise search systems.  
-
-
-## 3. Components of RAG  
-
-### 3.1 Retriever  
-Handles fetching of relevant documents or information from a knowledge base. Popular frameworks include:
-- **Vector Databases**: Tools like **Qdrant**, **Weaviate**, and **Pinecone**.
-- **Hybrid Retrieval**: Combines keyword and vector search.
-
-
-### 3.2 Chunker  
-Splits documents into smaller chunks for effective retrieval. Tools like **LangChain Text Splitters** are commonly used.
-
-
-### 3.3 Generator  
-Generates responses by processing the retrieved context.  
-- **Options**: GPT models, multimodal models (e.g., GPT-4 Vision).  
-
-In this course we will use the Smol-family models as generator.
-
-### 3.4 Orchestrator  
-Manages interaction between components and workflows.  
-- **Tools**: **LangChain**, **HayStack**.  
-
-
-## 4. Evaluation  
-
-Evaluation involves measuring retrieval quality and response generation accuracy.  
-- **Frameworks**: **RAGAs** for integrated evaluation, **BLEU**, **ROUGE**, and **MRR** for detailed metrics.
-
-
-## 5. Tools and Frameworks  
-
-| Component       | Tools/Frameworks                      |
-|------------------|---------------------------------------|
-| Retriever        | **DPR**, **BM25**, **Qdrant**, **Pinecone** |
-| Chunker          | **LangChain Text Splitters**          |
-| Generator        | **OpenAI GPT-4**, **Hugging Face Transformers** |
-| Orchestrator     | **LangChain**, **Hugging Face Agents** |
-| Evaluation       | **RAGAs**, **BLEU**, **ROUGE**, **MRR** |
-
- 
 ## Exercise Notebooks  
 
 | Title            | Description | Exercise | Link | Colab |
@@ -134,3 +122,4 @@ Evaluation involves measuring retrieval quality and response generation accuracy
 
 - [LangChain Documentation](https://docs.langchain.com)  
 - [RAGAs Toolkit](https://github.com/ragas-toolkit)  
+- [Youtube: How RAG Turns AI Chatbots Into Something Practical](https://youtu.be/5Y3a61o0jFQ?si=epzQv1UIJe53OoLB)
