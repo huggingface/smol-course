@@ -16,7 +16,7 @@ For example, if you're developing a customer service application, you might want
 
 ## The Fine-Tuning Process
 
-The supervised fine-tuning process involves training model weights on a task-specific dataset. 
+The supervised fine-tuning process involves adjusting a model's weights on a task-specific dataset. 
 
 First, you'll need to prepare or select a dataset that represents your target task. This dataset should include diverse examples that cover the range of scenarios your model will encounter. The quality of this data is important - each example should demonstrate the kind of output you want your model to produce. Next comes the actual fine-tuning phase, where you'll use frameworks like Hugging Face's `transformers` and `trl` to train the model on your dataset. 
 
