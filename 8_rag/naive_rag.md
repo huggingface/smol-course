@@ -1,30 +1,52 @@
-# Basic RAG
+# **Basic RAG (Retrieval-Augmented Generation)**
 
 ## **Overview**
-The Retrieval-Augmented Generation (RAG) pipeline is a powerful framework for combining **retrieval** and **generation** to provide factual, context-aware responses. The pipeline uses a knowledge base of documents, which is indexed and retrieved efficiently to generate answers grounded in the stored information. 
 
-RAG pipelines are particularly useful for tasks requiring factual consistency, such as question answering, research assistance, and domain-specific knowledge systems. In this setup, we leverage **Haystack**, a modular framework for building RAG pipelines with relatively low complexity compared to other popular frameworks like **LangChain** and **Llama-Index**.
+Retrieval-Augmented Generation (RAG) is a powerful framework for combining **retrieval** (fetching relevant context) with **generation** (producing coherent and contextually accurate responses) to create intelligent, factual, and context-aware systems. 
+
+Most RAG pipeline leverages **retrieval** to access external knowledge and **generation** to produce fluent, natural responses, making it an essential architecture for modern AI systems.
+
+This guide focuses on implementing a basic RAG pipeline using **Haystack**, a lightweight yet feature-rich framework that simplifies the process of building and customizing such systems.
 
 
 ## **Why Haystack?**
-**Haystack** is chosen over more popular frameworks like LangChain and Llama-Index because of the following advantages:
 
-1. **Less Abstraction**: Haystack provides a straightforward implementation with clear, modular components for indexing and retrieval.
-2. **Lightweight**: It avoids unnecessary overhead and keeps the setup simpler for use cases that don't require extensive customizations or orchestration.
-3. **Transparency**: Each step in the pipeline is explicit, making it easier to debug, modify, or extend.
-4. **Feature-rich**: Haystack includes out-of-the-box support for document cleaning, splitting, embedding, and indexing, alongside retrieval and generation.
-5. **Broad Compatibility**: Works seamlessly with pre-trained models from **Hugging Face**, **Sentence Transformers**, and other embedding libraries.
+Compared to frameworks like LangChain and Llama-Index, Haystack stands out with several advantages:
 
+1. **Minimal Abstraction**: Components like indexing, embedding, and retrieval are modular and transparent, enabling fine-grained control.
+2. **Lightweight and Simple**: Focused on core RAG functionalities without excessive abstraction layers, making it more suitable for straightforward use cases.
+3. **Debuggable and Extendable**: Each stage in the pipeline is explicit, making debugging easier and enabling customization.
+4. **Integrated Features**: Provides robust tools for text preprocessing, embedding generation, and document indexing.
+5. **Compatibility**: Works well with pre-trained models (e.g., Hugging Face, Sentence Transformers) and various storage backends.
 
-## **Indexing Pipeline**
-The indexing pipeline is the foundation of the RAG framework. It preprocesses documents, converts them into embeddings, and stores them in a searchable format for efficient retrieval.
+## **Core Concepts in RAG**
 
-**Steps in the Indexing Pipeline**
-1. **Document Collection**: Collect raw documents (e.g., Wikipedia pages) and parse them into structured data.  
-2. **Document Cleaning**: Remove irrelevant or noisy text using the **DocumentCleaner**.  
-3. **Document Splitting**: Divide documents into smaller chunks (paragraphs or sentences) using the **DocumentSplitter**.  
-4. **Embedding Generation**: Generate embeddings (vector representations) of each chunk using **SentenceTransformersDocumentEmbedder**.  
-5. **Document Indexing**: Store the processed documents and their embeddings in an **InMemoryDocumentStore**.
+### **Indexing Pipeline**
+
+The **Indexing Pipeline** prepares your knowledge base by preprocessing raw documents, splitting them into manageable chunks, and embedding them into vectors. These vectors are stored in an efficient database to support fast retrieval.
+
+#### **Steps in the Indexing Pipeline**
+
+1. **Document Collection**:
+   - Source raw documents from relevant repositories, such as Wikipedia, internal databases, or research articles.
+   - Examples: `.txt`, `.pdf`, `.docx`, JSON, or other formats.
+
+2. **Document Cleaning**:
+   - Use tools like Haystack's `DocumentCleaner` to remove noise, boilerplate text, and irrelevant sections.
+   - Focus on retaining meaningful content.
+
+3. **Document Splitting**:
+   - Split large documents into smaller, coherent chunks (e.g., paragraphs or sentences).
+   - Use Haystack's `DocumentSplitter` to define chunk size and overlap for better retrieval performance.
+
+4. **Embedding Generation**:
+   - Convert text chunks into dense vector representations using pre-trained models (e.g., `SentenceTransformersDocumentEmbedder`).
+   - Embeddings capture semantic meaning, enabling similarity-based search.
+
+5. **Document Indexing**:
+   - Store embeddings and metadata in a vector database or document store, such as `InMemoryDocumentStore` or `FAISS`.
+
+**Indexing Workflow**
 
 ```plaintext
 [Raw Documents]
@@ -33,42 +55,73 @@ The indexing pipeline is the foundation of the RAG framework. It preprocesses do
 [Document Cleaner] -- Removes noise
        |
        v
-[Document Splitter] -- Splits into chunks
+[Document Splitter] -- Splits text into chunks
        |
        v
-[Document Embedder] -- Converts chunks into vectors
+[Document Embedder] -- Converts chunks into vector embeddings
        |
        v
-[Document Store] -- Stores vectors for retrieval
+[Document Store] -- Stores embeddings for fast retrieval
 ```
 
-At the end of this pipeline, all documents are preprocessed, split into manageable pieces, and embedded into a format that supports fast semantic search.
 
-## **Retrieve + Generate Pipeline**
-The generation pipeline combines the retrieval step with a text generation model to answer user queries effectively.
+### **Retrieve + Generate Pipeline**
 
-**Steps in the Generation Pipeline**
-1. **Query Embedding**: The user’s query is converted into a vector using a **SentenceTransformersTextEmbedder**.  
-2. **Document Retrieval**: The query vector is compared to document vectors in the **DocumentStore**, and the most relevant documents are retrieved based on similarity.  
-3. **Prompt Construction**: The retrieved documents and user query are formatted into a prompt using the **PromptBuilder**.  
-4. **Response Generation**: The prompt is passed to a generative model (e.g., **SmolLM2**) to produce the final answer.
+The **Retrieve + Generate Pipeline** processes user queries by retrieving relevant knowledge and generating context-aware responses using retrieved content.
+
+#### **Steps in the Retrieve + Generate Pipeline**
+
+1. **Query Embedding**:
+   - Convert the user query into a dense vector representation using a model like `SentenceTransformersTextEmbedder`.
+
+2. **Document Retrieval**:
+   - Perform similarity search in the document store to retrieve the top-k most relevant chunks based on query embedding.
+
+3. **Prompt Construction**:
+   - Combine the user query and retrieved documents into a structured prompt for the generative model.
+   - Ensure clarity and relevance by organizing context logically.
+
+4. **Response Generation**:
+   - Use a text generation model (e.g., GPT-3, SmolLM2) to generate a coherent and factual response based on the constructed prompt.
+
+**Retrieve + Generate Workflow**
 
 ```plaintext
 [User Query]
        |
        v
-[Query Embedder] -- Converts query into a vector
+[Query Embedder] -- Converts query into vector
        |
        v
 [Document Retriever] -- Finds top-k relevant documents
        |
        v
-[Prompt Builder] -- Combines query + documents into a prompt
+[Prompt Builder] -- Combines query + retrieved documents into a prompt
        |
        v
-[Text Generator] -- Produces answer based on the prompt
+[Text Generator] -- Produces contextually grounded response
 ```
 
-This pipeline ensures that the generated response is informed by the retrieved context, making it more factual and relevant to the query.
 
 ## **Evaluation**
+
+To ensure the RAG system performs well, evaluate both retrieval and generation components using appropriate metrics:
+
+- **BLEU** (Bilingual Evaluation Understudy) focuses on **precision** and evaluates how much of the generated text matches reference text n-grams.
+- **ROUGE** (Recall-Oriented Understudy for Gisting Evaluation) focuses on **recall** and evaluates how much of the reference text's n-grams are captured by the generated text, making it ideal for summarization and text generation tasks.
+- **MRR** (Mean Reciprocal Rank) evaluates the effectiveness of an information retrieval system and tasks like question answering by considering the rank of the first relevant result.
+
+Feedback may be used to iteratively improve embeddings, retrieval thresholds, or prompt formatting.
+
+## **Example: Basic RAG System**
+
+1. **Setup Knowledge Base**:
+   - Collect documents and preprocess them using the **Indexing Pipeline**.
+   
+2. **Integrate Query Handling**:
+   - Implement the **Retrieve + Generate Pipeline** to handle user inputs.
+   
+3. **Evaluate and Adjust**:
+   - Evaluate the pipeline and monitor retrieval and generation quality. Incorporate feedback for adjustment.
+
+⏩ Try the [Basic RAG Tutorial](./notebooks/naive_rag_haystack_example.ipynb) to implement a Naive RAG pipeline.
