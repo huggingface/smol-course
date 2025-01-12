@@ -6,18 +6,7 @@ Retrieval-Augmented Generation (RAG) is a powerful framework for combining **ret
 
 Most RAG pipeline leverages **retrieval** to access external knowledge and **generation** to produce fluent, natural responses, making it an essential architecture for modern AI systems.
 
-This guide focuses on implementing a basic RAG pipeline using **Haystack**, a lightweight yet feature-rich framework that simplifies the process of building and customizing such systems.
-
-
-## **Why Haystack?**
-
-Compared to frameworks like LangChain and Llama-Index, Haystack stands out with several advantages:
-
-1. **Minimal Abstraction**: Components like indexing, embedding, and retrieval are modular and transparent, enabling fine-grained control.
-2. **Lightweight and Simple**: Focused on core RAG functionalities without excessive abstraction layers, making it more suitable for straightforward use cases.
-3. **Debuggable and Extendable**: Each stage in the pipeline is explicit, making debugging easier and enabling customization.
-4. **Integrated Features**: Provides robust tools for text preprocessing, embedding generation, and document indexing.
-5. **Compatibility**: Works well with pre-trained models (e.g., Hugging Face, Sentence Transformers) and various storage backends.
+This guide focuses on implementing a basic RAG pipeline using **Haystack**, a relatively lightweight yet feature-rich llm orchestration framework that simplifies the process of building and customizing such systems. It would be straighforward to implement the pipeline with other framework like LangChain and Llama-Index which all possess identical core functionalities required for RAG.
 
 ## **Core Concepts in RAG**
 
@@ -125,3 +114,6 @@ Feedback may be used to iteratively improve embeddings, retrieval thresholds, or
    - Evaluate the pipeline and monitor retrieval and generation quality. Incorporate feedback for adjustment.
 
 ⏩ Try the [Basic RAG Tutorial](./notebooks/naive_rag_haystack_example.ipynb) to implement a Naive RAG pipeline.
+
+## **Resources**
+

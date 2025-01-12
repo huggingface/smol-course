@@ -72,9 +72,8 @@ Evaluation measures retrieval quality and response generation accuracy.
  
 ## 3. The Architecture of RAG Systems  
 
-The architecture of a Retrieval-Augmented Generation (RAG) system determines its capabilities, scalability, and the enhancements it offers beyond the basic Naive RAG approach. Over the years, research and innovation in the RAG space have introduced diverse architectures that optimize various stages of the RAG pipeline.
+The architecture of a Retrieval-Augmented Generation (RAG) system determines its capabilities, scalability, and the enhancements it offers beyond the basic Naive RAG approach. Over the years, research and innovation in the RAG space have introduced diverse architectures that optimize various stages of the RAG pipeline, in particular to adressing the following questions.
 
-The distinctions between RAG architectures often emerge from how they handle the **Retrieve** and **Generate** stages. These stages are critical to answering the following questions:  
 - **What to retrieve?** Selecting the most relevant chunks or embeddings from the knowledge base.  
 - **When to retrieve?** Deciding at what point in the workflow retrieval is required, particularly in iterative or dynamic processes.  
 - **How to use the retrieved information?** Determining how retrieved content is incorporated into downstream tasks, such as response generation or query refinement.  
@@ -83,11 +82,6 @@ Broadly, they can be categorized into:
 - **Naive RAG**:	Most basic pipeline, directly passing retrieved chunks to the generator.
 - **Advanced RAG**:	Pipelines which incorperated different techniques to improve the quality of responses with Pre-retrieval and Post-retrieval processes.
 - **Modular RAG**:	Pipelines that further enhance functionalities by integrating modules that interatively refine result or dynamically adapt based on task-specific requirements.
-
-In addition, some architectural innovations target the **Index Stage**, introducing new ways to organize and structure knowledge bases:  
-- **Graph-Based Knowledge Bases**: Represent data as nodes and edges, enabling richer context and relationship reasoning.  
-- **Hierarchical Chunking**: Organizes chunks in a multi-level structure for faster and more contextually aware retrieval.  
-- **Adaptive Embedding Updates**: Dynamically adjusts embeddings in response to new data or evolving user needs. 
 
 Following are common RAG architectures:
 
