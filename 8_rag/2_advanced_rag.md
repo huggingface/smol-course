@@ -46,8 +46,8 @@ After retrieving context data (chunks) from a vector database, the next step is 
 
 ### Strategies to Address Post-Retrieval Issues:
 
-- **Reranking**: Re-rank the retrieved chunks to prioritize the most relevant ones. This is especially useful as LLMs may struggle when excessive context is introduced. Reranking identifies the top-K most relevant chunks to use as context for the LLM. Libraries such as LlamaIndex, Langchain, and HayStack offer various reranking techniques.
-- **Prompt Compression**: Compress retrieved information by filtering out irrelevant context and reducing the length of the prompt before feeding it to the LLM. Use small language models to calculate mutual information or perplexity to estimate the importance of each context element. Summarization techniques can also help compress long contexts.
+- **Reranking**: Prioritize the most relevant chunks by reranking the retrieved results. This ensures LLMs are given the top-K most pertinent context, reducing performance issues caused by excessive context. Available reranking techniques are offered by libraries like LlamaIndex, LangChain, and HayStack.
+- **Prompt Compression**: Filter out irrelevant context and shorten the prompt before inputting it to the LLM. Techniques such as mutual information or perplexity estimation, along with summarization, help in reducing context length and noise.
 
 ⏩ Try the [Improved RAG Tutorial](./notebooks/improved_rag_haystack_example.ipynb) to implement improved RAG pipelines.
 
