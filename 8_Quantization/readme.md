@@ -1,18 +1,18 @@
 # Quantization
 
-This module will guide you through the concenpt of quantization which is useful for optimizing language models for efficient inference on CPUs, without the need for GPUs. We’ll focus on quantization for inference, a technique that reduces model size to improve inference speed. Additionally, we’ll explore how to perform inference on Intel and MLX (machine learning accelerators) CPUs, demonstrating how to leverage local resources for efficient and cost-effective model deployment.
+This module will guide you through the concept of quantization which is useful for optimizing language models for efficient inference on CPUs, without the need for GPUs. We’ll focus on quantization for inference, a technique that reduces model size to improve inference speed. Additionally, we’ll explore how to perform inference on Intel and MLX (machine learning accelerators) CPUs, demonstrating how to leverage local resources for efficient and cost-effective model deployment.
 
-## Quantization Fundementals
+## Quantization Fundamentals
 
-First we will introduce quantization and explain how it reduces model size.
+First we will introduce quantization and explain how it reduces model size. Check out the [Fundamentals](./fundamentals.md) page for more information.
 
 ## The GGUF format
 
-Second, we will introduce the GGUF format and the LlamaCPP package. We will explain how to quantize pre-trained or finetuned models, and how to use them for optimized inference with LlamaCPP.
+Second, we will introduce the GGUF format and the LlamaCPP package. We will explain how to quantize pre-trained or finetuned models, and how to use them for optimized inference with LlamaCPP. Check out the [GGUF](./gguf.md) page for more information.
 
 ## CPU Inference (Intel & MLX)
 
-Finally, we will explore how to perform inference on Intel and MLX (machine learning accelerators for MacOS) CPUs, demonstrating how to leverage local resources for efficient and cost-effective model deployment.
+Finally, we will explore how to perform inference on Intel and MLX (machine learning accelerators for MacOS) CPUs, demonstrating how to leverage local resources for efficient and cost-effective model deployment. Check out the [CPU Inference](./cpu.md) page for more information.
 
 ## Exercise Notebooks
 
