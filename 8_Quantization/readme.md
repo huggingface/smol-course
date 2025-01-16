@@ -1,33 +1,25 @@
 # Quantization
 
-This module will guide you through optimizing language models for efficient inference on CPUs, without the need for heavy GPUs.
-We’ll cover quantization, a technique that reduces model size and improves inference speed, and introduce GGUF (a format for optimized models).
-Additionally, we’ll explore how to perform inference on Intel and MLX (machine learning accelerators) CPUs, demonstrating how to leverage local resources for efficient and cost-effective model deployment.
+This module will guide you through the concenpt of quantization which is useful for optimizing language models for efficient inference on CPUs, without the need for GPUs. We’ll focus on quantization for inference, a technique that reduces model size to improve inference speed. Additionally, we’ll explore how to perform inference on Intel and MLX (machine learning accelerators) CPUs, demonstrating how to leverage local resources for efficient and cost-effective model deployment.
 
-## Quantization
+## Quantization Fundementals
 
-TBD
-Motivation? less memory less accuracy? comparing the results? Int4, Int8, bf16?
+First we will introduce quantization and explain how it reduces model size.
 
-## GGUF format
+## The GGUF format
 
-TBD
-using huggingface to run diff quantization models
-ollama and llm.cpp?
+Second, we will introduce the GGUF format and the LlamaCPP package. We will explain how to quantize pre-trained or finetuned models, and how to use them for optimized inference with LlamaCPP.
 
 ## CPU Inference (Intel & MLX)
 
-TBD
-use mlx for inference
-use intel for inference (ipex? openvino?)
+Finally, we will explore how to perform inference on Intel and MLX (machine learning accelerators for MacOS) CPUs, demonstrating how to leverage local resources for efficient and cost-effective model deployment.
 
 ## Exercise Notebooks
 
 | Title | Description | Exercise | Link | Colab |
 |-------|-------------|----------|------|-------|
-| Quantization | Description| Exercise| [link](./notebooks/example.ipynb) | <a target="_blank" href="link"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-| GGUF format | Description| Exercise| [link](./notebooks/example.ipynb) | <a target="_blank" href="link"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-| CPU Inference (Intel & MLX) | Description| Exercise| [link](./notebooks/example.ipynb) | <a target="_blank" href="link"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| Quantization with LlamaCPP | Description| Exercise| [link](./notebooks/example.ipynb) | <a target="_blank" href="link"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| CPU Inference (Intel or MLX) | Description| Exercise| [link](./notebooks/example.ipynb) | <a target="_blank" href="link"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
 
 ## References
 
