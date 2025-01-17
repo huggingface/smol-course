@@ -65,5 +65,5 @@ def process_search():
 
 ## Further Reading
 
-- [SmoLAgents Blog](https://huggingface.co/blog/smolagents) - Learn about the latest advancements in AI agents and how they can be applied to custom function agents.
+- [smolagents Blog](https://huggingface.co/blog/smolagents) - Learn about the latest advancements in AI agents and how they can be applied to custom function agents.
 - [Building Good Agents](https://huggingface.co/docs/smolagents/tutorials/building_good_agents) - A comprehensive guide on best practices for developing reliable and effective custom function agents.

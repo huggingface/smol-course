@@ -4,7 +4,7 @@ AI Agents are autonomous systems that can understand user requests, break them d
 
 ## Module Overview
 
-Building effective agents requires understanding three key components. First, retrieval capabilities allow agents to access and use relevant information from various sources. Second, function calling enables agents to take concrete actions in their environment. Finally, domain-specific knowledge and tooling equips agents for specialized tasks like code manipulation.
+Building effective agents requires understanding three key components. First, retrieval capabilities allow agents to access and use relevant information from various sources. Second, function calling enables agents to take concrete actions in their environment. Finally, domain-specific knowledge and tooling equip agents for specialized tasks like code manipulation.
 
 ## Contents
 
@@ -24,13 +24,13 @@ Custom function agents extend basic AI capabilities through specialized function
 
 | Title | Description | Exercise | Link | Colab |
 |-------|-------------|----------|------|-------|
-| Building a Research Agent | Create an agent that can perform research tasks using retrieval and custom functions | 🐢 Build a simple RAG agent <br> 🐕 Add custom search functions <br> 🦁 Create a full research assistant | [Notebook](./notebooks/agents.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/8_agents/notebooks/building_research_agent.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| Building a Research Agent | Create an agent that can perform research tasks using retrieval and custom functions | 🐢 Build a simple RAG agent <br> 🐕 Add custom search functions <br> 🦁 Create a full research assistant | [Notebook](./notebooks/agents.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/8_agents/notebooks/agents.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
 
 ## Resources
 
-- [SmoLAgents Documentation](https://huggingface.co/docs/smolagents) - Official docs for the SmoLAgents library
+- [smolagents Documentation](https://huggingface.co/docs/smolagents) - Official docs for the smolagents library
 - [Building Effective Agents](https://www.anthropic.com/research/building-effective-agents) - Research paper on agent architectures
 - [Agent Guidelines](https://huggingface.co/docs/smolagents/tutorials/building_good_agents) - Best practices for building reliable agents
-- [LangChain Agents](https://python.langchain.com/docs/modules/agents/) - Additional examples of agent implementations
+- [LangChain Agents](https://python.langchain.com/docs/how_to/#agents) - Additional examples of agent implementations
 - [Function Calling Guide](https://platform.openai.com/docs/guides/function-calling) - Understanding function calling in LLMs
 - [RAG Best Practices](https://www.pinecone.io/learn/retrieval-augmented-generation/) - Guide to implementing effective RAG

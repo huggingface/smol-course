@@ -9,19 +9,17 @@ Traditional RAG has key limitations - it only performs a single retrieval step a
 Let's start by building a simple agent that can search the web using DuckDuckGo. This agent will be able to answer questions by retrieving relevant information and synthesizing responses.
 
 ```python
-from smolagents import Agent
-from smolagents.tools import DuckDuckGoSearch
-from smolagents.memory import SqliteMemory
+from smolagents import CodeAgent, DuckDuckGoSearchTool, HfApiModel
 
 # Initialize the search tool
-search_tool = DuckDuckGoSearch()
+search_tool = DuckDuckGoSearchTool()
 
-# Create an agent with memory
-agent = Agent(
-    name="research_assistant",
-    description="I help find and synthesize information from the web",
-    tools=[search_tool],
-    memory=SqliteMemory(db_path="agent_memory.db")
+# Initialize the model
+model = HfApiModel()
+
+agent = CodeAgent(
+    model = model,
+    tools=[search_tool]
 )
 
 # Example usage
@@ -42,48 +40,39 @@ The agent will:
 For domain-specific applications, we often want to combine web search with our own knowledge base. Let's create a custom tool that can query a vector database of technical documentation.
 
 ```python
-from smolagents import Agent, Tool
-from smolagents.embeddings import OpenAIEmbeddings
-from smolagents.vectorstores import Qdrant
+from smolagents import Tool
 
-class DocumentationTool(Tool):
-    def __init__(self, docs_path: str):
-        self.embeddings = OpenAIEmbeddings()
-        self.vectorstore = Qdrant(
-            collection_name="documentation",
-            embeddings=self.embeddings
+class RetrieverTool(Tool):
+    name = "retriever"
+    description = "Uses semantic search to retrieve the parts of transformers documentation that could be most relevant to answer your query."
+    inputs = {
+        "query": {
+            "type": "string",
+            "description": "The query to perform. This should be semantically close to your target documents. Use the affirmative form rather than a question.",
+        }
+    }
+    output_type = "string"
+
+    def __init__(self, docs, **kwargs):
+        super().__init__(**kwargs)
+        self.retriever = BM25Retriever.from_documents(
+            docs, k=10
         )
-        # Load and index documentation
-        self.load_docs(docs_path)
-    
-    def load_docs(self, path: str):
-        # Load documents and split into chunks
-        documents = self.load_and_split(path)
-        # Index in vector store
-        self.vectorstore.add_documents(documents)
-    
-    def search(self, query: str, k: int = 3):
-        # Retrieve relevant documents
-        results = self.vectorstore.similarity_search(query, k=k)
-        return [doc.page_content for doc in results]
 
-# Create tools
-docs_tool = DocumentationTool("path/to/docs")
-search_tool = DuckDuckGoSearch()
+    def forward(self, query: str) -> str:
+        assert isinstance(query, str), "Your search query must be a string"
 
-# Initialize agent with both tools
-agent = Agent(
-    name="technical_assistant",
-    description="I help answer questions using documentation and web search",
-    tools=[docs_tool, search_tool],
-    memory=SqliteMemory(db_path="tech_agent_memory.db")
-)
+        docs = self.retriever.invoke(
+            query,
+        )
+        return "\nRetrieved documents:\n" + "".join(
+            [
+                f"\n\n===== Document {str(i)} =====\n" + doc.page_content
+                for i, doc in enumerate(docs)
+            ]
+        )
 
-# Example usage
-response = agent.run(
-    "How do I implement RAG in my application? Include both general concepts and specific code examples."
-)
-print(response)
+retriever_tool = RetrieverTool(docs_processed)
 ```
 
 This enhanced agent can:
@@ -102,6 +91,30 @@ When building agentic RAG systems, the agent can employ sophisticated strategies
 4. Result Validation - Retrieved content can be analyzed for relevance and accuracy before being included in responses
 
 Effective agentic RAG systems require careful consideration of several key aspects. The agent should select between available tools based on the query type and context. Memory systems help maintain conversation history and avoid repetitive retrievals. Having fallback strategies ensures the system can still provide value even when primary retrieval methods fail. Additionally, implementing validation steps helps ensure the accuracy and relevance of retrieved information.
+
+```python
+import datasets
+from langchain.docstore.document import Document
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.retrievers import BM25Retriever
+
+knowledge_base = datasets.load_dataset("m-ric/huggingface_doc", split="train")
+knowledge_base = knowledge_base.filter(lambda row: row["source"].startswith("huggingface/transformers"))
+
+source_docs = [
+    Document(page_content=doc["text"], metadata={"source": doc["source"].split("/")[1]})
+    for doc in knowledge_base
+]
+
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=500,
+    chunk_overlap=50,
+    add_start_index=True,
+    strip_whitespace=True,
+    separators=["\n\n", "\n", ".", " ", ""],
+)
+docs_processed = text_splitter.split_documents(source_docs)
+```
 
 ## Next Steps
 

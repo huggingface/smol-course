@@ -57,12 +57,12 @@ agent.run("Can you give me a nice one-day trip around Paris with a few locations
 
 ```
 
-These examples are just the beginning of what you can do with code agents. You can learn more about how to build code agents in the [SmoLAgents documentation](https://huggingface.co/docs/smolagents).
+These examples are just the beginning of what you can do with code agents. You can learn more about how to build code agents in the [smolagents documentation](https://huggingface.co/docs/smolagents).
 
-SmoLAgents provides a lightweight framework for building code agents, with a core implementation of approximately 1,000 lines of code. The framework specializes in agents that write and execute Python code snippets, offering sandboxed execution for security. It supports both open-source and proprietary language models, making it adaptable to various development environments.
+smolagents provides a lightweight framework for building code agents, with a core implementation of approximately 1,000 lines of code. The framework specializes in agents that write and execute Python code snippets, offering sandboxed execution for security. It supports both open-source and proprietary language models, making it adaptable to various development environments.
 
 ## Further Reading
 
-- [SmoLAgents Blog](https://huggingface.co/blog/smolagents) - Introduction to SmoLAgents and code interactions
-- [SmoLAgents: Building Good Agents](https://huggingface.co/docs/smolagents/tutorials/building_good_agents) - Best practices for reliable agents
+- [smolagents Blog](https://huggingface.co/blog/smolagents) - Introduction to smolagents and code interactions
+- [smolagents: Building Good Agents](https://huggingface.co/docs/smolagents/tutorials/building_good_agents) - Best practices for reliable agents
 - [Building Effective Agents - Anthropic](https://www.anthropic.com/research/building-effective-agents) - Agent design principles
