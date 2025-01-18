@@ -156,6 +156,10 @@ cython_debug/
 
 # Model output files
 sft_output/
+smol_dpo_output/
+SmolLM2-FT-DPO/
+results/
+smolcourse_chapter2_ORPO
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
 #  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
