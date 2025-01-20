@@ -28,7 +28,7 @@ SFT plays a fundamental role in aligning language models with human preferences.
 
 ## Supervised Fine-Tuning With Transformer Reinforcement Learning
 
-A key software package for Supervised Fine-Tuning is Transformer Reinforcement Learning (TRL). TRL is a toolkit used to train transformer language models models using reinforcement learning (RL).
+A key software package for Supervised Fine-Tuning is Transformer Reinforcement Learning (TRL). TRL is a toolkit used to train transformer language models using reinforcement learning (RL).
 
 Built on top of the Hugging Face Transformers library, TRL allows users to directly load pretrained language models and supports most decoder and encoder-decoder architectures. The library facilitates major processes of RL used in language modelling, including supervised fine-tuning (SFT), reward modeling (RM), proximal policy optimization (PPO), and Direct Preference Optimization (DPO). We will use TRL in a number of modules throughout this repo.
 
