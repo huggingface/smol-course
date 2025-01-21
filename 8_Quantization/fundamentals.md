@@ -9,7 +9,7 @@ Quantization is a technique used to reduce memory and computational costs by rep
 * handling outliers with float16
 
 ## Quantization Techniques
-* Post-Training Quantization (PTQ) vs Quantization-Aware Training (QAT)
+* Post-Training Quantization (PTQ) vs Quantization-Aware Training (QAT) - focus on PTQ
 
 ## Quantization for Inference
 Need to look for more resources
