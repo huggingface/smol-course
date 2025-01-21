@@ -17,7 +17,7 @@ Need to look for more resources
 ## Exercise Notebooks
 I'm unsure about what exactly we should include here. Below are a few options, along with my humble thoughts:
 * Type casting (float32 to int8): This seems too low-level.
-* Reproducing a GPT-2 example from the Maxim blog post: I'm uncertain about the contribution this would make.
+* Reproducing a GPT-2 example from the Maxime blog post: I'm uncertain about the contribution this would make.
 * Taking a large model from the Hugging Face Hub and converting it to a quantized model: This might fit better in the section where we discuss GTPQ or other quantization methods.
 
 ## References
