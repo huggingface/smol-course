@@ -20,6 +20,9 @@ I'm unsure about what exactly we should include here. Below are a few options, a
 * Reproducing a GPT-2 example from the Maxime blog post: I'm uncertain about the contribution this would make.
 * Taking a large model from the Hugging Face Hub and converting it to a quantized model: This might fit better in the section where we discuss GTPQ or other quantization methods.
 
+## Open Questions
+Where should we talk about "quantization method" like gptq?
+
 ## References
 https://huggingface.co/docs/transformers/main_classes/quantization
 https://huggingface.co/docs/transformers/v4.48.0/quantization/overview
