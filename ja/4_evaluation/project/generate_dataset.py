@@ -10,52 +10,52 @@ from distilabel.steps.tasks import TextGeneration
 
 
 ################################################################################
-# Script Parameters
+# スクリプトのパラメータ
 ################################################################################
 
 parser = argparse.ArgumentParser(
-    description="Generate exam questions from text files in a directory."
+    description="ディレクトリ内のテキストファイルから試験問題を生成します。"
 )
 parser.add_argument(
     "--model_id",
     type=str,
     default="Qwen/Qwen2.5-7B-Instruct",
-    help="Model ID for text generation",
+    help="テキスト生成のためのモデルID",
 )
 parser.add_argument(
     "--tokenizer_id",
     type=str,
     default="Qwen/Qwen2.5-7B-Instruct",
-    help="Tokenizer ID for text generation",
+    help="テキスト生成のためのトークナイザーID",
 )
 parser.add_argument(
     "--input_dir",
     type=str,
-    help="Directory containing input text files",
+    help="入力テキストファイルを含むディレクトリ",
     default="data",
 )
 parser.add_argument(
     "--max_new_tokens",
     type=int,
     default=2048,
-    help="Maximum number of new tokens to generate",
+    help="生成する新しいトークンの最大数",
 )
 parser.add_argument(
     "--output_path",
     type=str,
     default="exam_questions_output",
-    help="Directory to save the generated datasets",
+    help="生成されたデータセットを保存するディレクトリ",
 )
 
 args = parser.parse_args()
 
 ################################################################################
-# Load the documents
-# We assume that the documents are in the input directory, and that each file
-# is a separate document about the same topic.
+# ドキュメントの読み込み
+# ドキュメントは入力ディレクトリにあり、各ファイルが同じトピックに関する
+# 個別のドキュメントであると仮定します。
 ################################################################################
 
-# Process all text files in the input directory
+# 入力ディレクトリ内のすべてのテキストファイルを処理
 documents = []
 for filename in os.listdir(args.input_dir):
     if filename.endswith(".txt"):
@@ -64,48 +64,48 @@ for filename in os.listdir(args.input_dir):
             document_content = file.read()
             documents.append(document_content)
 
-# Create a single dataset from all document contents
+# すべてのドキュメント内容から単一のデータセットを作成
 dataset = Dataset.from_dict({"document": documents})
 
 ################################################################################
-# Define the prompts
-# We use a system prompt to guide the model to generate the correct output format.
-# A template is used to insert the document into the prompt.
+# プロンプトの定義
+# モデルが正しい出力形式を生成するようにシステムプロンプトを使用します。
+# テンプレートを使用してドキュメントをプロンプトに挿入します。
 ################################################################################
 
 SYSTEM_PROMPT = """\
-You are an exam writer specialized in writing exams for students.
-Your goal is to create questions and answers based on the document provided, 
-and a list of distractors, that are incorrect but viable answers to the question.
-Your answer must adhere to the following format:
+あなたは学生のための試験問題を作成する専門家です。
+提供されたドキュメントに基づいて質問と回答を作成し、
+質問に対する正しい回答と、誤っているが妥当な回答のリストを作成してください。
+回答は次の形式に従う必要があります：
 ```
 [
     {
-        "question": "Your question",
-        "answer": "The correct answer to the question",
-        "distractors": ["wrong answer 1", "wrong answer 2", "wrong answer 3"]
+        "question": "質問内容",
+        "answer": "質問に対する正しい回答",
+        "distractors": ["誤った回答1", "誤った回答2", "誤った回答3"]
     },
-    ... (more questions and answers as required)
+    ... (必要に応じてさらに質問と回答を追加)
 ]
 ```
 """.strip()
 
 INSTRUCTION_TEMPLATE = """\
-    Generate a list of answers and questions about the document. 
-    Document:\n\n{{ instruction }}"""
+    ドキュメントに関する質問と回答のリストを生成してください。 
+    ドキュメント:\n\n{{ instruction }}"""
 
 ################################################################################
-# Define the output structure
-# We define a data model for the output of the pipeline, this is used to ensure
-# that the output is in the correct format for the evaluation task.
+# 出力構造の定義
+# パイプラインの出力のデータモデルを定義し、評価タスクの正しい形式で
+# 出力があることを確認します。
 ################################################################################
 
 
 class ExamQuestion(BaseModel):
-    question: str = Field(..., description="The question to be answered")
-    answer: str = Field(..., description="The correct answer to the question")
+    question: str = Field(..., description="回答すべき質問")
+    answer: str = Field(..., description="質問に対する正しい回答")
     distractors: List[str] = Field(
-        ..., description="A list of incorrect but viable answers to the question"
+        ..., description="質問に対する誤っているが妥当な回答のリスト"
     )
 
 
@@ -114,17 +114,17 @@ class ExamQuestions(BaseModel):
 
 
 ################################################################################
-# Create the pipeline
-# We create a pipeline with a single task that generates the exam questions
-# based on the document and in the correct format. We will Hugging Face
-# InferenceEndpoints and the model specified in the arguments.
+# パイプラインの作成
+# ドキュメントに基づいて試験問題を生成し、正しい形式で出力する単一のタスクを
+# 持つパイプラインを作成します。Hugging Face InferenceEndpointsと
+# 引数で指定されたモデルを使用します。
 ################################################################################
 
 with Pipeline(
     name="Domain-Eval-Questions",
-    description="Generate exam questions based on given documents.",
+    description="提供されたドキュメントに基づいて試験問題を生成します。",
 ) as pipeline:
-    # Set up the text generation task
+    # テキスト生成タスクの設定
     text_generation = TextGeneration(
         name="exam_generation",
         llm=InferenceEndpointsLLM(
@@ -145,12 +145,12 @@ with Pipeline(
 
 
 ################################################################################
-# Run the pipeline
-# We run the pipeline for all documents and save the results to the output path.
+# パイプラインの実行
+# すべてのドキュメントに対してパイプラインを実行し、結果を出力パスに保存します。
 ################################################################################
 
 if __name__ == "__main__":
-    # Run the pipeline for all documents
+    # すべてのドキュメントに対してパイプラインを実行
     distiset = pipeline.run(
         parameters={
             "exam_generation": {
