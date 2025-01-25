@@ -16,7 +16,7 @@ For example, if you're developing a customer service application, you might want
 
 ## The Fine-Tuning Process
 
-The supervised fine-tuning process involves training model weights on a task-specific dataset. 
+The supervised fine-tuning process involves adjusting a model's weights on a task-specific dataset. 
 
 First, you'll need to prepare or select a dataset that represents your target task. This dataset should include diverse examples that cover the range of scenarios your model will encounter. The quality of this data is important - each example should demonstrate the kind of output you want your model to produce. Next comes the actual fine-tuning phase, where you'll use frameworks like Hugging Face's `transformers` and `trl` to train the model on your dataset. 
 
@@ -28,7 +28,7 @@ SFT plays a fundamental role in aligning language models with human preferences.
 
 ## Supervised Fine-Tuning With Transformer Reinforcement Learning
 
-A key software package for Supervised Fine-Tuning is Transformer Reinforcement Learning (TRL). TRL is a toolkit used to train transformer language models models using reinforcement learning (RL).
+A key software package for Supervised Fine-Tuning is Transformer Reinforcement Learning (TRL). TRL is a toolkit used to train transformer language models using reinforcement learning (RL).
 
 Built on top of the Hugging Face Transformers library, TRL allows users to directly load pretrained language models and supports most decoder and encoder-decoder architectures. The library facilitates major processes of RL used in language modelling, including supervised fine-tuning (SFT), reward modeling (RM), proximal policy optimization (PPO), and Direct Preference Optimization (DPO). We will use TRL in a number of modules throughout this repo.
 
