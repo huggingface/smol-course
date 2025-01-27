@@ -56,6 +56,34 @@ Before starting, ensure you have the following:
 - Familiarity with Python, PyTorch, and the `transformers` library.
 - Access to a pre-trained language model and a labeled dataset.
 
+Here's my suggestion for the improved section, incorporating all your requirements and maintaining consistency:
+
+## Quick Start with Dev Containers (Recommended)
+
+The easiest way to get started is using a development container, avoiding any Python version or dependency conflicts. This gives you a ready-to-use environment with everything installed. Think of it as your "smol" setup—sandboxed and efficient!
+
+### Prerequisites
+- Install [Docker Desktop](https://www.docker.com/products/docker-desktop/) (or alternative like [OrbStack](https://orbstack.dev/))
+
+### Option 1: Visual Studio Code
+1. Install the "Dev Containers" extension in VS Code
+2. Fork this repository and clone it on your computer
+3. When you open the repository in VS Code, click "Reopen in Container" in the bottom-right corner pop-up
+4. VS Code will automatically set up the environment for you inside a container
+
+### Option 2: Daytona (supports most code editors)
+1. Install [Daytona](https://github.com/daytonaio/daytona/)
+2. Run these commands:
+```bash
+daytona create https://github.com/huggingface/smol-course
+daytona code smol-course
+```
+**Note:** With `daytona ide` command you can select your preferred editor like Cursor, Zed, JetBrains, or Jupyter.
+
+Both options will provide you with an identical, isolated development environment that includes all the necessary tools and dependencies to work through this course.
+
+**Note:** If you prefer to set up your environment manually, see the Installation section below.
+
 ## Installation
 
 We maintain the course as a package so you can install dependencies easily via a package manager. We recommend [uv](https://github.com/astral-sh/uv) for this purpose, but you could use alternatives like `pip` or `pdm`.
