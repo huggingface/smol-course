@@ -27,14 +27,15 @@ Podemos discutir el proceso en este [hilo de discusión](https://github.com/hugg
 Este curso ofrece un enfoque práctico para trabajar con modelos pequeños de lenguaje, desde el entrenamiento inicial hasta el despliegue en producción.
 
 | Módulo | Descripción | Estado | Fecha de lanzamiento |
-|--------|-------------|--------|----------------------|
-| [Ajuste de Instrucciones](./1_instruction_tuning) | Aprende ajuste fino (fine-tuning) supervisado, plantillas de chat y seguimiento básico de instrucciones | ✅ Completo | 3 de diciembre de 2024 |
-| [Alineación de Preferencias](./2_preference_alignment) | Explora las técnicas DPO y ORPO para alinear modelos con las preferencias humanas | ✅ Completo | 6 de diciembre de 2024 |
-| [Ajuste Fino (Fine-tuning) Eficiente en Parámetros](./3_parameter_efficient_finetuning) | Aprende LoRA, ajuste de prompt y métodos de adaptación eficientes | [🚧 En Progreso](https://github.com/huggingface/smol-course/pull/41) | 9 de diciembre de 2024 |
-| [Evaluación](./4_evaluation) | Usa benchmarks automáticos y crea evaluaciones personalizadas para dominios | [🚧 En Progreso](https://github.com/huggingface/smol-course/issues/42) | 13 de diciembre de 2024 |
-| [Modelos Visión-Lenguaje](./5_vision_language_models) | Adapta modelos multimodales para tareas visión-lenguaje | [🚧 En Progreso](https://github.com/huggingface/smol-course/issues/49) | 16 de diciembre de 2024 |
-| [Conjuntos de Datos Sintéticos](./6_synthetic_datasets) | Crea y valida conjuntos de datos sintéticos para el entrenamiento | 📝 Planificado | 20 de diciembre de 2024 |
-| [Inferencia](./7_inference) | Inferencia eficiente con modelos | 📝 Planificado | 23 de diciembre de 2024 |
+|--------|-------------|---------|----------------------|
+| [Ajuste de instrucciones](./1_instruction_tuning) | Aprende el ajuste fino supervisado, plantillas de chat y seguimiento básico de instrucciones | ✅ Listo | 3 de diciembre, 2024 |
+| [Alineación de preferencias](./2_preference_alignment) | Explora las técnicas DPO y ORPO para alinear los modelos con las preferencias humanas | ✅ Listo  | 6 de diciembre, 2024 |
+| [Ajuste fino eficiente de parámetros](./3_parameter_efficient_finetuning) | Aprende LoRA, ajuste de prompts y métodos de adaptación eficiente | ✅ Listo | 9 de diciembre, 2024 |
+| [Evaluación](./4_evaluation) | Usa benchmarks automáticos y crea evaluaciones personalizadas para dominios | ✅ Listo | 13 de diciembre, 2024 |
+| [Modelos visión-lenguaje](./5_vision_language_models) | Adapta modelos multimodales para tareas visión-lenguaje | ✅ Listo | 16 de diciembre, 2024 |
+| [Conjuntos de datos sintéticos](./6_synthetic_datasets) | Crea y valida conjuntos de datos sintéticos para el entrenamiento | ✅ Listo | 20 de diciembre, 2024 |
+| [Inferencia](./7_inference) | Realiza inferencias con los modelos de manera eficiente | ✅ Listo | 8 de enero, 2025 |
+| [Agentes](./8_agents) | Construye tu propia IA agente | ✅ Listo | 13 de enero, 2025 |
 
 ## ¿Por qué Modelos Pequeños de Lenguaje?
 
