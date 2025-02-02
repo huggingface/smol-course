@@ -1,11 +1,11 @@
 # 選好の整合
 
-このモジュールでは、言語モデルを人間の選好に合わせるための技術について説明します。教師あり微調整（SFT）がモデルにタスクを学習させるのに役立つ一方で、選好の整合は出力が人間の期待や価値観に一致するようにします。
+このモジュールでは、言語モデルを人間の選好に合わせるための技術について説明します。教師ありファインチューニング（SFT）がモデルにタスクを学習させるのに役立つ一方で、選好の整合は出力が人間の期待や価値観に一致するようにします。
 
 ## 概要
 
 選好の整合の典型的な方法には、複数のステージが含まれます：
-1. 教師あり微調整（SFT）でモデルを特定のドメインに適応させる。
+1. 教師ありファインチューニング（SFT）でモデルを特定のドメインに適応させる。
 2. 選好の整合（RLHFやDPOなど）で応答の質を向上させる。
 
 ORPOのような代替アプローチは、指示調整と選好の整合を単一のプロセスに統合します。ここでは、DPOとORPOのアルゴリズムに焦点を当てます。
@@ -24,7 +24,7 @@ ORPOは、指示調整と選好の整合を単一のプロセスに統合する�
 
 | タイトル | 説明 | 実習内容 | リンク | Colab |
 |-------|-------------|----------|------|-------|
-| DPOトレーニング | 直接選好最適化を使用してモデルを��レーニングする方法を学ぶ | 🐢 AnthropicのHH-RLHFデータセットを使用してモデルをトレーニングする<br>🐕 独自の選好データセットを使用する<br>🦁 さまざまな選好データセットとモデルサイズで実験する | [ノートブック](./notebooks/dpo_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/2_preference_alignment/notebooks/dpo_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| DPOトレーニング | 直接選好最適化を使用してモデルをトレーニングする方法を学ぶ | 🐢 AnthropicのHH-RLHFデータセットを使用してモデルをトレーニングする<br>🐕 独自の選好データセットを使用する<br>🦁 さまざまな選好データセットとモデルサイズで実験する | [ノートブック](./notebooks/dpo_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/2_preference_alignment/notebooks/dpo_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
 | ORPOトレーニング | 選好確率比最適化を使用してモデルをトレーニングする方法を学ぶ | 🐢 指示と選好データを使用してモデルをトレーニングする<br>🐕 損失の重みを変えて実験する<br>🦁 ORPOとDPOの結果を比較する | [ノートブック](./notebooks/orpo_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/2_preference_alignment/notebooks/orpo_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
 
 ## リソース
