@@ -34,8 +34,8 @@ This course provides a practical, hands-on approach to working with small langua
 | [Evaluation](./4_evaluation) | Use automatic benchmarks and create custom domain evaluations | ✅ Ready | Dec 13, 2024 |
 | [Vision-language Models](./5_vision_language_models) | Adapt multimodal models for vision-language tasks | ✅ Ready | Dec 16, 2024 |
 | [Synthetic Datasets](./6_synthetic_datasets) | Create and validate synthetic datasets for training | ✅ Ready | Dec 20, 2024 |
-| [Inference](./7_inference) | Infer with models efficiently | [🚧 WIP](https://github.com/huggingface/smol-course/pull/150) | Jan 8, 2025 |
-| Capstone Project | Use what you've learnt to climb the leaderboard! | [🚧 WIP](https://github.com/huggingface/smol-course/pull/97) | Jan 10, 2025 |
+| [Inference](./7_inference) | Infer with models efficiently | ✅ Ready | Jan 8, 2025 |
+| [Agents](./8_agents) | Build your own agentic AI | ✅ Ready | Jan 13, 2025 ||
 
 ## Why Small Language Models?
 
@@ -87,8 +87,3 @@ pip install -r requirements.txt
 pip install transformers trl datasets huggingface_hub
 ```
 
-## Engagement
-
-Let's share this, so that loads of people can learn to finetune LLMs without expensive hardware.
-
-[![Star History Chart](https://api.star-history.com/svg?repos=huggingface/smol-course&type=Date)](https://star-history.com/#huggingface/smol-course&Date)
