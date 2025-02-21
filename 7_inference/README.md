@@ -14,7 +14,7 @@ LLM inference can be categorized into two main approaches: simple pipeline-based
 
 Learn how to use the Hugging Face Transformers pipeline for basic inference. We'll cover setting up pipelines, configuring generation parameters, and best practices for local development. The pipeline approach is perfect for prototyping and small-scale applications. [Start learning](./pipeline_inference.md).
 
-### 2. [Production Inference with TGI](./tgi_inference.md)
+### 2. [Production Inference with TGI](./text_generation_inference.md)
 
 Learn how to deploy models for production using Text Generation Inference. We'll explore optimized serving techniques, batching strategies, and monitoring solutions. TGI provides production-ready features like health checks, metrics, and Docker deployment options. [Start learning](./text_generation_inference.md).
 
