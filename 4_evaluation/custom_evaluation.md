@@ -1,16 +1,16 @@
-# Custom Domain Evaluation
+# 在特定领域进行自定义评测
 
-While standard benchmarks provide valuable insights, many applications require specialized evaluation approaches tailored to specific domains or use cases. This guide will help you create custom evaluation pipelines that accurately assess your model's performance in your target domain.
+虽然标准化的评测基准让我们对模型的性能有了初步的认识，但针对特定的应用场景，我们还需要专门制定评测方法，考察模型在特定领域的表现。本文将带你创建自定义的评测流程，针对你的目标领域对模型进行精准评测。
 
-## Designing Your Evaluation Strategy
+## 设计评测策略
 
-A successful custom evaluation strategy starts with clear objectives. Consider what specific capabilities your model needs to demonstrate in your domain. This might include technical knowledge, reasoning patterns, or domain-specific formats. Document these requirements carefully - they'll guide both your task design and metric selection.
+成功创建自定义评测策略的第一步是确定清晰的目标。你需要考虑在你的特定领域，哪些特殊能力是你的模型需要具备的？这可能涉及技术层面的知识、推理的模式、特定的格式等。你需要认真记录好这些需求，然后参考这些需求去设计测试任务、选择评测指标。
 
-Your evaluation should test both standard use cases and edge cases. For example, in a medical domain, you might evaluate both common diagnostic scenarios and rare conditions. In financial applications, you might test both routine transactions and complex edge cases involving multiple currencies or special conditions.
+测试的样例不仅需要包含标准应用场景，也要考虑边缘场景。举例来说，如果是医学领域，常见的诊断场景和罕见情况都是需要考虑的。在金融领域，除了常规交易，复杂交易（比如设计多种货币或特殊条件的情况）的处理能力也需要被测试到。
 
-## Implementation with LightEval
+## 使用 LightEval 的代码实现
 
-LightEval provides a flexible framework for implementing custom evaluations. Here's how to create a custom task:
+LightEval 是一个非常灵活的框架，可以用来实现自定义的测评任务。下面代码展示了如何创建自定义测试任务：
 
 ```python
 from lighteval.tasks import Task, Doc
@@ -34,9 +34,9 @@ class CustomEvalTask(Task):
         return response.strip() == ref.strip()
 ```
 
-## Custom Metrics
+## 自定义评价指标
 
-Domain-specific tasks often require specialized metrics. LightEval provides a flexible framework for creating custom metrics that capture domain-relevant aspects of performance:
+特定领域的测试任务通常也需要特殊的评价指标。LightEval 也可以灵活地做到这一点：
 
 ```python
 from aenum import extend_enum
@@ -72,7 +72,7 @@ custom_metric_group = SampleLevelMetricGrouping(
 extend_enum(Metrics, "custom_metric_name", custom_metric_group)
 ```
 
-For simpler cases where you only need one metric value per sample:
+如果每个样例只有一个指标，代码可以是这样：
 
 ```python
 def simple_metric(predictions: list[str], formatted_doc: Doc, **kwargs) -> bool:
@@ -92,41 +92,44 @@ simple_metric_obj = SampleLevelMetric(
 extend_enum(Metrics, "simple_metric", simple_metric_obj)
 ```
 
-You can then use your custom metrics in your evaluation tasks by referencing them in the task configuration. The metrics will be automatically computed across all samples and aggregated according to your specified functions.
+实现完代码后，你就可以在你的评测任务中引用这些指标的名称，然后在你的评测任务中使用。这些指标会在测试过程中自动在每个样本上计算，并最终统计数值。
 
-For more complex metrics, consider:
-- Using metadata in your formatted documents to weight or adjust scores
-- Implementing custom aggregation functions for corpus-level statistics
-- Adding validation checks for your metric inputs
-- Documenting edge cases and expected behavior
+如果需要使用更复杂的评测指标，你还可以实现这些功能：
 
-For a complete example of custom metrics in action, see our [domain evaluation project](./project/README.md).
+- 使用元数据，对不同测试样本的分数进行加权或其它调整
+- 对所有样本的指标进行统计时，你可以实现一个自定义的函数（上述示例中 corpus-level 统计使用了取平均的方法）
+- 对输入到你的评测指标函数中的数据进行格式检查
+- 记录边缘场景及其期望的行为
 
-## Dataset Creation
 
-High-quality evaluation requires carefully curated datasets. Consider these approaches for dataset creation:
 
-1. Expert Annotation: Work with domain experts to create and validate evaluation examples. Tools like [Argilla](https://github.com/argilla-io/argilla) make this process more efficient.
+你可以学习本章 [domain evaluation project](./project/README_CN.md) 这个项目课程，真正地动手实践一下自定义测评。
 
-2. Real-World Data: Collect and anonymize real usage data, ensuring it represents actual deployment scenarios.
+## 测试数据集的创建
 
-3. Synthetic Generation: Use LLMs to generate initial examples, then have experts validate and refine them.
+高质量的测评需要高质量的测试数据集。在创建数据集时，需要考虑以下方面：
 
-## Best Practices
+1. 专家级的标注：与领域专家一起创建和检验测试样本。你可以用 [Argilla](https://github.com/argilla-io/argilla) 高效地进行标注。
 
-- Document your evaluation methodology thoroughly, including any assumptions or limitations
-- Include diverse test cases that cover different aspects of your domain
-- Consider both automated metrics and human evaluation where appropriate
-- Version control your evaluation datasets and code
-- Regularly update your evaluation suite as you discover new edge cases or requirements
+2. 真实世界的数据：收集真实数据并进行脱敏，确保这些样本能代表真实部署模型的场景。
 
-## References
+3. 借助合成数据：使用 LLM 生成一些初始样本，然后让领域专家检查、修改。这样可以助你快速创建数据集。
 
-- [LightEval Custom Task Guide](https://github.com/huggingface/lighteval/wiki/Adding-a-Custom-Task)
-- [LightEval Custom Metrics](https://github.com/huggingface/lighteval/wiki/Adding-a-New-Metric)
-- [Argilla Documentation](https://docs.argilla.io) for dataset annotation
-- [Evaluation Guidebook](https://github.com/huggingface/evaluation-guidebook) for general evaluation principles
+## 最佳实践
 
-# Next Steps
+- 全面记录你的测试方法，包括各种假设和局限
+- 保证测试样本的多样性，确保你的领域内各个方面都能被测试到
+- 如有需要，自动化的测试指标和人工评测都要用上
+- 对测评数据集和代码进行版本控制
+- 定期更新你的评测流程，不断加入新的边缘场景、完善新的需求
 
-⏩ For a complete example of implementing these concepts, see our [domain evaluation project](./project/README.md).
+## 参考资料
+
+- [LightEval 如何添加自定义任务](https://github.com/huggingface/lighteval/wiki/Adding-a-Custom-Task)
+- [LightEval 如何添加自定义测评指标](https://github.com/huggingface/lighteval/wiki/Adding-a-New-Metric)
+- [Argilla 文档](https://docs.argilla.io) 可以用来进行数据标注
+- [评测的指南书籍](https://github.com/huggingface/evaluation-guidebook) 大语言模型评测领域的全面指南
+- 
+# 接下来
+
+⏩ 完整的自定义测评请见本章 [domain evaluation project](./project/README_CN.md)。

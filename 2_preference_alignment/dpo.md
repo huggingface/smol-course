@@ -1,24 +1,24 @@
-# Direct Preference Optimization (DPO)
+# 直接偏好优化（DPO）
 
-Direct Preference Optimization (DPO) offers a simplified approach to aligning language models with human preferences. Unlike traditional RLHF methods that require separate reward models and complex reinforcement learning, DPO directly optimizes the model using preference data.
+直接偏好优化（Direct Preference Optimization），简称 DPO，是一种非常简洁的使用人类偏好数据对齐模型的算法。DPO 直接使用偏好数据优化模型，无需 RLHF 的激励模型和强化学习步骤。
 
-## Understanding DPO
+## 理解 DPO
 
-DPO recasts preference alignment as a classification problem on human preference data. Traditional RLHF approaches require training a separate reward model and using complex reinforcement learning algorithms like PPO to align model outputs. DPO simplifies this process by defining a loss function that directly optimizes the model's policy based on preferred vs non-preferred outputs.
+DPO 将偏好对齐任务转化为了一个在偏好数据上训练的分类任务。传统的 RLHF 需要训练一个额外的激励模型，并使用强化学习方法（如 PPO）去对齐模型输出。DPO简化了这个步骤，通过定义一个损失函数，直接在“倾向的输出”和“不倾向的输出”上进行训练。
 
-This approach has proven highly effective in practice, being used to train models like Llama. By eliminating the need for a separate reward model and reinforcement learning stage, DPO makes preference alignment more accessible and stable.
+这个方法在实践中十分高效，Llama 模型的训练就使用了 DPO。同时，没有了激励模型了强化学习，DPO 训练也更简单、更稳定。
 
-## How DPO Works
+## DPO 工作原理
 
-The DPO process requires supervised fine-tuning (SFT) to adapt the model to the target domain. This creates a foundation for preference learning by training on standard instruction-following datasets. The model learns basic task completion while maintaining its general capabilities.
+在 DPO 之前，我们需要使用 SFT 微调模型，用指令跟随的数据集先把模型适配到特定任务领域中，让模型在这个领域具备基本能力。
 
-Next comes preference learning, where the model is trained on pairs of outputs - one preferred and one non-preferred. The preference pairs help the model understand which responses better align with human values and expectations.
+接下来才是偏好学习。模型将在“倾向的输出”和“不倾向的输出”这样成对的数据上训练，学习哪种类型的回答更符合人类的喜好。
 
-The core innovation of DPO lies in its direct optimization approach. Rather than training a separate reward model, DPO uses a binary cross-entropy loss to directly update the model weights based on preference data. This streamlined process makes training more stable and efficient while achieving comparable or better results than traditional RLHF.
+DPO 的关键原理在于它直接使用偏好数据进行优化。不同于 RLHF，DPO 使用了二分类的交叉墒损失函数，这里的损失直接在“倾向的输出”和“不倾向的输出”这样的成对数据上计算。这使得模型训练更稳定、更高效，同时效果甚至还比 RLHF 好。
 
-## DPO datasets
+## DPO 数据集
 
-Datasets for DPO are typically created by annotating pairs of responses as preferred or non-preferred. This can be done manually or using automated filtering techniques. Below is an example structure of single turn preference dataset for DPO:
+构造 DPO 专用数据集，一般需要对回答进行“倾向”和“不倾向”的标注。使用人工标注或自动化方法都可以实现这一步骤。下表就是一个示例数据集：
 
 | Prompt | Chosen | Rejected |
 |--------|--------|----------|
@@ -26,14 +26,14 @@ Datasets for DPO are typically created by annotating pairs of responses as prefe
 | ...    | ...    | ...      |
 | ...    | ...    | ...      |
 
-The `Prompt` column contains the prompt used to generate the `Chosen` and `Rejected` responses. The `Chosen` and `Rejected` columns contain the responses that are preferred and non-preferred respectively. There are variations on this structure, for example, including a system prompt column or `Input` column containing reference material. The values of `chosen` and `rejected` can be be represented as strings for single turn conversations or as conversation lists. 
+`Prompt` 这一栏提供问题， `Chosen` 和 `Rejected` 分别代表针对这个问题我们倾向的回答和不倾向的回答。`chosen` 和 `rejected` 也可以是一个列表形式，包含多个不同的回答。
 
-You can find a collection of DPO datasets on Hugging Face [here](https://huggingface.co/collections/argilla/preference-datasets-for-dpo-656f0ce6a00ad2dc33069478).
+你可以在 Hugging Face 的[这个地方](https://huggingface.co/collections/argilla/preference-datasets-for-dpo-656f0ce6a00ad2dc33069478)找到很多 DPO 数据集。
 
-## Implementation with TRL
+## 用 TRL 实现 DPO
 
-The Transformers Reinforcement Learning (TRL) library makes implementing DPO straightforward. The `DPOConfig` and `DPOTrainer` classes follow the same `transformers` style API.
-Here's a basic example of setting up DPO training:
+使用 TRL 实现 DPO 非常简单直接，仅需配置 `DPOConfig` 和 `DPOTrainer` 即可。这两个类遵循 `transformers` 的 API 风格。
+下面就是一个简单的例子：
 
 ```python
 from trl import DPOConfig, DPOTrainer
@@ -55,18 +55,18 @@ trainer = DPOTrainer(
 trainer.train()
 ```
 
-We will cover more details on how to use the `DPOConfig` and `DPOTrainer` classes in the [DPO Tutorial](./notebooks/dpo_finetuning_example.ipynb).
+我们还将在 [DPO 教程](./notebooks/dpo_finetuning_example.ipynb) 中详细讲解 `DPOConfig` 和 `DPOTrainer` 的配置。
 
-## Best Practices
+## 最佳实践
 
-Data quality is crucial for successful DPO implementation. The preference dataset should include diverse examples covering different aspects of desired behavior. Clear annotation guidelines ensure consistent labeling of preferred and non-preferred responses. You can improve model performance by improving the quality of your preference dataset. For example, by filtering down larger datasets to include only high quality examples, or examples that relate to your use case.
+数据质量对 DPO 的成败至关重要。偏好数据集必须足够多样，涵盖不同的想要的回答。在数据标注过程中，需要制定清晰明确的标注指导。通过提高数据集质量一般都可以提升模型性能，可能的做法包括对大规模数据集进行过滤，仅保留高质量数据，或仅保留和应用领域相关的数据。
 
-During training, carefully monitor the loss convergence and validate performance on held-out data. The beta parameter may need adjustment to balance preference learning with maintaining the model's general capabilities. Regular evaluation on diverse prompts helps ensure the model is learning the intended preferences without overfitting.
+训练过程中，仔细监视损失的收敛情况、及时验证性能也很重要。及时调节 $\beta$ 参数，在偏好学习和通用能力间找到平衡。有规律地在多样的问题上做验证测试，确保模型不过你和。这些也都很重要。
 
-Compare the model's outputs with the reference model to verify improvement in preference alignment. Testing on a variety of prompts, including edge cases, helps ensure robust preference learning across different scenarios.
+同时，也要对比一下原模型和优化后模型针对同一问题的回答，看看 模型是否学到了偏好。在包括极端情况下的问题集上测试，确保模型健壮性。
 
-## Next Steps
+## 接下来的学习
 
-⏩ To get hands-on experience with DPO, try the [DPO Tutorial](./notebooks/dpo_finetuning_example.ipynb). This practical guide will walk you through implementing preference alignment with your own model, from data preparation to training and evaluation. 
+⏩ 在 [DPO 教程](./notebooks/dpo_finetuning_example.ipynb)中，你可以直接上手实践。该教程将会带你实践 DPO 的整个过程，从数据准备指导模型训练和验证。
 
-⏭️ After completing the tutorial, you can explore the [ORPO](./orpo.md) page to learn about another preference alignment technique.
+⏭️ 之后，你还可以学习 [ORPO](./orpo.md)，了解更多偏好优化算法。

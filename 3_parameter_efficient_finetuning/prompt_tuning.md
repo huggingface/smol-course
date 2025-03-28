@@ -1,22 +1,22 @@
 # Prompt Tuning
 
-Prompt tuning is a parameter-efficient approach that modifies input representations rather than model weights. Unlike traditional fine-tuning that updates all model parameters, prompt tuning adds and optimizes a small set of trainable tokens while keeping the base model frozen.
+Prompt tuning 也是一个高效的微调手段，不同于微调模型参数，它改变的是输入模型的表征。具体来说，prompt tuning 在训练前会添加几个额外的 token，训练过程中，token 的 embedding 被更新，而模型参数一直保持不变。
 
-## Understanding Prompt Tuning
+## 理解 Prompt Tuning
 
-Prompt tuning is a parameter-efficient alternative to model fine-tuning that prepends trainable continuous vectors (soft prompts) to the input text. Unlike discrete text prompts, these soft prompts are learned through backpropagation while keeping the language model frozen. The method was introduced in ["The Power of Scale for Parameter-Efficient Prompt Tuning"](https://arxiv.org/abs/2104.08691) (Lester et al., 2021), which demonstrated that prompt tuning becomes more competitive with model fine-tuning as model size increases. Within the paper, at around 10 billion parameters, prompt tuning matches the performance of model fine-tuning while only modifying a few hundred parameters per task.
+Prompt tuning 通常把可以训练的连续向量（也称为soft prompts）接在输入文本的前面。与离散的文本提示词不同，这些 soft prompts 是通过训练过程中经反向传播更新的，而语言模型则在训练中不变。该方法在 [The Power of Scale for Parameter-Efficient Prompt Tuning](https://arxiv.org/abs/2104.08691) 中提出，展示了其在模型尺寸增大时的有效性：当模型尺寸在 10B 参数量左右时，prompt tuning 只更新 soft prompts 的几百个参数，即可达到模型全量微调的效果。
 
-These soft prompts are continuous vectors in the model's embedding space that get optimized during training. Unlike traditional discrete prompts that use natural language tokens, soft prompts have no inherent meaning but learn to elicit the desired behavior from the frozen model through gradient descent. The technique is particularly effective for multi-task scenarios since each task requires storing only a small prompt vector (typically a few hundred parameters) rather than a full model copy. This approach not only maintains a minimal memory footprint but also enables rapid task switching by simply swapping prompt vectors without any model reloading.
+Soft prompts 是模型的 embedding 空间中的一些连续数值的向量，它们会在微调过程中被更新。传统的 prompts 是一些离散的 tokens，在自然语言层面代表某些语义信息；soft prompt 则没有这些内在含义，经过参数更新后，它被用来从模型中引出一些特定行为。这种方法在多任务领域尤其有效，因为每个任务仅需保存一个 soft prompt 的向量（通常仅几百个参数），而不是对整个模型复制。这种做法不仅现存占用少，而且还能支持快速的任务切换，无需模型重新加载。
 
-## Training Process
+## 训练过程
 
-Soft prompts typically number between 8 and 32 tokens and can be initialized either randomly or from existing text. The initialization method plays a crucial role in the training process, with text-based initialization often performing better than random initialization.
+Soft prompts 一般包含 8 到 32 个 tokens，它的初始化可以是随机初始化，也可以是来自现有的文本。初始化过程很影响训练，后者的方法通常效果更好。
 
-During training, only the prompt parameters are updated while the base model remains frozen. This focused approach uses standard training objectives but requires careful attention to the learning rate and gradient behavior of the prompt tokens.
+训练过程中，仅这些 soft prompts 的参数会被更新；训练用的损失函数也没有变化；但学习率需要我们认真调节，同时也建议观察 soft prompts 上面的梯度信息，以免训练失败。
 
-## Implementation with PEFT
+## 基于 PEFT 的代码实现
 
-The PEFT library makes implementing prompt tuning straightforward. Here's a basic example:
+使用 PEFT 库实现 prompt tuning 非常简单直接，以下是一个简单的例子：
 
 ```python
 from peft import PromptTuningConfig, TaskType, get_peft_model
@@ -29,8 +29,8 @@ tokenizer = AutoTokenizer.from_pretrained("your-base-model")
 # Configure prompt tuning
 peft_config = PromptTuningConfig(
     task_type=TaskType.CAUSAL_LM,
-    num_virtual_tokens=8,  # Number of trainable tokens
-    prompt_tuning_init="TEXT",  # Initialize from text
+    num_virtual_tokens=8,  # soft prompts 的 token 数量
+    prompt_tuning_init="TEXT",  # 初始化方法为从文本初始化
     prompt_tuning_init_text="Classify if this text is positive or negative:",
     tokenizer_name_or_path="your-base-model",
 )
@@ -39,36 +39,36 @@ peft_config = PromptTuningConfig(
 model = get_peft_model(model, peft_config)
 ```
 
-## Comparison to Other Methods
+## 与其它方法的对比
 
-When compared to other PEFT approaches, prompt tuning stands out for its efficiency. While LoRA offers low parameter counts and memory usage but requires loading adapters for task switching, prompt tuning achieves even lower resource usage and enables immediate task switching. Full fine-tuning, in contrast, demands significant resources and requires separate model copies for different tasks.
+对比与其它 PEFT 方法，prompt tuning 胜在它的高效性。虽然 LoRA 也减少了训练参数以及所需显存，但反复加载 adapter 来切换任务就很麻烦。Prompt tuning 需要的训练参数更少，且任务切换更加方便。而全量参数微调则既需要超大的训练资源，也需要通过全量参数重新载入来切换任务。
 
-| Method | Parameters | Memory | Task Switching |
+| 方法 | 训练参数量 | 显存需求 | 任务切换难度 |
 |--------|------------|---------|----------------|
-| Prompt Tuning | Very Low | Minimal | Easy |
-| LoRA | Low | Low | Requires Loading |
-| Full Fine-tuning | High | High | New Model Copy |
+| Prompt Tuning | 很低 | 很低 | 非常简单 |
+| LoRA | 低 | 低 | 需要加载 Adapter |
+| 全量参数微调 | 很高 | 很高 | 加载所有参数 |
 
-When implementing prompt tuning, start with a small number of virtual tokens (8-16) and increase only if the task complexity demands it. Text initialization typically yields better results than random initialization, especially when using task-relevant text. The initialization strategy should reflect the complexity of your target task.
+在实际 prompt tuning 训练过程中，建议先从较小的 virtual tokens 数量开始（如 8 到 16 个），仅当任务复杂度增加时，再增加 virtual tokens 数量。从文本初始化通常比随机初始化更好，尤其是你使用和任务相关的文本时。初始化方法需要和你的任务复杂度匹配。
 
-Training requires slightly different considerations than full fine-tuning. Higher learning rates often work well, but careful monitoring of prompt token gradients is essential. Regular validation on diverse examples helps ensure robust performance across different scenarios.
+训练过程中，你还需注意学习率。如果使用较大的学习率，你需要时刻观察 soft prompt 更新时的梯度信息，以防训练崩溃。训练过程中，定期的验证也是确保性能的良好手段。
 
-## Application
+## 应用
 
-Prompt tuning excels in several scenarios:
+Prompt tuning 在这些场景下优势明显：
 
-1. Multi-task deployment
-2. Resource-constrained environments
-3. Rapid task adaptation
-4. Privacy-sensitive applications
+1. 多任务下的大语言模型部署
+2. 计算资源有限的训练场景
+3. 需要在不同任务间快速切换的场景
+4. 针对隐私敏感的应用场景
 
-As models get smaller, prompt tuning becomes less competitive compared to full fine-tuning. For example, on models like SmolLM2 scales prompt tuning is less relevant than full fine-tuning. 
+而当模型变小时，prompt tuning 就没有那么有竞争力了。比如在 SmolLM2 这样的模型尺寸下，prompt tuning 的意义就不大，可能还不如全量微调。
 
-## Next Steps
+## 接下来
 
-⏭️ Move on to the [LoRA Adapters Tutorial](./notebooks/finetune_sft_peft.ipynb) to learn how to fine-tune a model with LoRA adapters.
+⏭️ 学习 [LoRA Adapters 的教程](./notebooks/finetune_sft_peft.ipynb)，了解如何实操 LoRA 微调模型的过程。
 
-## Resources
-- [PEFT Documentation](https://huggingface.co/docs/peft)
-- [Prompt Tuning Paper](https://arxiv.org/abs/2104.08691)
-- [Hugging Face Cookbook](https://huggingface.co/learn/cookbook/prompt_tuning_peft)
+## 学习资源
+- [PEFT 官方文档](https://huggingface.co/docs/peft)
+- [Prompt Tuning 论文](https://arxiv.org/abs/2104.08691)
+- [Hugging Face Cookbook 中关于 prompt tuning 的部分](https://huggingface.co/learn/cookbook/prompt_tuning_peft)

@@ -1,30 +1,32 @@
-# Custom Function Agents
+# 自定义函数智能体
 
-Custom Function Agents are AI agents that leverage specialized function calls (or “tools”) to perform tasks. Unlike general-purpose agents, Custom Function Agents focus on powering advanced workflows by integrating directly with your application's logic. For example, you can expose database queries, system commands, or any custom utility as isolated functions for the agent to invoke.
+自定义函数智能体是一类借助专门的函数调用（或称为 tools）来执行任务的人工智能智能体。与通用智能体不同，自定义函数智能体专注于通过直接与应用程序的逻辑相集成，为高级工作流程提供支持。例如，你可以将数据库查询、系统命令或任何自定义实用程序作为独立函数开放，以供智能体调用。
 
-## Why Custom Function Agents?
+## 为什么需要自定义函数智能体？
 
-- **Modular and Extensible**: Instead of building one monolithic agent, you can design individual functions that represent discrete capabilities, making your architecture more extensible.
-- **Fine-Grained Control**: Developers can carefully control the agent’s actions by specifying exactly which functions are available and what parameters they accept.
-- **Improved Reliability**: By structuring each function with clear schemas and validations, you reduce errors and unexpected behaviors.
+- **模块化与可扩展性**：无需构建一个庞大的单体智能体，你可以设计代表不同独立功能的单个函数，使你的架构更具可扩展性。
 
-## Basic Workflow
+- **细粒度控制**：开发人员可以通过明确指定哪些函数可用以及它们接受哪些参数，来精细地控制智能体的行为。
 
-1. **Identify Functions**  
-   Determine which tasks can be transformed into custom functions (e.g., file I/O, database queries, streaming data processing).
+- **增强可靠性**：通过为每个函数构建清晰的模式和验证机制，可减少错误和意外行为。
 
-2. **Define the Interface**  
-   Use a function signature or schema that precisely outlines each function’s inputs, outputs, and expected behavior. This enforces strong contracts between your agent and its environment.
+## 基本工作流程
 
-3. **Register with the Agent**  
-   Your agent needs to “learn” which functions are available. Typically, you pass metadata describing each function’s interface to the language model or agent framework.
+1. **确定函数**
+   确定哪些任务可以转化为自定义函数（例如，文件输入输出、数据库查询、流数据处理）。
 
-4. **Invoke and Validate**  
-   Once the agent selects a function to call, run the function with the provided arguments and validate the results. If valid, feed the results back to the agent for context to drive subsequent decisions.
+2. **定义接口**
+   使用函数签名或模式精确概述每个函数的输入、输出以及预期行为。这在智能体与其运行环境之间建立了严格的契约。
 
-## Example
+3. **向智能体注册**
+   智能体需要 “了解” 哪些函数可用。通常，你将描述每个函数接口的元数据传递给语言模型或智能体框架。
 
-Below is a simplified example demonstrating how custom function calls might look in pseudocode. The objective is to perform a user-defined search and retrieve relevant content:
+4. **调用与验证**
+   一旦智能体选择要调用的函数，使用提供的参数运行该函数并验证结果。如果结果有效，将结果反馈给智能体作为上下文，以推动后续决策。
+
+## 示例
+
+以下是一个简化示例，以伪代码展示自定义函数调用可能的形式。目标是执行用户定义的搜索并检索相关内容：
 
 ```python
 # Define a custom function with clear input/output types
@@ -63,7 +65,7 @@ def process_search():
         logging.info("No results found for query")
 ```
 
-## Further Reading
+## 延伸阅读
 
-- [smolagents Blog](https://huggingface.co/blog/smolagents) - Learn about the latest advancements in AI agents and how they can be applied to custom function agents.
-- [Building Good Agents](https://huggingface.co/docs/smolagents/tutorials/building_good_agents) - A comprehensive guide on best practices for developing reliable and effective custom function agents.
+- [smolagents Blog](https://huggingface.co/blog/smolagents) - 介绍 smolagents 的博客
+- [Building Good Agents](https://huggingface.co/docs/smolagents/tutorials/building_good_agents) - 构建可靠智能体的最佳实践

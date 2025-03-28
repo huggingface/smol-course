@@ -1,39 +1,40 @@
-# Evaluation
+# 评测
 
-Evaluation is a critical step in developing and deploying language models. It helps us understand how well our models perform across different capabilities and identify areas for improvement. This module covers both standard benchmarks and domain-specific evaluation approaches to comprehensively assess your smol model.
+在开发和部署语言模型的过程中，模型评测是一个非常关键的步骤。它有助于我们理解模型在不同方面的能力究竟如何，并找到进一步提示改进的空间。本章将涵盖标准基准测试和特定领域的评估方法，以全面评估你的 smol 模型。
 
-We'll use [`lighteval`](https://github.com/huggingface/lighteval), a powerful evaluation library developed by Hugging Face that integrates seamlessly with the Hugging Face ecosystem. For a deeper dive into evaluation concepts and best practices, check out the evaluation [guidebook](https://github.com/huggingface/evaluation-guidebook).
+我们将使用 [`lighteval`](https://github.com/huggingface/lighteval) 这个强大的评测代码库。它由 HuggingFace 开发，并完美地集成入了 HuggingFace 的生态系统。我们还提供了[指南书籍](https://github.com/huggingface/evaluation-guidebook)以便读者想要深入学习评测的相关概念和最佳实践。
 
-## Module Overview 
+## 章节总览
 
-A thorough evaluation strategy examines multiple aspects of model performance. We assess task-specific capabilities like question answering and summarization to understand how well the model handles different types of problems. We measure output quality through factors like coherence and factual accuracy. Safety evaluation helps identify potential harmful outputs or biases. Finally, domain expertise testing verifies the model's specialized knowledge in your target field.
+一个全面的评估策略会检查模型多个方面的性能。我们将评估模型特定领域的能力，比如回答问题、概括总结，来理解模型处理不同问题的能力。我们通过生成的连贯性和事实准确性等因素来衡量输出质量。同时，我们也需要安全评测，防治模型输出有害的信息或带有偏见的观点。最后，我们还可以进行特定领域的专业性测试，来确认模型是否在特定领域掌握了专业知识。
 
-## Contents
+## 目录
 
-### 1️⃣ [Automatic Benchmarks](./automatic_benchmarks.md)
+### 1️⃣ [自动化基准测试](./automatic_benchmarks_cn.md)
 
-Learn to evaluate your model using standardized benchmarks and metrics. We'll explore common benchmarks like MMLU and TruthfulQA, understand key evaluation metrics and settings, and cover best practices for reproducible evaluation.
+学习如何使用标准的测试基准和指标来评估模型。我们将会学习常见的测试基准，如 MMLU 和 TruthfulQA，理解重要指标和相关配置，同时为可复现的评估结果提供最佳实践。
 
+### 2️⃣ [自定义领域的评测](./custom_evaluation_cn.md)
 
-### 2️⃣ [Custom Domain Evaluation](./custom_evaluation.md)
-Discover how to create evaluation pipelines tailored to your specific use case. We'll walk through designing custom evaluation tasks, implementing specialized metrics, and building evaluation datasets that match your requirements.
+学习怎样为你的特定任务领域量身定做评估流程。我们将学习设计自定义评估任务、代码实现特定的指标，以及构建符合你要求的评估数据集。
 
-### 3️⃣ [Domain Evaluation Project](./project/README.md)
-Follow a complete example of building a domain-specific evaluation pipeline. You'll learn to generate evaluation datasets, use Argilla for data annotation, create standardized datasets, and evaluate models using LightEval.
+### 3️⃣ [领域评估的项目示例](./project/README_CN.md)
 
-### Exercise Notebooks
+通过一个完整的例子，学习构建特定领域的评测流程。这包含：生成评测数据集、使用 Argilla 平台进行数据标注、构建标准化的数据集、用 LightEval 评测模型。
 
-| Title | Description | Exercise | Link | Colab |
+### Notebook 练习
+
+| 标题 | 简述 | 习题 | 链接 | Colab |
 |-------|-------------|----------|------|-------|
-| Evaluate and Analyze Your LLM | Learn how to use LightEval to evaluate and compare models on specific domains | 🐢 Use medical domain tasks to evaluate a model <br> 🐕 Create a new domain evaluation with different MMLU tasks <br> 🦁 Create a custom evaluation task for your domain | [Notebook](./notebooks/lighteval_evaluate_and_analyse_your_LLM.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/4_evaluation/notebooks/lighteval_evaluate_and_analyse_your_LLM.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| 评测并分析你的大语言模型 | 学习使用 LightEval 在特定领域评测、比较模型 | 🐢 使用医学相关领域的任务评估模型 <br> 🐕 Create a new domain evaluation with different MMLU tasks <br> 🦁 为你的特定任务领域创建一个自定义的评测任务 | [Notebook](./notebooks/lighteval_evaluate_and_analyse_your_LLM.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/4_evaluation/notebooks/lighteval_evaluate_and_analyse_your_LLM.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
 
 
 ## Resources
 
-- [Evaluation Guidebook](https://github.com/huggingface/evaluation-guidebook) - Comprehensive guide to LLM evaluation
-- [LightEval Documentation](https://github.com/huggingface/lighteval) - Official docs for the LightEval library
-- [Argilla Documentation](https://docs.argilla.io) - Learn about the Argilla annotation platform
-- [MMLU Paper](https://arxiv.org/abs/2009.03300) - Paper describing the MMLU benchmark
-- [Creating a Custom Task](https://github.com/huggingface/lighteval/wiki/Adding-a-Custom-Task)
-- [Creating a Custom Metric](https://github.com/huggingface/lighteval/wiki/Adding-a-New-Metric)
-- [Using existing metrics](https://github.com/huggingface/lighteval/wiki/Metric-List)
+- [评测的指南书籍](https://github.com/huggingface/evaluation-guidebook) - 大语言模型评测领域的全面指南
+- [LightEval 文档](https://github.com/huggingface/lighteval) - LightEval 官方文档
+- [Argilla 文档](https://docs.argilla.io) - 了解 Argilla 标注平台
+- [MMLU 论文](https://arxiv.org/abs/2009.03300) - 关于 MMLU 测评基准的论文
+- [LightEval 如何添加自定义任务](https://github.com/huggingface/lighteval/wiki/Adding-a-Custom-Task)
+- [LightEval 如何添加自定义测评指标](https://github.com/huggingface/lighteval/wiki/Adding-a-New-Metric)
+- [LightEval 如何使用现有的测评指标](https://github.com/huggingface/lighteval/wiki/Metric-List)
