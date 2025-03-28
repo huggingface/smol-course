@@ -1,47 +1,46 @@
-# Odds Ratio Preference Optimization (ORPO)
+# 基于优势比的偏好优化（ORPO）
 
-ORPO (Odds Ratio Preference Optimization) is a novel fine-tuning technique that combines fine-tuning and preference alignment into a single unified process. This combined approach offers advantages in efficiency and performance compared to traditional methods like RLHF or DPO.
+基于优势比的偏好优化（Odds Ratio Preference Optimization）或 ORPO，是一种更新颖的偏好对齐方法，它把微调和偏好对齐结合，组成一个统一的过程。这个算法相比于 RLHF 和 DPO 有着更高的效率和更好的性能。
 
-## Understanding ORPO
+## 理解 ORPO
 
-Alignment with methods like DPO typically involve two separate steps: supervised fine-tuning to adapt the model to a domain and format, followed by preference alignment to align with human preferences. While SFT effectively adapts models to target domains, it can inadvertently increase the probability of generating both desirable and undesirable responses. ORPO addresses this limitation by integrating both steps into a single process, as illustrated in the comparison below:
+诸如 DPO 的对齐方法一般包含两个步骤：使用 SFT 先让模型适配如这个领域或回答格式，然后进行偏好对齐训练。虽然 SFT 已经将模型对齐到了特定任务领域，但模型不可避免可能会产生我们不期望的回答，所以我们还需要进行下一步的偏好对齐。ORPO 则合并了这两个步骤。下图取自 ORPO 论文，对比了 RLHF、DPO 和 ORPO 的差异：
 
 ![Alignment Techniques Comparison](https://argilla.io/images/blog/mantisnlp-rlhf/part-8-alignments.png)
-*Comparison of different model alignment techniques*
+*三种对齐算法的对比*
 
-## How ORPO Works
+## ORPO 工作原理
 
-The training process leverages a preference dataset similar to what we used for DPO, where each training example contains an input prompt along with two responses: one that is preferred, and another that is rejected. Unlike other alignment methods that require separate stages and reference models, ORPO integrates preference alignment directly into the supervised fine-tuning process. This monolithic approach makes it reference model-free, computationally more efficient, and memory efficient with fewer FLOPs.
+ORPO 训练使用的数据集和 DPO 相似：针对一个输入的问题包含两个可能输出：一个是“倾向的输出”，另一个是“不倾向的输出”。不同的是，ORPO 直接将偏好对齐加入到 SFT 中。这一整体性方法使得它无需 DPO 中的参考模型，同时也更高效、节省内存。
 
-ORPO creates a new objective by combining two main components:
+ORPO 的损失函数包含两个部分：
 
-1. **SFT Loss**: The standard negative log-likelihood loss used in language modeling, which maximizes the probability of generating reference tokens. This helps maintain the model's general language capabilities.
+1. **SFT Loss**：这里使用标准的负对数似然函数，和 DPO 中的类似，用于扩大想要的 token 的生成概率。这个损失函数也有助于模型保持通用的语言能力。
+2. **Odds Ratio Loss**：这是新提出的损失函数。由于上述 SFT Loss 不能惩罚不想要的输出，所以这个函数在激励倾向的输出的同时，也惩罚不倾向的输出。具体来说，这里定义了计算优势比（Odds Ratio）的公式，通过抬高倾向输出和不倾向输出两者的优势比比值，在奖励倾向输出的同时，也压低不倾向输出的生成概率。
 
-2. **Odds Ratio Loss**: A novel component that penalizes undesirable responses while rewarding preferred ones. This loss function uses odds ratios to effectively contrast between favored and disfavored responses at the token level.
+在两个损失函数共同作用下，模型不仅被适配进了相应的任务领域，也压低了不倾向的回答的生成概率。其中，优势比这个机制提供了一个很直观的方法，模拟了倾向回答和不倾向回答之间的差异程度。你也可以阅读 [ORPO 的论文](https://arxiv.org/abs/2403.07691)，进一步了解其中的数学理论。如果你对具体的实现感兴趣，你可以阅读 [TRL 中关于这部分的实现](https://github.com/huggingface/trl/blob/b02189aaa538f3a95f6abb0ab46c0a971bfde57e/trl/trainer/orpo_trainer.py#L660)。
 
-Together, these components guide the model to adapt to desired generations for the specific domain while actively discouraging generations from the set of rejected responses. The odds ratio mechanism provides a natural way to measure and optimize the model's preference between chosen and rejected outputs. If you want to deep dive into the math, you can read the [ORPO paper](https://arxiv.org/abs/2403.07691). If you want to learn about ORPO from the implementation perspective, you should check out how loss for ORPO is calculated in the [TRL library](https://github.com/huggingface/trl/blob/b02189aaa538f3a95f6abb0ab46c0a971bfde57e/trl/trainer/orpo_trainer.py#L660).
+## 训练结果
 
-## Performance and Results
-
-ORPO has demonstrated impressive results across various benchmarks. On MT-Bench, it achieves competitive scores across different categories:
+ORPO 在很多测试基准上都取得了不错的效果。以下是它在 MT-Bench 测试基准上的结果（根据任务类别划分）：
 
 ![MT-Bench Results](https://argilla.io/images/blog/mantisnlp-rlhf/part-8-mtbench.png)
-*MT-Bench results by category for Mistral-ORPO models*
+*Mistral-ORPO 模型在 MT-Bench 不同任务领域的结果*
 
-When compared to other alignment methods, ORPO shows superior performance on AlpacaEval 2.0:
+在 AlpacaEval 2.0 上，ORPO 展现了超越其它对齐算法的效果：
 
 ![AlpacaEval Results](https://argilla.io/images/blog/mantisnlp-rlhf/part-8-winrate.png)
-*AlpacaEval 2.0 scores across different alignment methods*
+*不同对齐算法在 AlpacaEval 2.0 的得分*
 
-Compared to SFT+DPO, ORPO reduces computational requirements by eliminating the need for a reference model and halving the number of forward passes per batch. Also, the training process is more stable across different model sizes and datasets, requiring fewer hyperparameters to tune. Performance-wise, ORPO matches larger models while showing better alignment with human preferences.
+相较于 SFT 加 DPO 的做法，ORPO 通过去除参考模型、减半前向推理的策略，大大降低了计算资源的要求。同时，训练过程也更稳定，需要调节的超参数也更少。在性能上，ORPO 对人类偏好的适配做得也更好。
 
-## Implementation 
+## 代码实现
 
-Successful implementation of ORPO depends heavily on high-quality preference data. The training data should follow clear annotation guidelines and provide a balanced representation of preferred and rejected responses across diverse scenarios. 
+成功训练 ORPO 也极度依赖高质量数据集。所以标注训练数据时，我们也需要清晰明确的标注标准，确保对话场景的多样性，同时倾向和不倾向的回答需要分布均匀。
 
-### Implementation with TRL
+### 用 TRL 实现 ORPO
 
-ORPO can be implemented using the Transformers Reinforcement Learning (TRL) library. Here's a basic example:
+以下代码提供了用 TRL 实现 ORPO 的基本示例：
 
 ```python
 from trl import ORPOConfig, ORPOTrainer
@@ -68,17 +67,17 @@ trainer = ORPOTrainer(
 trainer.train()
 ```
 
-Key parameters to consider:
-- `orpo_alpha`: Controls the strength of preference optimization
-- `orpo_beta`: Temperature parameter for the odds ratio calculation
-- `learning_rate`: Should be relatively small to prevent catastrophic forgetting
-- `gradient_accumulation_steps`: Helps with training stability
+关键参数：
+- `orpo_alpha`：用来控制偏好优化部分的权重
+- `orpo_beta`：计算优势比（Odds Ratio）时的 Temperature 参数
+- `learning_rate`：这里需要用较小的学习率，用来防治灾难性遗忘（catastrophic forgetting）
+- `gradient_accumulation_steps`：调节这个也能稳定训练
 
-## Next Steps
+## 接下来的学习
 
-⏩ Try the [ORPO Tutorial](./notebooks/orpo_finetuning_example.ipynb) to implement this unified approach to preference alignment.
+⏩ 学习 [ORPO 教程](./notebooks/orpo_finetuning_example.ipynb) 来实践 ORPO 算法。
 
-## Resources
-- [ORPO Paper](https://arxiv.org/abs/2403.07691)
-- [TRL Documentation](https://huggingface.co/docs/trl/index)
+## 学习资源
+- [ORPO 论文](https://arxiv.org/abs/2403.07691)
+- [TRL 官方文档](https://huggingface.co/docs/trl/index)
 - [Argilla RLHF Guide](https://argilla.io/blog/mantisnlp-rlhf-part-8/) 

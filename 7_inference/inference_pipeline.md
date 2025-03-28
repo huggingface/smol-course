@@ -1,34 +1,34 @@
-# Basic Inference with Transformers Pipeline
+# 使用 transformers 的 pipeline 进行基本的模型推理
 
-The `pipeline` abstraction in 🤗 Transformers provides a simple way to run inference with any model from the Hugging Face Hub. It handles all the preprocessing and postprocessing steps, making it easy to use models without deep knowledge of their architecture or requirements.
+🤗 Transformers 中的 `pipeline` 抽象，为使用 Hugging Face 模型库中的任何模型进行推理提供了一种简单的方法。它处理了所有的预处理和后处理步骤，使得在无需深入了解模型架构或要求的情况下就能轻松使用这些模型。
 
-## How Pipelines Work
+## pipeline 的工作原理
 
-Hugging Face pipelines streamline the machine learning workflow by automating three critical stages between raw input and human-readable output:
+Hugging Face 的 pipeline 通过将原始输入和人类可读输出之间的三个关键阶段自动化，简化了机器学习工作流程：
 
-**Preprocessing Stage**
-The pipeline first prepares your raw inputs for the model. This varies by input type:
-- Text inputs undergo tokenization to convert words into model-friendly token IDs
-- Images are resized and normalized to match model requirements
-- Audio is processed through feature extraction to create spectrograms or other representations
+**预处理阶段**
+pipeline 首先将你的原始输入为模型做好准备。这会因输入类型而异：
+- 文本输入会经过分词处理，将单词转换为对模型友好的 token ID
+- 图像会被调整大小并进行归一化处理，以符合模型要求
+- 音频会通过特征提取进行处理，以创建频谱图或其他表示形式
 
-**Model Inference**
-During the forward pass, the pipeline:
-- Handles batching of inputs automatically for efficient processing
-- Places computation on the optimal device (CPU/GPU)
-- Applies performance optimizations like half-precision (FP16) inference where supported
+**模型推理**
+在正向传播过程中，pipeline 实现了这些事情：
+- 自动进行输入的 batch 处理，以实现高效处理
+- 选择最优计算设备（CPU/GPU）进行计算
+- 如果硬件可以支持，会使用诸如半精度（FP16）推理等技术进行性能优化
 
-**Postprocessing Stage**
-Finally, the pipeline converts raw model outputs into useful results:
-- Decodes token IDs back into readable text
-- Transforms logits into probability scores
-- Formats outputs according to the specific task (e.g., classification labels, generated text)
+**后处理阶段**
+最后，pipeline 将原始的模型输出转换为有用的结果：
+- 将 token ID 解码回可读文本
+- 将 logits 值转换为概率值
+- 根据具体任务（例如分类标签、生成文本），对输出进行格式化
 
-This abstraction lets you focus on your application logic while the pipeline handles the technical complexity of model inference.
+这种抽象让你可以专注于应用程序逻辑，而管道会处理模型推理的技术复杂性。
 
-## Basic Usage
+## 基本用法
 
-Here's how to use a pipeline for text generation:
+下面示例展示如何使用 pipeline 进行文本生成：
 
 ```python
 from transformers import pipeline
@@ -51,9 +51,9 @@ response = generator(
 print(response[0]['generated_text'])
 ```
 
-## Key Configuration Options
+## 关键配置
 
-### Model Loading
+### 载入模型
 ```python
 # CPU inference
 generator = pipeline("text-generation", model="HuggingFaceTB/SmolLM2-1.7B-Instruct", device="cpu")
@@ -70,23 +70,23 @@ generator = pipeline(
 )
 ```
 
-### Generation Parameters
+### 生成相关的参数
 
 ```python
 response = generator(
     "Translate this to French:",
-    max_new_tokens=100,     # Maximum length of generated text
-    do_sample=True,         # Use sampling instead of greedy decoding
-    temperature=0.7,        # Control randomness (higher = more random)
-    top_k=50,               # Limit to top k tokens
-    top_p=0.95,             # Nucleus sampling threshold
-    num_return_sequences=1  # Number of different generations
+    max_new_tokens=100,     # 生成文本的最大长度
+    do_sample=True,         # 解码时用采样的策略，而不是贪心策略
+    temperature=0.7,        # 这个参数可以控制随机性，值越大越随机
+    top_k=50,               # 采样时，只考虑最靠前的前 k 个 token
+    top_p=0.95,             # 采样时，概率值的阈值
+    num_return_sequences=1  # 针对一个输入输出几个输出
 )
 ```
 
-## Processing Multiple Inputs
+## 同时处理多个输入
 
-Pipelines can efficiently handle multiple inputs through batching:
+Pipeline 可以借助 batch 的技术，高效地同时处理多个输入：
 
 ```python
 # Prepare multiple prompts
@@ -111,9 +111,9 @@ for prompt, response in zip(prompts, responses):
     print(f"Response: {response[0]['generated_text']}\n")
 ```
 
-## Web Server Integration
+## 集成入网页端服务
 
-Here's how to integrate a pipeline into a FastAPI application:
+下面示例展示了如何将 pipeline 集成入 FastAPI 应用：
 
 ```python
 from fastapi import FastAPI, HTTPException
@@ -151,19 +151,20 @@ if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=5000)
 ```
 
-## Limitations
+## 局限性
 
-While pipelines are great for prototyping and small-scale deployments, they have some limitations:
+虽然 Pipeline 对于原型设计和小规模部署很有用，但它们存在一些局限性：
 
-- Limited optimization options compared to dedicated serving solutions
-- No built-in support for advanced features like dynamic batching
-- May not be suitable for high-throughput production workloads
+- 与专用服务解决方案相比，优化选项有限。
+- 不支持动态 batch 处理等高级特性。
+- 可能不适合高吞吐量的生产工作负载。
 
-For production deployments with high throughput requirements, consider using Text Generation Inference (TGI) or other specialized serving solutions.
+对于有高吞吐量要求的生产部署，可考虑使用 TGI 或其他专门的服务解决方案。
 
-## Resources
 
-- [Hugging Face Pipeline Tutorial](https://huggingface.co/docs/transformers/en/pipeline_tutorial)
-- [Pipeline API Reference](https://huggingface.co/docs/transformers/en/main_classes/pipelines)
-- [Text Generation Parameters](https://huggingface.co/docs/transformers/en/main_classes/text_generation)
-- [Model Quantization Guide](https://huggingface.co/docs/transformers/en/perf_infer_gpu_one)
+## 参考资料
+
+- [Hugging Face 的 Pipeline 教程](https://huggingface.co/docs/transformers/en/pipeline_tutorial)
+- [Pipeline API 参考资料](https://huggingface.co/docs/transformers/en/main_classes/pipelines)
+- [Text Generation 参数文档](https://huggingface.co/docs/transformers/en/main_classes/text_generation)
+- [模型量化指南](https://huggingface.co/docs/transformers/en/perf_infer_gpu_one)

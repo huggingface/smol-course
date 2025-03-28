@@ -1,16 +1,16 @@
-# Code Agents
+# 代码智能体
 
-Code agents are specialized autonomous systems that handle coding tasks like analysis, generation, refactoring, and testing. These agents leverage domain knowledge about programming languages, build systems, and version control to enhance software development workflows.
+代码智能体是专门的自主系统，可处理诸如分析、生成、重构和测试之类的代码任务。这些智能体利用关于编程语言、构建系统（build systems）和版本控制的领域知识来增强软件开发工作流程。
 
-## Why Code Agents?
+## 为什么我们需要代码智能体？
 
-Code agents accelerate development by automating repetitive tasks while maintaining code quality. They excel at generating boilerplate code, performing systematic refactoring, and identifying potential issues through static analysis. The agents combine retrieval capabilities to access external documentation and repositories with function calling to execute concrete actions like creating files or running tests.
+代码智能体通过将重复性任务自动化，同时保持代码质量，从而加速开发过程。它们擅长生成样板代码、进行系统性重构，并通过静态分析识别潜在问题。这些智能体将检索能力（访问外部文档和代码库）与函数调用相结合，以执行创建文件或运行测试等具体操作。
 
-## Building Blocks of a Code Agent
+## 代码智能体的组成
 
-Code agents are built on specialized language models fine-tuned for code understanding. These models are augmented with development tools like linters, formatters, and compilers to interact with real-world environments. Through retrieval techniques, agents maintain contextual awareness by accessing documentation and code histories to align with organizational patterns and standards. Action-oriented functions enable agents to perform concrete tasks such as committing changes or initiating merge requests.
+代码智能体建立在为代码理解而微调过的专门语言模型之上。这些模型辅以诸如代码检查工具、格式化工具和编译器等开发工具，以便与现实世界环境进行交互。通过检索技术，智能体通过访问文档和代码历史记录来保持上下文感知，以符合组织的模式和标准。以行动为导向的函数使智能体能够执行具体任务，例如提交变更或发起合并请求。
 
-In the following example, we create a code agent that can search the web using DuckDuckGo much like the retrieval agent we built earlier.
+在以下示例中，我们创建一个代码智能体，它可以像我们之前构建的检索智能体那样使用 DuckDuckGo 进行网络搜索。
 
 ```python
 from smolagents import CodeAgent, DuckDuckGoSearchTool, HfApiModel
@@ -20,7 +20,7 @@ agent = CodeAgent(tools=[DuckDuckGoSearchTool()], model=HfApiModel())
 agent.run("How many seconds would it take for a leopard at full speed to run through Pont des Arts?")
 ```
 
-In the following example, we create a code agent that can get the travel time between two locations. Here, we use the `@tool` decorator to define a custom function that can be used as a tool.
+在以下示例中，我们创建了一个代码智能体，它能够获取两个位置之间的运动时间。这里，我们使用 `@tool` 装饰器来定义一个可用作工具的自定义函数。
 
 ```python
 from smolagents import CodeAgent, HfApiModel, tool
@@ -57,12 +57,12 @@ agent.run("Can you give me a nice one-day trip around Paris with a few locations
 
 ```
 
-These examples are just the beginning of what you can do with code agents. You can learn more about how to build code agents in the [smolagents documentation](https://huggingface.co/docs/smolagents).
+当然，这两个例子仅仅是你开发代码智能体的开始。你需要阅读 [smolagents 文档](https://huggingface.co/docs/smolagents)来了解更多构建代码智能体的方法。
 
-smolagents provides a lightweight framework for building code agents, with a core implementation of approximately 1,000 lines of code. The framework specializes in agents that write and execute Python code snippets, offering sandboxed execution for security. It supports both open-source and proprietary language models, making it adaptable to various development environments.
+`smolagents` 为构建代码智能体提供了一个轻量级的框架，其核心代码实现仅有 1000 行左右。该框架专注于构建能够编写和执行 Python 代码片段的智能体，并提供沙盒式执行环境以确保安全性。它同时支持开源和专有语言模型，使其能够适配各种开发环境。
 
-## Further Reading
+## 延伸阅读
 
-- [smolagents Blog](https://huggingface.co/blog/smolagents) - Introduction to smolagents and code interactions
-- [smolagents: Building Good Agents](https://huggingface.co/docs/smolagents/tutorials/building_good_agents) - Best practices for reliable agents
-- [Building Effective Agents - Anthropic](https://www.anthropic.com/research/building-effective-agents) - Agent design principles
+- [smolagents Blog](https://huggingface.co/blog/smolagents) - 介绍 smolagents 的博客
+- [smolagents: Building Good Agents](https://huggingface.co/docs/smolagents/tutorials/building_good_agents) - 构建可靠智能体的最佳实践
+- [Building Effective Agents - Anthropic](https://www.anthropic.com/research/building-effective-agents) - 智能体设计原则

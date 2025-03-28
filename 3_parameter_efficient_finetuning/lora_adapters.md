@@ -1,16 +1,16 @@
-# LoRA (Low-Rank Adaptation)
+# LoRA（低秩分解）
 
-LoRA has become the most widely adopted PEFT method. It works by adding small rank decomposition matrices to the attention weights, typically reducing trainable parameters by about 90%. 
+LoRA 是最常用的 PEFT 算法。它针对 attention 层的权重加入参数量较少、低秩分解过的参数矩阵，用模型原有参数和低秩分解参数计算出的激活值之和代表微调过后的激活值。这样当我们只更新低秩分解过的参数矩阵时，我们需要训练的参数量能减少大约 90%。
 
-## Understanding LoRA
+## 理解 LoRA
 
-LoRA (Low-Rank Adaptation) is a parameter-efficient fine-tuning technique that freezes the pre-trained model weights and injects trainable rank decomposition matrices into the model's layers. Instead of training all model parameters during fine-tuning, LoRA decomposes the weight updates into smaller matrices through low-rank decomposition, significantly reducing the number of trainable parameters while maintaining model performance. For example, when applied to GPT-3 175B, LoRA reduced trainable parameters by 10,000x and GPU memory requirements by 3x compared to full fine-tuning. You can read more about LoRA in the [LoRA paper](https://arxiv.org/pdf/2106.09685).
+LoRA 全称是 Low-Rank Adaptation，或叫做“低秩分解”。它的基本做法是，在微调时，冻结所有预训练模型的参数，同时为需要微调的模型层注入额外的可训练的参数矩阵（通常称之为 Adapter）。通过对需要微调的层的参数矩阵进行低秩分解，可以得到两个参数量较小的新参数矩阵；而这一层的前向计算激活值则可以用“原有参数矩阵计算出的激活值”加上“低秩分解出的两个矩阵计算出的激活值”而得到。训练时，我们只需要训练两个低秩分解的矩阵即可，这样极大减少了所需微调的参数量，同时也能保持原有模型性能。例如，如果我们用 LoRA 微调 GPT-3 175B 模型，相比于全量参数的微调，LoRA 需要参与训练的参数量可减少至万分之一、GPU 现存需求可减少至三分之一。感兴趣的读者可以阅读 [LoRA 的论文](https://arxiv.org/pdf/2106.09685)。
 
-LoRA works by adding pairs of rank decomposition matrices to transformer layers, typically focusing on attention weights. During inference, these adapter weights can be merged with the base model, resulting in no additional latency overhead. LoRA is particularly useful for adapting large language models to specific tasks or domains while keeping resource requirements manageable.
+一般而言，LoRA 都是对 transformer 层的参数进行低秩分解的，尤其是在与注意力机制相关的参数上。在推理过程中，这些 adapter 的参数可以被直接融合进模型中，得到与原模型结构完全一致的新模型，无需增加新的层。得益于此，LoRA 尤其适合在低计算资源情况下，将大模型适配进入特定的任务领域。
 
-## Loading LoRA Adapters
+## 如何载入 LoRA 的 Adapters
 
-Adapters can be loaded onto a pretrained model with load_adapter(), which is useful for trying out different adapters whose weights aren’t merged. Set the active adapter weights with the set_adapter() function. To return the base model, you could use unload() to unload all of the LoRA modules. This makes it easy to switch between different task-specific weights.
+如果你使用 `peft` 库，你可以用 `load_adapter()` 载入 LoRA Adapters。这对你尝试不同的 adapter 非常管用，因为它还不会将参数融合进原模型。你可以使用 `set_adapter()` 指定哪个 LoRA Adapter 在生效。如果想返回原模型，你可以使用 `unload()` 卸载所有 LoRA 参数。这种设定使得在不同任务领域间切换模型变得非常容易。
 
 ```python
 from transformers import AutoModelForCausalLM
@@ -23,27 +23,25 @@ model = PeftModel.from_pretrained(base_model, peft_model_id)
 
 ![lora_load_adapter](./images/lora_adapter.png)
 
-## Merging LoRA Adapters
+## 将 LoRA 参数融入原模型
 
-After training with LoRA, you might want to merge the adapter weights back into the base model for easier deployment. This creates a single model with the combined weights, eliminating the need to load adapters separately during inference.
+如果在 LoRA 微调结束后，你想直接获取一套新的模型参数，而不是每次使用的时候都需要加载 LoRA 的 Adapter，你可以直接将 LoRA 的参数融入原模型中。
 
-The merging process requires attention to memory management and precision. Since you'll need to load both the base model and adapter weights simultaneously, ensure sufficient GPU/CPU memory is available. Using `device_map="auto"` in `transformers` will help with automatic memory management. Maintain consistent precision (e.g., float16) throughout the process, matching the precision used during training and saving the merged model in the same format for deployment. Before deploying, always validate the merged model by comparing its outputs and performance metrics with the adapter-based version.
+融合的时候，我们首先需要注意内存的管理以及参数的精度。因为我们要同时载入原模型和 LoRA 参数，需要注意 GPU 或 CPU 的内存是否够用。在 `transformers` 中使用 `device_map="auto"` 可以替我们自动进行内存管理。同时，要注意原模型、LoRA 参数的精度需保持一致。融合后，检查模型输出是否和未融合是一致也很重要。
 
-Adapters are also be convenient for switching between different tasks or domains. You can load the base model and adapter weights separately. This allows for quick switching between different task-specific weights. 
+## 代码实现
 
-## Implementation Guide
+在 `notebooks/` 目录下，有 PEFT 相关方法的实践教程以及练习题。我们首先会在 `load_lora_adapter_example.ipynb` 学习加载 LoRA Adapter 相关的内容，然后在 `lora_finetuning.ipynb` 中，我们将学习如果用 LoRA 进行 SFT。
 
-The `notebooks/` directory contains practical tutorials and exercises for implementing different PEFT methods. Begin with `load_lora_adapter_example.ipynb` for a basic introduction, then explore `lora_finetuning.ipynb` for a more detailed look at how to fine-tune a model with LoRA and SFT.
-
-When implementing PEFT methods, start with small rank values (4-8) for LoRA and monitor training loss. Use validation sets to prevent overfitting and compare results with full fine-tuning baselines when possible. The effectiveness of different methods can vary by task, so experimentation is key.
+一个比较好的 LoRA 训练流程应该是，首先从较低的秩开始，一般是 4 到 8，同时观察训练损失值。使用验证集及时查看避免过拟合。不同任务可能有较大差异，所有还是要以实际实验现象为准。
 
 ## OLoRA
 
-[OLoRA](https://arxiv.org/abs/2406.01775) utilizes QR decomposition to initialize the LoRA adapters. OLoRA translates the base weights of the model by a factor of their QR decompositions, i.e., it mutates the weights before performing any training on them. This approach significantly improves stability, accelerates convergence speed, and ultimately achieves superior performance.
+[OLoRA](https://arxiv.org/abs/2406.01775) 使用 QR 分解来初始化 LoRA 的 Adapter。该算法对原有的参数矩阵 W 分解为 Q 和 R 两个矩阵，其中 Q 矩阵包含 W 矩阵的 r 个正交向量，使得优化能够在一个较好的子空间进行。这样可以很大地提升收敛速度，同时也达到了非常好的效果。
 
-## Using TRL with PEFT
+##  TRL 与 PEFT 结合使用
 
-PEFT methods can be combined with TRL (Transformers Reinforcement Learning) for efficient fine-tuning. This integration is particularly useful for RLHF (Reinforcement Learning from Human Feedback) as it reduces memory requirements.
+PEFT 也可以和 TRL 库一起使用，这对 RLHF（Reinforcement Learning from Human Feedback）尤其实用。
 
 ```python
 from peft import LoraConfig
@@ -67,11 +65,14 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 ```
 
-Above, we used `device_map="auto"` to automatically assign the model to the correct device. You can also manually assign the model to a specific device using `device_map={"": device_index}`. You could also scale training across multiple GPUs while keeping memory usage efficient.
+在上述代码中，我们用 `device_map="auto"` 自动分配模型到正确的计算设备上。关于具体计算设备，你也可以手动修改：`device_map={"": device_index}`；当然你也可以扩大训练规模，如实用多 GPU 训练等。
 
-## Basic Merging Implementation
+## 基本的参数融合实现
 
-After training a LoRA adapter, you can merge the adapter weights back into the base model. Here's how to do it:
+
+
+训练好 LoRA adapter 后，将权重融合回原模型的方法如下：
+
 
 ```python
 import torch
@@ -103,7 +104,7 @@ except RuntimeError as e:
 merged_model.save_pretrained("path/to/save/merged_model")
 ```
 
-If you encounter size discrepancies in the saved model, ensure you're also saving the tokenizer:
+保存的时候，你可能也需要保存 tokenizer 到相应目录。
 
 ```python
 # Save both model and tokenizer
@@ -112,13 +113,14 @@ merged_model.save_pretrained("path/to/save/merged_model")
 tokenizer.save_pretrained("path/to/save/merged_model")
 ```
 
-## Next Steps
+## 接下来
 
-⏩ Move on to the [Prompt Tuning](prompt_tuning.md) guide to learn how to fine-tune a model with prompt tuning.
-⏩ Move on the [Load LoRA Adapters Tutorial](./notebooks/load_lora_adapter.ipynb) to learn how to load LoRA adapters.
+⏩ 继续学习 [Prompt Tuning](prompt_tuning_cn.md)，了解这种微调方式如何运作。
 
-# Resources
+⏩ 实践 [加载 LoRA Adapters 的教程](./notebooks/load_lora_adapter_cn.ipynb) 练习加载 LoRA adapters。
+
+# 学习资源
 
 - [LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS](https://arxiv.org/pdf/2106.09685)
-- [PEFT Documentation](https://huggingface.co/docs/peft)
-- [Hugging Face blog post on PEFT](https://huggingface.co/blog/peft)
+- [PEFT 官方文档](https://huggingface.co/docs/peft)
+- [Hugging Face 有关 PEFT 的博客](https://huggingface.co/blog/zh/peft)
