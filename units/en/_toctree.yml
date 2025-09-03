@@ -15,5 +15,7 @@
     title: Practical Exercises
   - local: unit1/5
     title: Training with Hugging Face Jobs
+  - local: unit1/6
+    title: Submit your final project!
 
 
