@@ -11,6 +11,8 @@
     title: Chat Templates
   - local: unit1/3
     title: Supervised Fine-Tuning
+  - local: unit1/3a
+    title: LoRA and PEFT
   - local: unit1/4
     title: Practical Exercises
   - local: unit1/5
