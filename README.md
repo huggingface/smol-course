@@ -28,15 +28,16 @@ This is a practical course on aligning language models for your specific use cas
 
 This course provides a practical, hands-on approach to working with small language models, from initial training through to production deployment.
 
-| Module | Description | Status | Release |
-|--------|-------------|--------|---------|
-| [Instruction Tuning](./1_instruction_tuning) | Learn supervised fine-tuning, chat templating, and basic instruction following | ✅ Released | ✅ |
-| [Evaluation](./4_evaluation) | Use automatic benchmarks and create custom domain evaluations | Planned | September 2024 |
-| [Preference Alignment](./2_preference_alignment) | Explore DPO and ORPO techniques for aligning models with human preferences | Planned | October 2024 |
-| Reinforcement Learning | Apply RLHF/TRL techniques to further align LLM behavior | Planned | October 2024 |
-| [Vision-language Models](./5_vision_language_models) | Adapt multimodal models for vision-language tasks | Planned | November 2024 |
-| [Synthetic Datasets](./6_synthetic_datasets) | Create and validate synthetic datasets for training | Planned | November 2024 |
-| Award Ceremony | Celebrate achievements and showcase community projects | Planned | December 2024 |
+| # | Topic | Description | Released |
+| - | ----- | ----------- | -------- |
+| 1 | Instruction Tuning | Supervised fine-tuning, chat templates, instruction following | ✅ |
+| 2 | Evaluation | Benchmarks and custom domain evaluation | September 2025 |
+| 3 | Preference Alignment | Aligning models to human preferences with algorithms like DPO. | October 2025 |
+| 4 | Reinforcement Learning | Optimizing models with based on reinforcement policies. | October 2025 |
+| 5 | Vision Language Models | Adapt and use multimodal models | November 2025 |
+| 6 | Synthetic Data | Generate synthetic datasets for custom domains | November 2025 |
+| 7 | Award Ceremony | Showcase projects and celebrate | December 2025 |
+
 
 ## Why Small Language Models?
 
