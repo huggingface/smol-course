@@ -21,9 +21,6 @@ This is a practical course on aligning language models for your specific use cas
 <img src="https://img.shields.io/badge/Discord-7289DA?&logo=discord&logoColor=white"/>
 </a>
 
-
-
-
 ## Course Outline
 
 This course provides a practical, hands-on approach to working with small language models, from initial training through to production deployment.
