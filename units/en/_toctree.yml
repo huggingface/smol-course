@@ -20,4 +20,17 @@
   - local: unit1/6
     title: Submit your final project!
 
+- title: "2. Model Evaluation"
+  sections:
+  - local: unit2/1
+    title: Introduction to Model Evaluation
+  - local: unit2/2
+    title: VLLM Inference with Hugging Face Models
+  - local: unit2/3
+    title: Automatic Benchmarks
+  - local: unit2/4
+    title: Custom Domain Evaluation
+  - local: unit2/5
+    title: Submit your evaluation results!
+
 
