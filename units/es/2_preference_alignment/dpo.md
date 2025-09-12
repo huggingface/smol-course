@@ -3,7 +3,8 @@
 <CourseFloatingBanner chapter={10}
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
-    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/es/2_preference_alignment/dpo_finetuning_example.ipynb"}] />
+    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/es/2_preference_alignment/dpo_finetuning_example.ipynb"},
+]} />
 
 La Optimización Directa de Preferencias (DPO) ofrece un enfoque simplificado para alinear modelos de lenguaje con las preferencias humanas. A diferencia de los métodos tradicionales de RLHF (Reinforcement Learning with Human Feedback), que requieren modelos de recompensas separados y algoritmos complejos de aprendizaje por refuerzo, DPO optimiza directamente el modelo utilizando datos de preferencia.
 

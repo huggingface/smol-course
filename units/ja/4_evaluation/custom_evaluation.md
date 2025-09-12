@@ -3,7 +3,8 @@
 <CourseFloatingBanner chapter={10}
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
-    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ja/4_evaluation/lighteval_evaluate_and_analyse_your_LLM.ipynb"}] />
+    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ja/4_evaluation/lighteval_evaluate_and_analyse_your_LLM.ipynb"},
+]} />
     
 標準ベンチマークは貴重な洞察を提供しますが、多くのアプリケーションでは特定のドメインやユースケースに合わせた評価アプローチが必要です。このガイドでは、ターゲットドメインでモデルの性能を正確に評価するためのカスタム評価パイプラインを作成する方法を説明します。
 

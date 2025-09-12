@@ -3,7 +3,8 @@
 <CourseFloatingBanner chapter={10}
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
-    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/6_synthetic_datasets/preference_dpo_dataset.ipynb"}] />
+    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/6_synthetic_datasets/preference_dpo_dataset.ipynb"},
+]} />
     
 Trong [chương về điều chỉnh ưu tiên (preference alignment)](../2_preference_alignment/README.md), chúng ta đã học về Tối ưu hóa ưu tiên trực tiếp (Direct Preference Optimization). Trong phần này, chúng ta sẽ khám phá cách tạo tập dữ liệu ưu tiên cho các phương pháp như DPO. Chúng ta sẽ xây dựng dựa trên các phương pháp đã được giới thiệu trong phần [tạo tập dữ liệu hướng dẫn](./instruction_datasets.md). Ngoài ra, chúng ta sẽ chỉ ra cách thêm các phần hoàn thành (completions) bổ sung vào tập dữ liệu bằng cách sử dụng kỹ thuật nhắc nhở (prompting) cơ bản hoặc bằng cách sử dụng EvolQuality để cải thiện chất lượng của các phản hồi. Cuối cùng, chúng ta sẽ chỉ ra cách `UltraFeedback` có thể được sử dụng để tạo điểm số và phê bình.
 

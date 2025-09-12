@@ -3,7 +3,8 @@
 <CourseFloatingBanner chapter={10}
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
-    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ja/5_vision_language_models/vlm_usage_sample.ipynb"}] />
+    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ja/5_vision_language_models/vlm_usage_sample.ipynb"},
+]} />
     
 ビジュアル言語モデル（VLM）は、画像とテキストの間のギャップを埋め、画像キャプションの生成、視覚に基づく質問への回答、テキストと視覚データの関係の理解などの高度なタスクを可能にします。そのアーキテクチャは、両方のモダリティをシームレスに処理するように設計されています。
 

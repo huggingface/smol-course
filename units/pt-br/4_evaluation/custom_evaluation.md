@@ -3,7 +3,8 @@
 <CourseFloatingBanner chapter={10}
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
-    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/pt-br/4_evaluation/lighteval_evaluate_and_analyse_your_LLM.ipynb"}] />
+    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/pt-br/4_evaluation/lighteval_evaluate_and_analyse_your_LLM.ipynb"},
+]} />
 
 Embora benchmarks padrão ofereçam insights valiosos, muitas aplicações requerem abordagens de avaliação especializadas adaptadas a domínios ou casos de uso específicos. Este guia ajudará você a criar pipelines de avaliação personalizados que avaliem com precisão o desempenho do seu modelo no domínio-alvo.
 

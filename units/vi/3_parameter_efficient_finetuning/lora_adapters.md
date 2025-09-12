@@ -3,7 +3,8 @@
 <CourseFloatingBanner chapter={10}
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
-    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/3_parameter_efficient_finetuning/finetune_sft_peft.ipynb"}] />
+    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/3_parameter_efficient_finetuning/finetune_sft_peft.ipynb"},
+]} />
 
 LoRA đã trở thành phương pháp PEFT được sử dụng rộng rãi nhất. Nó hoạt động bằng cách thêm các ma trận phân rã hạng thấp (small rank decomposition matrices) vào các trọng số attention, điều này dẫn đến việc giảm khoảng 90% số lượng tham số có thể huấn luyện.
 

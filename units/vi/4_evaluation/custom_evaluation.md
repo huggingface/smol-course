@@ -3,7 +3,8 @@
 <CourseFloatingBanner chapter={10}
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
-    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/4_evaluation/lighteval_evaluate_and_analyse_your_LLM.ipynb"}] />
+    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/4_evaluation/lighteval_evaluate_and_analyse_your_LLM.ipynb"},
+]} />
 
 Mặc dù các phương pháp đánh giá tiêu chuẩn (`benchmark`) cung cấp những thông tin chuyên sâu có giá trị, nhiều ứng dụng đòi hỏi các phương pháp đánh giá chuyên biệt phù hợp với các lĩnh vực hoặc trường hợp sử dụng cụ thể. Bài học này sẽ giúp bạn tạo các quy trình (`pipeline`) tùy chỉnh các phương pháp đánh giá để có cái nhìn chính xác hơn về hiệu suất của mô hình trong lĩnh vực cụ thể của bạn.
 

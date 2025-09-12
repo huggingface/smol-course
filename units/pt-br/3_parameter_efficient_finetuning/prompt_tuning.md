@@ -3,7 +3,8 @@
 <CourseFloatingBanner chapter={10}
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
-    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/pt-br/3_parameter_efficient_finetuning/finetune_sft_peft.ipynb"}] />
+    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/pt-br/3_parameter_efficient_finetuning/finetune_sft_peft.ipynb"},
+]} />
   
 O ajuste de prompts (prompt tuning) é uma abordagem eficiente em termos de parâmetros que modifica as representações de entrada em vez dos pesos do modelo. Diferente do ajuste fino tradicional, que atualiza todos os parâmetros do modelo, o ajuste de prompts adiciona e otimiza um pequeno conjunto de tokens treináveis, mantendo o modelo base congelado.
 

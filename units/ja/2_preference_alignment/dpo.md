@@ -3,7 +3,8 @@
 <CourseFloatingBanner chapter={10}
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
-    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ja/2_preference_alignment/dpo_finetuning_example.ipynb"}] />
+    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ja/2_preference_alignment/dpo_finetuning_example.ipynb"},
+]} />
     
 直接選好最適化（DPO）は、言語モデルを人間の好みに合わせるための簡素化されたアプローチを提供します。従来のRLHF（人間のフィードバックを用いた強化学習）メソッドとは異なり、DPOは別個の報酬モデルや複雑な強化学習アルゴリズムを必要とせず、選好データを使用してモデルを直接最適化します。
 

@@ -3,7 +3,8 @@
 <CourseFloatingBanner chapter={10}
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
-    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/4_evaluation/lighteval_evaluate_and_analyse_your_LLM.ipynb"}] />
+    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/4_evaluation/lighteval_evaluate_and_analyse_your_LLM.ipynb"},
+]} />
 
 Đánh giá tự động là các công cụ chuẩn hoá để đánh giá các mô hình ngôn ngữ qua các tác vụ và khả năng khác nhau. Mặc dù chúng cung cấp điểm khởi đầu hữu ích để hiểu hiệu năng của mô hình, điều quan trọng là phải nhận ra rằng chúng chỉ là một phần trong toàn bộ khả năng của mô hình.
 

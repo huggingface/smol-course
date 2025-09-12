@@ -3,7 +3,8 @@
 <CourseFloatingBanner chapter={10}
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
-    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/pt-br/3_parameter_efficient_finetuning/finetune_sft_peft.ipynb"}] />
+    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/pt-br/3_parameter_efficient_finetuning/finetune_sft_peft.ipynb"},
+]} />
 
 LoRA tornou-se o método PEFT mais amplamente adotado. Ele funciona adicionando pequenas matrizes de decomposição de classificação aos pesos de atenção, reduzindo tipicamente os parâmetros treináveis em cerca de 90%.
 

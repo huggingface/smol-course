@@ -3,7 +3,8 @@
 <CourseFloatingBanner chapter={10}
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
-    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/6_synthetic_datasets/instruction_sft_dataset.ipynb"}] />
+    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/6_synthetic_datasets/instruction_sft_dataset.ipynb"},
+]} />
     
 Trong [chương về tinh chỉnh hướng dẫn (instruction tuning)](../1_instruction_tuning/README.md), chúng ta đã học về việc tinh chỉnh mô hình với Tinh chỉnh có giám sát (Supervised Fine-tuning). Trong phần này, chúng ta sẽ khám phá cách tạo tập dữ liệu hướng dẫn cho SFT. Chúng ta sẽ khám phá việc tạo các tập dữ liệu tinh chỉnh hướng dẫn thông qua việc nhắc nhở (prompting) cơ bản và sử dụng các kỹ thuật tinh tế hơn từ các bài báo. Các tập dữ liệu tinh chỉnh hướng dẫn với dữ liệu hạt giống (seed data) để học trong ngữ cảnh (in-context learning) có thể được tạo ra thông qua các phương pháp như SelfInstruct và Magpie. Ngoài ra, chúng ta sẽ khám phá sự tiến hóa hướng dẫn thông qua EvolInstruct. Cuối cùng, chúng ta sẽ khám phá cách tạo tập dữ liệu để tinh chỉnh hướng dẫn bằng cách sử dụng quy trình (pipeline) distilabel.
 
