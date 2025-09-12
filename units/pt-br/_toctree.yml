@@ -1,0 +1,35 @@
+- title: "1. Ajuste por Instruções"
+  sections:
+  - local: 1_instruction_tuning/README
+    title: Introdução ao Ajuste por Instruções
+  - local: 1_instruction_tuning/chat_templates
+    title: Templates de Chat
+  - local: 1_instruction_tuning/supervised_fine_tuning
+    title: Fine-tuning Supervisionado
+
+- title: "2. Alinhamento de Preferências"
+  sections:
+  - local: 2_preference_alignment/README
+    title: Introdução ao Alinhamento de Preferências
+  - local: 2_preference_alignment/dpo
+    title: Otimização Direta de Preferências (DPO)
+  - local: 2_preference_alignment/orpo
+    title: ORPO (Odds Ratio Preference Optimization)
+
+- title: "3. Fine-tuning Eficiente em Parâmetros"
+  sections:
+  - local: 3_parameter_efficient_finetuning/README
+    title: Introdução ao Fine-tuning Eficiente
+  - local: 3_parameter_efficient_finetuning/lora_adapters
+    title: Adaptadores LoRA
+  - local: 3_parameter_efficient_finetuning/prompt_tuning
+    title: Prompt Tuning
+
+- title: "4. Avaliação"
+  sections:
+  - local: 4_evaluation/README
+    title: Introdução à Avaliação
+  - local: 4_evaluation/automatic_benchmarks
+    title: Benchmarks Automáticos
+  - local: 4_evaluation/custom_evaluation
+    title: Avaliação Personalizada
