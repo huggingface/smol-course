@@ -12,13 +12,6 @@ Chúng ta sẽ cùng khám phá hai chủ đề chính: 1) Định dạng Chat (
 
 Huấn luyện có giám sát (SFT) là một quá trình cốt lõi để điều chỉnh các mô hình ngôn ngữ đã *pre-trained* cho các tác vụ cụ thể. Quá trình này bao gồm việc huấn luyện mô hình trên tập dữ liệu có gán nhãn theo tác vụ cụ thể. Để đọc hướng dẫn chi tiết về SFT, bao gồm các bước quan trọng và các phương pháp thực hành tốt nhất, hãy xem tại trang [Supervised Fine-Tuning](./supervised_fine_tuning.md).
 
-## Bài tập
-
-| Tiêu đề | Mô tả | Bài tập | Đường dẫn | Google Colab |
-|-------|-------------|----------|------|-------|
-| Định dạng Chat | Học cách sử dụng *định dạng chat* với SmolLM2 và xử lý dữ liệu thành định dạng *chatml* | 🐢 Chuyển đổi tập dữ liệu `HuggingFaceTB/smoltalk` sang định dạng *chatml* <br> 🐕 Chuyển đổi tập dữ liệu `openai/gsm8k` sang định dạng *chatml* | [Notebook](../../../notebooks/vi/1_instruction_tuning/chat_templates_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/1_instruction_tuning//colab.research.google.com/assets/colab-badge.svg" alt="Sử dụng Colab"/></a> |
-| Tinh chỉnh có giám sát | Học cách tinh chỉnh SmolLM2 sử dụng SFTTrainer | 🐢 Sử dụng tập dữ liệu `HuggingFaceTB/smoltalk` <br>🐕 Thử nghiệm với tập dữ liệu `bigcode/the-stack-smol` <br>🦁 Chọn một tập dữ liệu cho trường hợp sử dụng thực tế | [Notebook](../../../notebooks/vi/1_instruction_tuning/sft_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/1_instruction_tuning/sft_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Sử dụng Colab"/></a> |
-
 ## Tài liệu tham khảo
 
 - [Tài liệu Transformers về định dạng chat](https://huggingface.co/docs/transformers/main/en/chat_templating)
