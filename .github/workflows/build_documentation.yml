@@ -12,7 +12,7 @@ jobs:
       commit_sha: ${{ github.sha }}
       package: smol-course
       package_name: smol-course
-      path_to_docs: units/
+      path_to_docs: smol-course/units/
       additional_args: --not_python_module
       languages: en es ja ko pt-br vi
     secrets:
