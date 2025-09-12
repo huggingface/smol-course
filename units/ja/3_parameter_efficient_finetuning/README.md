@@ -21,14 +21,6 @@ LoRAは、効率的なモデル適応のためのエレガントなソリュー�
 
 プロンプトチューニングは、モデルの重みを変更するのではなく、**入力に学習可能なトークンを追加する**さらに軽量なアプローチを提供します。プロンプトチューニングはLoRAほど人気はありませんが、モデルを新しいタスクやドメインに迅速に適応させるための便利な技術です。[プロンプトチューニング](./prompt_tuning.md)セクションでプロンプトチューニングを詳しく見ていきます。
 
-## 演習ノートブック
-
-| タイトル | 説明 | 演習 | リンク | Colab |
-|-------|-------------|----------|------|-------|
-| LoRA微調整 | LoRAアダプタを使用してモデルを微調整する方法を学ぶ | 🐢 LoRAを使用してモデルをトレーニング<br>🐕 異なるランク値で実験<br>🦁 完全な微調整と性能を比較 | [ノートブック](../../../notebooks/ja/3_parameter_efficient_finetuning/finetune_sft_peft.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ja/3_parameter_efficient_finetuning//colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-| LoRAアダプタの読み込み | トレーニングされたLoRAアダプタを読み込んで使用する方法を学ぶ | 🐢 事前学習されたアダプタを読み込む<br>🐕 アダプタをベースモデルと統合<br>🦁 複数のアダプタ間を切り替える | [ノートブック](../../../notebooks/ja/3_parameter_efficient_finetuning/load_lora_adapter.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ja/3_parameter_efficient_finetuning//colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-<!-- | プロンプトチューニング | プロンプトチューニングを実装する方法を学ぶ | 🐢 ソフトプロンプトをトレーニング<br>🐕 異なる初期化戦略を比較<br>🦁 複数のタスクで評価 | [ノートブック](../../../notebooks/ja/3_parameter_efficient_finetuning/prompt_tuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ja/3_parameter_efficient_finetuning/prompt_tuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> | -->
-
 ## リソース
 - [PEFTドキュメント](https://huggingface.co/docs/peft)
 - [LoRA論文](https://arxiv.org/abs/2106.09685)

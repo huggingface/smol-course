@@ -20,12 +20,6 @@ Khám phá cách tạo quy trình (pipeline) đánh giá phù hợp với trư�
 ### 3️⃣ [Dự án đánh giá theo lĩnh vực cụ thể](./project/README.md)
 Theo dõi một ví dụ hoàn chỉnh về việc xây dựng quy trình đánh giá cho lĩnh vực cụ thể. Bạn sẽ học cách tạo tập dữ liệu đánh giá, sử dụng `Argilla` để gán nhãn dữ liệu, tạo tập dữ liệu chuẩn hoá và đánh giá mô hình bằng `LightEval`.
 
-### Các notebook bài tập
-
-| Tiêu đề | Mô tả | Bài tập | Link | Colab |
-|---------|-------|---------|------|-------|
-| Đánh giá và phân tích mô hình LLM của bạn | Học cách sử dụng `LightEval` để đánh giá và so sánh các mô hình trên các lĩnh vực cụ thể | 🐢 Sử dụng các tác vụ trong **lĩnh vực y tế** để đánh giá mô hình <br> 🐕 Tạo đánh giá lĩnh vực mới với các tác vụ MMLU khác nhau <br> 🦁 Tạo tác vụ đánh giá cho lĩnh vực của bạn | [Notebook](../../../notebooks/vi/4_evaluation/lighteval_evaluate_and_analyse_your_LLM.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/4_evaluation/lighteval_evaluate_and_analyse_your_LLM.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-
 ## Tài liệu tham khảo
 
 - [Hướng dẫn đánh giá](https://github.com/huggingface/evaluation-guidebook) - Hướng dẫn toàn diện về đánh giá LLM

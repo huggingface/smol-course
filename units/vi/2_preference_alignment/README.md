@@ -21,13 +21,6 @@ Phương pháp này đơn giản hóa quá trình *tinh chỉnh theo chỉ thị
 
 ORPO giới thiệu một phương pháp kết hợp cả 2 giai đoạn *tinh chỉnh theo chỉ thị* và *tinh chỉnh theo sự ưu tiên* vào trong 1 giai đoạn tinh chỉnh duy nhất. Phương pháp này điều chỉnh mục tiêu tiêu chuẩn của mô hình ngôn ngữ bằng cách kết hợp *negative log-likelihood loss* với một * tỷ lệ odds* ở cấp độ *token*. Vì vậy, ORPO tạo ra 1 quá trình tinh chỉnh thống nhất với kiến trúc không cần mô hình thưởng phạt và cải thiện đáng kể hiệu quả tính toán. ORPO đã cho thấy kết quả ấn tượng trên nhiều benchmark, thể hiện hiệu suất tốt hơn trên AlpacaEval so với các phương pháp truyền thống. Để biết thêm chi tiết, bạn có thể tham khảo tài liệu [tối ưu hóa ưu tiên theo tỷ lệ odds (ORPO)](./orpo.md).
 
-## Bài Tập
-
-| Tiêu đề | Mô tả | Bài tập | Đường dẫn | Colab |
-|-------|-------------|----------|------|-------|
-| Tinh chỉnh theo DPO | Học cách tinh chỉnh mô hình bằng phương pháp tối ưu hóa ưu tiên trực tiếp | 🐢 Tinh chỉnh mô hình sử dụng bộ dữ liệu HH-RLHF <br>🐕 Sử dụng tập dữ liệu của riêng bạn<br>🦁 Thử nghiệm với các tập dữ liệu và kích thước mô hình khác nhau | [Notebook](../../../notebooks/vi/2_preference_alignment/dpo_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/2_preference_alignment/dpo_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Sử dụng Colab"/></a> |
-| Tinh chỉnh theo ORPO | Học cách tinh chỉnh mô hình bằng phương pháp tối ưu hóa ưu tiên theo tỷ lệ odds | 🐢 Huấn luyện mô hình sử dụng bộ dữ liệu chỉ thị (instruction) và dữ liệu ưu tiên (preference)<br>🐕 Thử nghiệm với các trọng số loss khác nhau<br>🦁 So sánh kết quả ORPO với DPO | [Notebook](../../../notebooks/vi/2_preference_alignment/orpo_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/2_preference_alignment/orpo_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Sử dụng Colab"/></a> |
-
 
 ## Resources
 

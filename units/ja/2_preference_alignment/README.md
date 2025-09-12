@@ -20,13 +20,6 @@ ORPOのような代替アプローチは、指示調整と選好の整合を単�
 
 ORPOは、指示調整と選好の整合を単一のプロセスに統合する新しいアプローチを導入します。これは、負の対数尤度損失とトークンレベルのオッズ比項を組み合わせて標準的な言語モデリングの目的を修正します。このアプローチは、単一のトレーニングステージ、参照モデル不要のアーキテクチャ、および計算効率の向上を提供します。ORPOは、さまざまなベンチマークで印象的な結果を示しており、従来の方法と比較してAlpacaEvalで優れたパフォーマンスを示しています。詳細については、[選好確率比最適化（ORPO）のドキュメント](./orpo.md)を参照してください。
 
-## 実習ノートブック
-
-| タイトル | 説明 | 実習内容 | リンク | Colab |
-|-------|-------------|----------|------|-------|
-| DPOトレーニング | 直接選好最適化を使用してモデルを��レーニングする方法を学ぶ | 🐢 AnthropicのHH-RLHFデータセットを使用してモデルをトレーニングする<br>🐕 独自の選好データセットを使用する<br>🦁 さまざまな選好データセットとモデルサイズで実験する | [ノートブック](../../../notebooks/ja/2_preference_alignment/dpo_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ja/2_preference_alignment//colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-| ORPOトレーニング | 選好確率比最適化を使用してモデルをトレーニングする方法を学ぶ | 🐢 指示と選好データを使用してモデルをトレーニングする<br>🐕 損失の重みを変えて実験する<br>🦁 ORPOとDPOの結果を比較する | [ノートブック](../../../notebooks/ja/2_preference_alignment/orpo_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ja/2_preference_alignment/orpo_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-
 ## リソース
 
 - [TRLのドキュメント](https://huggingface.co/docs/trl/index) - DPOを含むさまざまな整合技術を実装するためのTransformers Reinforcement Learning（TRL）ライブラリのドキュメント。

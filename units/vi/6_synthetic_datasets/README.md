@@ -20,12 +20,6 @@ Tìm hiểu cách tạo tập dữ liệu hướng dẫn để tinh chỉnh hư�
 
 Tìm hiểu cách tạo tập dữ liệu sở thích để điều chỉnh sở thích. Chúng ta sẽ xây dựng dựa trên các phương pháp và kỹ thuật được giới thiệu trong phần 1, bằng cách tạo thêm các phản hồi. Tiếp theo, chúng ta sẽ học cách cải thiện các phản hồi đó bằng lời nhắc `EvolQuality`. Cuối cùng, chúng ta sẽ khám phá cách đánh giá các phản hồi bằng lời nhắc `UltraFeedback`, lời nhắc này sẽ tạo ra điểm số và phê bình, cho phép chúng ta tạo các cặp sở thích. [Bắt đầu học](./preference_datasets.md).
 
-### Notebook bài tập
-
-| Tiêu đề | Mô tả | Bài tập | Liên kết | Colab |
-|-------|-------------|----------|------|-------|
-| Tập dữ liệu hướng dẫn | Tạo tập dữ liệu để tinh chỉnh hướng dẫn | 🐢 Tạo tập dữ liệu tinh chỉnh hướng dẫn <br> 🐕 Tạo tập dữ liệu tinh chỉnh hướng dẫn với dữ liệu hạt giống <br> 🦁 Tạo tập dữ liệu tinh chỉnh hướng dẫn với dữ liệu hạt giống và với sự tiến hóa hướng dẫn | [Liên kết](../../../notebooks/vi/6_synthetic_datasets/instruction_sft_dataset.ipynb) | [Colab](https://githubtocolab.com/huggingface/smol-course/tree/main/notebooks/vi/6_synthetic_datasets/notebooks/vi/6_synthetic_datasets/preference_alignment_dataset.ipynb) | [Colab](https://githubtocolab.com/huggingface/smol-course/tree/main/notebooks/vi/6_synthetic_datasets/preference_alignment_dataset.ipynb) |
-
 ## Tài liệu tham khảo
 
 - [Tài liệu Distilabel](https://distilabel.argilla.io/latest/)

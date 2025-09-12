@@ -20,12 +20,6 @@ La Optimización Directa de Preferencias (DPO) simplifica la alineación de pref
 
 ORPO introduce un enfoque combinado para la afinación por instrucciones y la alineación de preferencias en un solo proceso. Modifica el objetivo estándar del modelado de lenguaje combinando la pérdida de verosimilitud logarítmica negativa con un término de ratio de probabilidades a nivel de token. El enfoque presenta un proceso de entrenamiento de una sola etapa, una arquitectura libre de modelo de referencia y una mayor eficiencia computacional. ORPO ha mostrado resultados impresionantes en varios puntos de referencia, demostrando un mejor rendimiento en AlpacaEval en comparación con los métodos tradicionales. Para más detalles, puedes consultar la [documentación de Optimización de Preferencias por Ratio de Probabilidades (ORPO)](./orpo.md).
 
-## Notebooks de Ejercicios
-
-| Titulo | Descripción | Ejercicio | Enlace | Colab |
-|-------|-------------|----------|------|-------|
-| Entrenamiento DPO | Aprende a entrenar modelos utilizando la Optimización Directa de Preferencias | 🐢 Entrenar un modelo utilizando el conjunto de datos HH-RLHF de Anthropic<br>🐕 Utiliza tu propio conjunto de datos de preferencias<br>🦁 Experimenta con diferentes conjuntos de datos de preferencias y tamaños de modelo | [Notebook](../../../notebooks/es/2_preference_alignment/dpo_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/es/2_preference_alignment//colab.research.google.com/assets/colab-badge.svg" alt="Abrir en Colab"/></a> |
-| Entrenamiento ORPO | Aprende a entrenar modelos utilizando la Optimización de Preferencias por Ratio de Probabilidades | 🐢 Entrenar un modelo utilizando datos de instrucciones y preferencias<br>🐕 Experimenta con diferentes ponderaciones de la pérdida<br>🦁 Compara los resultados de ORPO con DPO | [Notebook](../../../notebooks/es/2_preference_alignment/orpo_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/es/2_preference_alignment/orpo_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Abrir en Colab"/></a> |
 
 ## Recursos
 

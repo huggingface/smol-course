@@ -12,13 +12,6 @@ Las plantillas de chat estructuran las interacciones entre los usuarios y los mo
 
 El Fine-tuning supervisado (SFT) es un proceso crítico para adaptar modelos de lenguaje preentrenados a tareas específicas. Implica entrenar el modelo en un conjunto de datos específico para la tarea con ejemplos etiquetados. Para una guía detallada sobre el SFT, incluyendo pasos clave y mejores prácticas, consulta la página de [Fine-tuning Supervisado](./supervised_fine_tuning.md).
 
-## Cuadernos de Ejercicio
-
-| Título | Descripción | Ejercicio | Enlace | Colab |
-|--------|-------------|-----------|--------|-------|
-| Plantillas de Chat | Aprende a usar plantillas de chat con SmolLM2 y a procesar conjuntos de datos en formato chatml | 🐢 Convierte el conjunto de datos `HuggingFaceTB/smoltalk` al formato chatml <br> 🐕 Convierte el conjunto de datos `openai/gsm8k` al formato chatml | [Cuaderno](../../../notebooks/es/1_instruction_tuning/chat_templates_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/es/1_instruction_tuning//colab.research.google.com/assets/colab-badge.svg" alt="Abrir en Colab"/></a> |
-| Fine-tuning Supervisado | Aprende a afinar SmolLM2 utilizando el SFTTrainer | 🐢 Usa el conjunto de datos `HuggingFaceTB/smoltalk` <br> 🐕 Prueba el conjunto de datos `bigcode/the-stack-smol` <br> 🦁 Selecciona un conjunto de datos para un caso de uso real | [Cuaderno](../../../notebooks/es/1_instruction_tuning/sft_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/es/1_instruction_tuning/sft_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Abrir en Colab"/></a> |
-
 ## Referencias
 
 - [Documentación de Transformers sobre plantillas de chat](https://huggingface.co/docs/transformers/main/en/chat_templating)

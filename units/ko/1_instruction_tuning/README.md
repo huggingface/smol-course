@@ -12,11 +12,6 @@
 
 지도 학습 기반 미세 조정(SFT)은 사전 학습된 언어 모델이 특정 작업에 적합하도록 조정하는 데 핵심적인 과정입니다. 이 과정에서는 레이블이 포함된 태스크별 데이터셋을 사용해 모델을 학습시킵니다. SFT의 주요 단계와 모범 사례를 포함한 자세한 가이드는 [지도 학습 기반 미세 조정](./supervised_fine_tuning.md) 섹션을 참고하세요.
 
-## 실습 노트북
-| 파일명 | 설명 | 실습 내용 | 링크 | Colab |
-|-------|-------------|----------|------|-------|
-| Chat Templates | SmolLM2를 활용한 대화 템플릿 사용법과 데이터셋을 ChatML 형식으로 변환하는 과정 학습 | 🐢 `HuggingFaceTB/smoltalk` 데이터셋을 chatml 형식으로 변환해보기 <br> 🐕 `openai/gsm8k` 데이터셋을 chatml 형식으로 변환해보기 | [Notebook](../../../notebooks/ko/1_instruction_tuning/chat_templates_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ko/1_instruction_tuning//colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-| Supervised Fine-Tuning | SFTTrainer를 이용해 SmolLM2를 파인튜닝하는 방법 학습 | 🐢 `HuggingFaceTB/smoltalk` 데이터셋 활용해보기 <br>🐕 `bigcode/the-stack-smol` 데이터셋 활용해보기 <br>🦁 실제 사용 사례에 맞는 데이터셋 선택해보기 | [Notebook](../../../notebooks/ko/1_instruction_tuning/sft_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ko/1_instruction_tuning/sft_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
 ## 참고
 
 - [Transformers documentation on chat templates](https://huggingface.co/docs/transformers/main/en/chat_templating)

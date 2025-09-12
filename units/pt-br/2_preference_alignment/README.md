@@ -21,14 +21,6 @@ Otimização de preferência direta (DPO) simplifica o alinhamento de preferênc
 
 ORPO introduz uma abordagem combinada para ajuste de instrução e alinhamento de preferência em um único processo. Ele modifica o objetivo padrão de modelagem de linguagem combinando a perda de log-verossimilhança negativa com um termo de razão de chances em um nível de token. A abordagem apresenta um processo de treinamento unificado de estágio único, arquitetura sem modelo de referência e eficiência computacional aprimorada. O ORPO apresentou resultados impressionantes em vários benchmarks, demonstrando melhor desempenho no AlpacaEval em comparação com os métodos tradicionais. Para obter mais detalhes, consulte a [Documentação sobre Otimização de Preferências de Razão de Chances (ORPO)](./orpo.md)
 
-## Caderno de Exercícios
-
-| Título | Descrição | Exercício | Link | Colab |
-|-------|-------------|----------|------|-------|
-| Treinamento em DPO | Aprenda a treinar modelos usando a Otimização Direta de Preferência | 🐢 Treine um modelo usando o conjunto de dados Anthropic HH-RLHF<br>🐕 Use seu próprio conjunto de dados de preferências<br>🦁 Experimente diferentes conjuntos de dados de preferências e tamanhos de modelos | [Exercício](../../../notebooks/pt-br/2_preference_alignment/dpo_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/pt-br/2_preference_alignment//colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-| Treinamento em ORPO | Aprenda a treinar modelos usando a otimização de preferências de razão de chances | 🐢 Treine um modelo usando instruções e dados de preferências<br>🐕 Experimente com diferentes pesos de perda<br>🦁 Comparar os resultados de ORPO com DPO | [Exercício](../../../notebooks/pt-br/2_preference_alignment/orpo_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/pt-br/2_preference_alignment/orpo_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-
-
 ## Referências
 
 - [Documentação do TRL](https://huggingface.co/docs/trl/index) - Documentação do módulo Transformers Reinforcement Learning (TRL), que implementa várias técnicas de alinhamento, inclusive a DPO.

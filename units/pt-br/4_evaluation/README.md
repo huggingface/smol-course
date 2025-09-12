@@ -22,13 +22,6 @@ Descubra como criar pipelines de avaliação adaptados ao seu caso de uso espec�
 
 Siga um exemplo completo de construção de um pipeline de avaliação de domínio específico. Você aprenderá a gerar conjuntos de dados de avaliação, usar o Argilla para anotação de dados, criar conjuntos de dados padronizados e avaliar modelos usando o LightEval.
 
-### Cadernos de Exercício
-
-| Título | Descrição | Exercício | Link | Colab |
-|-------|-------------|----------|------|-------|
-| Avalie e Analise Seu LLM | Aprenda a usar o LightEval para avaliar e comparar modelos em domínios específicos | 🐢 Use tarefas do domínio da medicina para avaliar um modelo <br> 🐕 Crie uma nova avaliação de domínio com diferentes tarefas do MMLU <br> 🦁 Crie uma tarefa de avaliação personalizada para o seu domínio | [Notebook](../../../notebooks/pt-br/4_evaluation/lighteval_evaluate_and_analyse_your_LLM.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/pt-br/4_evaluation/lighteval_evaluate_and_analyse_your_LLM.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-
-
 ## Referências
 
 - [Guia de Avaliação](https://github.com/huggingface/evaluation-guidebook) - Guia abrangente de avaliação de LLMs

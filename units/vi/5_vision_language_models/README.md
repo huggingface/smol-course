@@ -21,13 +21,6 @@ Mặc dù các công cụ và kỹ thuật cốt lõi vẫn tương tự như c�
 
 Để được hướng dẫn chi tiết về tinh chỉnh VLMs, hãy truy cập trang [Tinh chỉnh VLM](./vlm_finetuning.md).
 
-## Bài tập thực hành
-
-| Tiêu đề | Mô tả | Bài tập | Link | Colab |
-|-------|-------------|----------|------|-------|
-| Sử dụng VLM | Tìm hiểu cách tải và sử dụng VLM đã được huấn luyện trước cho các tác vụ khác nhau | 🐢 Xử lý một hình ảnh<br>🐕 Xử lý nhiều hình ảnh với xử lý hàng loạt <br>🦁 Xử lý toàn bộ video| [Notebook](../../../notebooks/vi/5_vision_language_models/vlm_usage_sample.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/5_vision_language_models//colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-| Tinh chỉnh VLM | Tìm hiểu cách tinh chỉnh VLM đã được huấn luyện trước cho các tập dữ liệu theo từng nhiệm vụ | 🐢 Sử dụng tập dữ liệu cơ bản để tinh chỉnh<br>🐕 Thử tập dữ liệu mới<br>🦁 Thử nghiệm với các phương pháp tinh chỉnh thay thế | [Notebook](../../../notebooks/vi/5_vision_language_models/vlm_sft_sample.ipynb)| <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/5_vision_language_models/vlm_sft_sample.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-
 ## Tài liệu tham khảo
 
 - [Hugging Face Learn: Tinh chỉnh có giám sát VLMs](https://huggingface.co/learn/cookbook/fine_tuning_vlm_trl)

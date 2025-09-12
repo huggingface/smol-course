@@ -19,12 +19,6 @@ Descubre cómo crear flujos de evaluación adaptados a tus casos de uso específ
 ### 3️⃣ [Proyecto de Evaluación en un Dominio](./project/README.md)
 Sigue un ejemplo completo de cómo construir un flujo de evaluación específico para un dominio. Aprenderás a generar conjuntos de datos de evaluación, usar Argilla para la anotación de datos, crear conjuntos de datos estandarizados y evaluar modelos utilizando LightEval.
 
-### Cuadernos de Ejercicios
-
-| Título | Descripción | Ejercicio | Enlace | Colab |
-|--------|-------------|----------|-------|-------|
-| Evalúa y analiza tu LLM | Aprende a usar LightEval para evaluar y comparar modelos en dominios específicos | 🐢 Usa tareas del dominio médico para evaluar un modelo <br> 🐕 Crea una evaluación de dominio con diferentes tareas MMLU <br> 🦁 Diseña una tarea de evaluación personalizada para tu dominio | [Cuaderno](../../../notebooks/es/4_evaluation/lighteval_evaluate_and_analyse_your_LLM.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/es/4_evaluation/lighteval_evaluate_and_analyse_your_LLM.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-
 ## Recursos
 
 - [Guía de Evaluación](https://github.com/huggingface/evaluation-guidebook) - Guía completa para la evaluación de modelos de lenguaje

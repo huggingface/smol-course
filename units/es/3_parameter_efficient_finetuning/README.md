@@ -21,13 +21,6 @@ LoRA se ha convertido en el método PEFT más adoptado, ofreciendo una solución
 
 El *prompt tuning* ofrece un enfoque **aún más ligero** al **añadir tokens entrenables a la entrada** en lugar de modificar los pesos del modelo. Aunque es menos popular que LoRA, puede ser útil para adaptar rápidamente un modelo a nuevas tareas o dominios. Exploraremos el *prompt tuning* en la sección [Prompt Tuning](./prompt_tuning.md).
 
-## Notebooks de Ejercicios
-
-| Título | Descripción | Ejercicio | Enlace | Colab |
-|-------|-------------|-----------|--------|-------|
-| *Fine-tuning* con LoRA | Aprende a realizar *fine-tuning* con adaptadores LoRA | 🐢 Entrena un modelo con LoRA<br>🐕 Experimenta con diferentes valores de rango<br>🦁 Compara el rendimiento con el *fine-tuning* completo | [Notebook](../../../notebooks/es/3_parameter_efficient_finetuning/finetune_sft_peft.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/es/3_parameter_efficient_finetuning//colab.research.google.com/assets/colab-badge.svg" alt="Abrir en Colab"/></a> |
-| Carga Adaptadores LoRA | Aprende a cargar y usar adaptadores LoRA entrenados | 🐢 Carga adaptadores preentrenados<br>🐕 Combina adaptadores con el modelo base<br>🦁 Alterna entre múltiples adaptadores | [Notebook](../../../notebooks/es/3_parameter_efficient_finetuning/load_lora_adapter_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/es/3_parameter_efficient_finetuning//colab.research.google.com/assets/colab-badge.svg" alt="Abrir en Colab"/></a> |
-
 <!-- | Prompt Tuning | Aprende a implementar *prompt tuning* | 🐢 Entrenar *soft prompts*<br>🐕 Comparar diferentes estrategias de inicialización<br>🦁 Evaluar en múltiples tareas | [Notebook](../../../notebooks/es/3_parameter_efficient_finetuning/prompt_tuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/es/3_parameter_efficient_finetuning/prompt_tuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Abrir en Colab"/></a> | -->
 
 ## Recursos

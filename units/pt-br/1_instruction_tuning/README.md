@@ -12,13 +12,6 @@ Modelos de bate-papo estruturam interações entre usuários e modelos de IA, ga
 
 Ajuste fino supervisionado (em inglês, SFT - Supervised Fine-Tuning) é um processo crítico para adaptar modelos de linguagem pré-treinados a tarefas específicas. O ajuste envolve treinar o modelo em um conjunto de dados de uma tarefa específica com exemplos rotulados. Para um guia detalhado sobre SFT, incluindo etapas importantes e práticas recomendadas, veja a página [Supervised Fine-Tuning (Ajuste Fino Supervisionado)](./supervised_fine_tuning.md).
 
-## Cadernos de Exercícios
-
-| Título | Descrição | Exercício | Link | Colab |
-|-------|-------------|----------|------|-------|
-| Modelos de Bate-Papo | Aprenda a usar modelos de bate-papo com SmolLM2 and a processar conjunto de dados para o formato chatml | 🐢 Converta o conjunto de dados `HuggingFaceTB/smoltalk` para o formato chatml<br> 🐕 Converta o conjunto de dados `openai/gsm8k` para o formato chatml | [Exercício](../../../notebooks/pt-br/1_instruction_tuning/chat_templates_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/pt-br/1_instruction_tuning//colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-| Ajuste Fino Supervisionado | Aprenda como fazer o ajuste fino no modelo SmolLM2 usando o SFTTrainer | 🐢 Use o conjunto de dados `HuggingFaceTB/smoltalk`<br>🐕 Experimente o conjunto de dados `bigcode/the-stack-smol`<br>🦁 Selecione um conjunto de dados para um caso de uso do mundo real | [Exercício](../../../notebooks/pt-br/1_instruction_tuning/sft_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/pt-br/1_instruction_tuning/sft_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-
 ## Referências
 
 - [Documentação dos transformadores em modelos de bate-papo](https://huggingface.co/docs/transformers/main/en/chat_templating)

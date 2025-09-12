@@ -12,12 +12,6 @@
 
 教師あり微調整（SFT）は、事前トレーニングされた言語モデルを特定のタスクに適応させるための重要なプロセスです。これは、ラベル付きの例を含む特定のタスクのデータセットでモデルをトレーニングすることを含みます。SFTの詳細なガイド、重要なステップ、およびベストプラクティスについては、[教師あり微調整](./supervised_fine_tuning.md)ページを参照してください。
 
-## 演習ノートブック
-
-| タイトル | 説明 | 演習 | リンク | Colab |
-|--------|-------------|-----------|--------|-------|
-| チャットテンプレート | SmolLM2を使用してチャットテンプレートを使用し、チャットml形式のデータセットを処理する方法を学びます | 🐢 `HuggingFaceTB/smoltalk`データセットをchatml形式に変換 <br> 🐕 `openai/gsm8k`データセットをchatml形式に変換 | [ノートブック](../../../notebooks/ja/1_instruction_tuning/chat_templates_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ja/1_instruction_tuning//colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-| 教師あり微調整 | SFTTrainerを使用してSmolLM2を微調整する方法を学びます | 🐢 `HuggingFaceTB/smoltalk`データセットを使用 <br> 🐕 `bigcode/the-stack-smol`データセットを試す <br> 🦁 実際の使用ケースに関連するデータセットを選択 | [ノートブック](../../../notebooks/ja/1_instruction_tuning/sft_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ja/1_instruction_tuning/sft_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
 
 ## 参考文献
 

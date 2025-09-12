@@ -21,13 +21,6 @@ LoRA đã nổi lên như phương pháp PEFT được áp dụng rộng rãi nh
 
 Prompt tuning cung cấp cách tiếp cận **thậm chí nhẹ hơn** bằng cách **thêm các token có thể huấn luyện vào đầu vào** thay vì sửa đổi trọng số mô hình. Prompt tuning ít phổ biến hơn LoRA, nhưng có thể là kỹ thuật hữu ích để nhanh chóng điều chỉnh mô hình cho các tác vụ hoặc lĩnh vực mới. Chúng ta sẽ khám phá prompt tuning trong phần [Prompt Tuning](./prompt_tuning.md).
 
-## Notebooks bài tập
-
-| Tiêu đề | Mô tả | Bài tập | Link | Colab |
-|---------|--------|---------|------|-------|
-| Tinh chỉnh LoRA | Học cách tinh chỉnh mô hình sử dụng LoRA adapters | 🐢 Huấn luyện mô hình sử dụng LoRA<br>🐕 Thử nghiệm với các giá trị rank khác nhau<br>🦁 So sánh hiệu suất với tinh chỉnh đầy đủ | [Notebook](../../../notebooks/vi/3_parameter_efficient_finetuning/finetune_sft_peft.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/3_parameter_efficient_finetuning//colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-| Tải LoRA Adapters | Học cách tải và sử dụng LoRA adapters đã huấn luyện | 🐢 Tải adapters đã huấn luyện trước<br>🐕 Gộp adapters với mô hình cơ sở<br>🦁 Chuyển đổi giữa nhiều adapters | [Notebook](../../../notebooks/vi/3_parameter_efficient_finetuning/load_lora_adapter.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/3_parameter_efficient_finetuning/load_lora_adapter.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-
 ## Tài liệu tham khảo
 - [Tài liệu PEFT](https://huggingface.co/docs/peft)
 - [Bài báo nghiên cứu LoRA](https://arxiv.org/abs/2106.09685)
