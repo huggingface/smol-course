@@ -3,8 +3,8 @@
 <CourseFloatingBanner chapter={10}
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
-    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ko/3_parameter_efficient_finetuning/finetune_sft_peft.ipynb"}\n    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ko/3_parameter_efficient_finetuning/load_lora_adapter.ipynb"}] />
-    
+    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ko/3_parameter_efficient_finetuning/finetune_sft_peft.ipynb"}] />
+
 LoRA는 널리 쓰이는 PEFT 방법으로 자리 잡았습니다. 어텐션 가중치에 작은 랭크 분해 행렬을 추가하는 방식으로 동작작하며 일반적으로 학습 가능한 파라미터를 약 90% 줄여줍니다.
 
 ## LoRA 이해하기

@@ -4,7 +4,7 @@
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
     {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ko/3_parameter_efficient_finetuning/finetune_sft_peft.ipynb"}] />
-    
+
 프롬프트 튜닝은 모델 가중치 대신 입력 표현을 변경하는 파라미터 효율적인 접근법입니다. 모델의 모든 파라미터를 업데이트하는 전통적인 미세 조정과 다르게, 프롬프트 튜닝은 기본 모델의 파라미터가 고정된 상태를 유지하면서 소수의 학습 가능한 토큰을 추가하고 최적화합니다. 
 
 ## 프롬프트 튜닝 이해하기

@@ -3,8 +3,8 @@
 <CourseFloatingBanner chapter={10}
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
-    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/es/3_parameter_efficient_finetuning/finetune_sft_peft.ipynb"}\n    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/es/3_parameter_efficient_finetuning/load_lora_adapter_example.ipynb"}] />
-    
+    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/es/3_parameter_efficient_finetuning/finetune_sft_peft.ipynb"}] />
+
 LoRA (Low-Rank Adaptation) se ha convertido en el método PEFT más utilizado. Su funcionamiento se basa en añadir matrices de descomposición de rango reducido a los pesos de atención, lo que suele reducir los parámetros entrenables en un 90%.
 
 ## Entendiendo LoRA
