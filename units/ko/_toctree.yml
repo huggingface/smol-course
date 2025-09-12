@@ -1,0 +1,17 @@
+- title: "1. 인스트럭션 튜닝"
+  sections:
+  - local: 1_instruction_tuning/README
+    title: 인스트럭션 튜닝 소개
+  - local: 1_instruction_tuning/chat_templates
+    title: 채팅 템플릿
+  - local: 1_instruction_tuning/supervised_fine_tuning
+    title: 지도 학습 파인튜닝
+
+- title: "3. 파라미터 효율적 파인튜닝"
+  sections:
+  - local: 3_parameter_efficient_finetuning/README
+    title: 파라미터 효율적 파인튜닝 소개
+  - local: 3_parameter_efficient_finetuning/lora_adapters
+    title: LoRA 어댑터
+  - local: 3_parameter_efficient_finetuning/prompt_tuning
+    title: 프롬프트 튜닝

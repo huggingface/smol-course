@@ -1,0 +1,53 @@
+- title: "1. Điều chỉnh theo Hướng dẫn"
+  sections:
+  - local: 1_instruction_tuning/README
+    title: Giới thiệu Điều chỉnh theo Hướng dẫn
+  - local: 1_instruction_tuning/chat_templates
+    title: Mẫu Chat
+  - local: 1_instruction_tuning/supervised_fine_tuning
+    title: Fine-tuning có giám sát
+
+- title: "2. Căn chỉnh Sở thích"
+  sections:
+  - local: 2_preference_alignment/README
+    title: Giới thiệu Căn chỉnh Sở thích
+  - local: 2_preference_alignment/dpo
+    title: Tối ưu hóa Sở thích Trực tiếp (DPO)
+  - local: 2_preference_alignment/orpo
+    title: ORPO (Odds Ratio Preference Optimization)
+
+- title: "3. Fine-tuning Hiệu quả Tham số"
+  sections:
+  - local: 3_parameter_efficient_finetuning/README
+    title: Giới thiệu Fine-tuning Hiệu quả Tham số
+  - local: 3_parameter_efficient_finetuning/lora_adapters
+    title: Bộ điều chỉnh LoRA
+  - local: 3_parameter_efficient_finetuning/prompt_tuning
+    title: Điều chỉnh Prompt
+
+- title: "4. Đánh giá"
+  sections:
+  - local: 4_evaluation/README
+    title: Giới thiệu Đánh giá
+  - local: 4_evaluation/automatic_benchmarks
+    title: Điểm chuẩn Tự động
+  - local: 4_evaluation/custom_evaluation
+    title: Đánh giá Tùy chỉnh
+
+- title: "5. Mô hình Ngôn ngữ Thị giác"
+  sections:
+  - local: 5_vision_language_models/README
+    title: Giới thiệu Mô hình Ngôn ngữ Thị giác
+  - local: 5_vision_language_models/vlm_usage
+    title: Sử dụng VLM
+  - local: 5_vision_language_models/vlm_finetuning
+    title: Fine-tuning VLM
+
+- title: "6. Bộ dữ liệu Tổng hợp"
+  sections:
+  - local: 6_synthetic_datasets/README
+    title: Giới thiệu Bộ dữ liệu Tổng hợp
+  - local: 6_synthetic_datasets/instruction_datasets
+    title: Bộ dữ liệu Hướng dẫn
+  - local: 6_synthetic_datasets/preference_datasets
+    title: Bộ dữ liệu Sở thích

@@ -1,0 +1,53 @@
+- title: "1. インストラクション・チューニング"
+  sections:
+  - local: 1_instruction_tuning/README
+    title: インストラクション・チューニング入門
+  - local: 1_instruction_tuning/chat_templates
+    title: チャット・テンプレート
+  - local: 1_instruction_tuning/supervised_fine_tuning
+    title: 教師ありファイン・チューニング
+
+- title: "2. プリファレンス・アライメント"
+  sections:
+  - local: 2_preference_alignment/README
+    title: プリファレンス・アライメント入門
+  - local: 2_preference_alignment/dpo
+    title: ダイレクト・プリファレンス・オプティマイゼーション (DPO)
+  - local: 2_preference_alignment/orpo
+    title: ORPO (Odds Ratio Preference Optimization)
+
+- title: "3. パラメータ効率的ファイン・チューニング"
+  sections:
+  - local: 3_parameter_efficient_finetuning/README
+    title: パラメータ効率的ファイン・チューニング入門
+  - local: 3_parameter_efficient_finetuning/lora_adapters
+    title: LoRA アダプター
+  - local: 3_parameter_efficient_finetuning/prompt_tuning
+    title: プロンプト・チューニング
+
+- title: "4. 評価"
+  sections:
+  - local: 4_evaluation/README
+    title: 評価入門
+  - local: 4_evaluation/automatic_benchmarks
+    title: 自動ベンチマーク
+  - local: 4_evaluation/custom_evaluation
+    title: カスタム評価
+
+- title: "5. ビジョン言語モデル"
+  sections:
+  - local: 5_vision_language_models/README
+    title: ビジョン言語モデル入門
+  - local: 5_vision_language_models/vlm_usage
+    title: VLM の使用
+  - local: 5_vision_language_models/vlm_finetuning
+    title: VLM のファイン・チューニング
+
+- title: "6. 合成データセット"
+  sections:
+  - local: 6_synthetic_datasets/README
+    title: 合成データセット入門
+  - local: 6_synthetic_datasets/instruction_datasets
+    title: インストラクション・データセット
+  - local: 6_synthetic_datasets/preference_datasets
+    title: プリファレンス・データセット
