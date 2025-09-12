@@ -4,6 +4,7 @@
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
     {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/pt-br/4_evaluation/lighteval_evaluate_and_analyse_your_LLM.ipynb"}] />
+
 Os benchmarks automáticos servem como ferramentas padronizadas para avaliar modelos de linguagem em diferentes tarefas e capacidades. Embora forneçam um ponto de partida útil para entender o desempenho do modelo, é importante reconhecer que eles representam apenas uma parte de uma estratégia abrangente de avaliação.
 
 ## Entendendo os Benchmarks Automáticos

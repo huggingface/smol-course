@@ -4,6 +4,7 @@
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
     {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ja/2_preference_alignment/orpo_finetuning_example.ipynb"}] />
+    
 選好確率比最適化（ORPO）は、微調整と選好整合を単一の統合プロセスで組み合わせる新しいアプローチです。この統合アプローチは、従来のRLHFやDPOなどの方法と比較して、効率とパフォーマンスの面で利点を提供します。
 
 ## ORPOの理解

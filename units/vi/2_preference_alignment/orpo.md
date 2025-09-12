@@ -4,6 +4,7 @@
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
     {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/2_preference_alignment/orpo_finetuning_example.ipynb"}] />
+
 ORPO là một kỹ thuật tinh chỉnh mới kết hợp cả quá trình *tinh chỉnh theo chỉ thị* và *tinh chỉnh ưu tiên* thành một quy trình thống nhất. Cách tiếp cận kết hợp này mang lại những lợi thế về hiệu quả và hiệu suất so với các phương pháp truyền thống như RLHF hoặc DPO.
 
 ## Tìm Hiểu Về ORPO

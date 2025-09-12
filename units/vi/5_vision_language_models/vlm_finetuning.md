@@ -4,6 +4,7 @@
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
     {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/5_vision_language_models/vlm_sft_sample.ipynb"}] />
+    
 ## Tinh chỉnh Hiệu quả
 
 ### Lượng tử hóa (Quantization)

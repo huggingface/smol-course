@@ -4,6 +4,7 @@
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
     {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ja/3_parameter_efficient_finetuning/finetune_sft_peft.ipynb"}] />
+    
 プロンプトチューニングは、モデルの重みではなく入力表現を変更するパラメータ効率の良いアプローチです。従来の微調整がすべてのモデルパラメータを更新するのに対し、プロンプトチューニングはベースモデルを固定したまま、少数の学習可能なトークンを追加して最適化します。
 
 ## プロンプトチューニングの理解

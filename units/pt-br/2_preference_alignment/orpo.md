@@ -4,6 +4,7 @@
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
     {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/pt-br/2_preference_alignment/orpo_finetuning_example.ipynb"}] />
+
 A ORPO (Odds Ratio Preference Optimization) é uma nova técnica de ajuste fino que combina o ajuste fino e o alinhamento de preferências em um único processo unificado. Essa abordagem combinada oferece vantagens em termos de eficiência e desempenho em comparação com métodos tradicionais como RLHF ou DPO.
 
 ## Entendendo sobre o ORPO

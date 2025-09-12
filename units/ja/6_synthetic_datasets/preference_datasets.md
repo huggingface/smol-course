@@ -4,6 +4,7 @@
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
     {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ja/6_synthetic_datasets/preference_dpo_dataset.ipynb"}] />
+    
 [嗜好調整の章](../2_preference_alignment/README.md)では、直接嗜好最適化について学びました。このセクションでは、DPOのような方法のための嗜好データセットを生成する方法を探ります。[インストラクションデータセットの生成](./instruction_datasets.md)で紹介した方法を基に構築します。さらに、基本的なプロンプトを使用してデータセットに追加の完了を追加する方法や、EvolQualityを使用して応答の品質を向上させる方法を示します。最後に、UltraFeedbackを使用してスコアと批評を生成する方法を示します。
 
 ## 複数の完了を作成する

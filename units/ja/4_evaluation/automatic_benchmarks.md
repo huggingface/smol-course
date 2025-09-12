@@ -4,6 +4,7 @@
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
     {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ja/4_evaluation/lighteval_evaluate_and_analyse_your_LLM.ipynb"}] />
+    
 自動ベンチマークは、さまざまなタスクや能力にわたって言語モデルを評価するための標準化されたツールとして機能します。これらはモデルの性能を理解するための有用な出発点を提供しますが、包括的な評価戦略の一部に過ぎないことを認識することが重要です。
 
 ## 自動ベンチマークの理解

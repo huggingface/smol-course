@@ -3,7 +3,8 @@
 <CourseFloatingBanner chapter={10}
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
-    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ja/6_synthetic_datasets/instruction_sft_dataset.ipynb"}] />
+    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ja/6_synthetic_datasets/instruction_sft_dataset.ipynb"}] 
+    
 [インストラクションチューニングの章](../1_instruction_tuning/README.md)では、教師あり微調整によるモデルの微調整について学びました。このセクションでは、SFTのためのインストラクションデータセットの生成方法を探ります。基本的なプロンプトを使用してインストラクションチューニングデータセットを作成する方法や、論文から得られたより洗練された技術を使用する方法を探ります。インストラクションチューニングデータセットは、SelfInstructやMagpieのような方法を使用して、インコンテキスト学習のためのシードデータを使用して作成できます。さらに、EvolInstructを通じたインストラクションの進化についても探ります。最後に、distilabelパイプラインを使用してインストラクションチューニングのためのデータセットを生成する方法を探ります。
 
 ## プロンプトからデータへ

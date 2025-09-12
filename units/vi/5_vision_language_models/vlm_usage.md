@@ -4,6 +4,7 @@
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
     {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/5_vision_language_models/vlm_usage_sample.ipynb"}] />
+    
 Mô hình Ngôn ngữ Thị giác (VLMs) thu hẹp khoảng cách giữa hình ảnh và văn bản, cho phép thực hiện các tác vụ nâng cao như tạo chú thích cho ảnh, trả lời câu hỏi dựa trên hình ảnh hoặc hiểu mối quan hệ giữa dữ liệu văn bản và hình ảnh. Kiến trúc của chúng được thiết kế để xử lý liền mạch cả hai phương thức.
 
 ### Kiến trúc

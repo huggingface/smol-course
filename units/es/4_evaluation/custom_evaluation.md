@@ -4,6 +4,7 @@
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
     {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/es/4_evaluation/lighteval_evaluate_and_analyse_your_LLM.ipynb"}] />
+    
 Aunque los "benchmarks" estándares proporcionan conocimiento relevante, muchas aplicaciones requieren enfoques de evaluación especializados que se adapten a dominios específicos o a casos de uso particulares. Esta guía te ayudará a crear flujos de evaluación personalizados que evalúen con precisión el rendimiento de tu modelo en tu dominio objetivo.
 
 ## Diseñando Tu Estrategia de Evaluación

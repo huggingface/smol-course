@@ -4,6 +4,7 @@
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
     {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/es/1_instruction_tuning/sft_finetuning_example.ipynb"}] />
+    
 El Fine-Tuning Supervisado (SFT) es un proceso crítico para adaptar modelos de lenguaje preentrenados a tareas o dominios específicos. Aunque los modelos preentrenados tienen capacidades generales impresionantes, a menudo necesitan ser personalizados para sobresalir en casos de uso particulares. El SFT cubre esta brecha entrenando el modelo con conjuntos de datos cuidadosamente seleccionados que contienen ejemplos validados por humanos.
 
 ## Comprendiendo el Fine-Tuning Supervisado

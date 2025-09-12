@@ -4,6 +4,7 @@
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
     {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/2_preference_alignment/dpo_finetuning_example.ipynb"}] />
+
 DPO cung cấp một cách tiếp cận đơn giản để tinh chỉnh mô hình ngôn ngữ theo ý muốn của con người. Khác với phương pháp RLHF truyền thống yêu cầu các mô hình thưởng phạt riêng biệt và học tăng cường phức tạp, DPO tối ưu hóa trực tiếp mô hình bằng dữ liệu ưu tiên (preference dataset).
 
 ## Tìm Hiểu Về DPO

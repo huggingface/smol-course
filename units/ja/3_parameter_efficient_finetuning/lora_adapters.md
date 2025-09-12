@@ -4,6 +4,7 @@
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
     {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ja/3_parameter_efficient_finetuning/finetune_sft_peft.ipynb"}\n    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/ja/3_parameter_efficient_finetuning/load_lora_adapter.ipynb"}] />
+    
 LoRAは最も広く採用されているPEFTメソッドとなっています。これは、注意重み行列に小さなランク分解行列を追加することで機能し、通常、学習可能なパラメータを約90％削減します。
 
 ## LoRAの理解

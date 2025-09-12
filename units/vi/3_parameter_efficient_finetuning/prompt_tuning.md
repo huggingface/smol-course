@@ -4,6 +4,7 @@
   classNames="absolute z-10 right-0 top-0"
   notebooks={[
     {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/vi/3_parameter_efficient_finetuning/finetune_sft_peft.ipynb"}] />
+  
 Prompt tuning là một phương pháp tiết kiệm tham số bằng cách điều chỉnh biểu diễn đầu vào thay vì trọng số mô hình. Không giống như tinh chỉnh truyền thống cập nhật tất cả các tham số mô hình, prompt tuning thêm và tối ưu hóa một tập nhỏ các token có thể huấn luyện trong khi giữ nguyên mô hình cơ sở.
 
 ## Tìm Hiểu Về Prompt Tuning
