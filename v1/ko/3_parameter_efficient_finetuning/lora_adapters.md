@@ -47,7 +47,7 @@ PEFT 방법을 구현할 때는 LoRA의 랭크를 4~8 정도의 작은 값으로
 
 ```python
 from peft import LoraConfig
-from transformers import AutoModelForCausalLM
+from trl import SFTTrainer
 
 # PEFT configuration 설정
 lora_config = LoraConfig(
@@ -58,16 +58,12 @@ lora_config = LoraConfig(
     task_type="CAUSAL_LM"
 )
 
-# 특정 디바이스에서 모델 불러오기
-model = AutoModelForCausalLM.from_pretrained(
-    "your-model-name",
-    load_in_8bit=True,  # 선택 사항: 8비트 정밀도 사용
-    device_map="auto",
+trainer = SFTTrainer(
+    model="your-model-name",
+    train_dataset=dataset["train"]
     peft_config=lora_config
 )
 ```
-
-위 코드에서 `device_map="auto"`를 사용해 모델을 적절한 디바이스에 자동으로 할당했습니다. `device_map={"": device_index}`를 써서 모델을 특정 디바이스에 직접 할당할 수도 있습니다. 또한, 메모리 사용량을 효율적으로 유지하면서 여러 GPU에 걸쳐 학습을 확장할 수도 있습니다.
 
 ## 기본적인 병합 구현
 
