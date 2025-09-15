@@ -1,5 +1,11 @@
 # Plantillas de Chat
 
+<CourseFloatingBanner chapter={10}
+  classNames="absolute z-10 right-0 top-0"
+  notebooks={[
+    {label: "Google Colab", value: "https://colab.research.google.com/github/huggingface/smol-course/blob/main/notebooks/es/1_instruction_tuning/chat_templates_example.ipynb"}
+  ]} />
+
 Las plantillas de chat son esenciales para estructurar las interacciones entre modelos de lenguaje y usuarios. Proporcionan un formato consistente para las conversaciones, asegurando que los modelos comprendan el contexto y el rol de cada mensaje, manteniendo patrones de respuesta apropiados.
 
 ## Modelos Base vs Modelos Instructivos
