@@ -1,17 +1,22 @@
+- title: "0. 🤗 smol-course에 오신 것을 환영합니다"
+  sections:
+  - local: unit0/1
+    title: 🤗 smol-course에 오신 것을 환영합니다
+
 - title: "1. 인스트럭션 튜닝"
   sections:
-  - local: 1_instruction_tuning/README
+  - local: unit1/1
     title: 인스트럭션 튜닝 소개
-  - local: 1_instruction_tuning/chat_templates
+  - local: unit1/2
     title: 채팅 템플릿
-  - local: 1_instruction_tuning/supervised_fine_tuning
+  - local: unit1/3
     title: 지도 학습 파인튜닝
 
 - title: "3. 파라미터 효율적 파인튜닝"
   sections:
-  - local: 3_parameter_efficient_finetuning/README
+  - local: unit3/1
     title: 파라미터 효율적 파인튜닝 소개
-  - local: 3_parameter_efficient_finetuning/lora_adapters
+  - local: unit3/2
     title: LoRA 어댑터
-  - local: 3_parameter_efficient_finetuning/prompt_tuning
+  - local: unit3/3
     title: 프롬프트 튜닝
