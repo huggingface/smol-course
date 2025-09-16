@@ -1,3 +1,8 @@
+- title: "0. Bienvenido al 🤗 smol-course"
+  sections:
+  - local: unit0/1
+    title: Bienvenido al 🤗 smol-course
+
 - title: "1. Ajuste por Instrucciones"
   sections:
   - local: unit1/0
