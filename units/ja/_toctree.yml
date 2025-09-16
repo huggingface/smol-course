@@ -1,53 +1,58 @@
+- title: "0. 🤗 smol-courseへようこそ"
+  sections:
+  - local: unit0/1
+    title: 🤗 smol-courseへようこそ
+
 - title: "1. インストラクション・チューニング"
   sections:
-  - local: 1_instruction_tuning/README
+  - local: unit1/1
     title: インストラクション・チューニング入門
-  - local: 1_instruction_tuning/chat_templates
+  - local: unit1/2
     title: チャット・テンプレート
-  - local: 1_instruction_tuning/supervised_fine_tuning
+  - local: unit1/3
     title: 教師ありファイン・チューニング
 
 - title: "2. プリファレンス・アライメント"
   sections:
-  - local: 2_preference_alignment/README
+  - local: unit2/1
     title: プリファレンス・アライメント入門
-  - local: 2_preference_alignment/dpo
+  - local: unit2/2
     title: ダイレクト・プリファレンス・オプティマイゼーション (DPO)
-  - local: 2_preference_alignment/orpo
+  - local: unit2/3
     title: ORPO (Odds Ratio Preference Optimization)
 
 - title: "3. パラメータ効率的ファイン・チューニング"
   sections:
-  - local: 3_parameter_efficient_finetuning/README
+  - local: unit3/1
     title: パラメータ効率的ファイン・チューニング入門
-  - local: 3_parameter_efficient_finetuning/lora_adapters
+  - local: unit3/2
     title: LoRA アダプター
-  - local: 3_parameter_efficient_finetuning/prompt_tuning
+  - local: unit3/3
     title: プロンプト・チューニング
 
 - title: "4. 評価"
   sections:
-  - local: 4_evaluation/README
+  - local: unit4/1
     title: 評価入門
-  - local: 4_evaluation/automatic_benchmarks
+  - local: unit4/2
     title: 自動ベンチマーク
-  - local: 4_evaluation/custom_evaluation
+  - local: unit4/3
     title: カスタム評価
 
 - title: "5. ビジョン言語モデル"
   sections:
-  - local: 5_vision_language_models/README
+  - local: unit5/1
     title: ビジョン言語モデル入門
-  - local: 5_vision_language_models/vlm_usage
+  - local: unit5/2
     title: VLM の使用
-  - local: 5_vision_language_models/vlm_finetuning
+  - local: unit5/3
     title: VLM のファイン・チューニング
 
 - title: "6. 合成データセット"
   sections:
-  - local: 6_synthetic_datasets/README
+  - local: unit6/1
     title: 合成データセット入門
-  - local: 6_synthetic_datasets/instruction_datasets
+  - local: unit6/2
     title: インストラクション・データセット
-  - local: 6_synthetic_datasets/preference_datasets
+  - local: unit6/3
     title: プリファレンス・データセット
