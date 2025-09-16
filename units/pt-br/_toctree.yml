@@ -1,35 +1,40 @@
+- title: "0. Bem-vindo ao 🤗 smol-course"
+  sections:
+  - local: unit0/1
+    title: Bem-vindo ao 🤗 smol-course
+
 - title: "1. Ajuste por Instruções"
   sections:
-  - local: 1_instruction_tuning/README
+  - local: unit1/1
     title: Introdução ao Ajuste por Instruções
-  - local: 1_instruction_tuning/chat_templates
+  - local: unit1/2
     title: Templates de Chat
-  - local: 1_instruction_tuning/supervised_fine_tuning
+  - local: unit1/3
     title: Fine-tuning Supervisionado
 
 - title: "2. Alinhamento de Preferências"
   sections:
-  - local: 2_preference_alignment/README
+  - local: unit2/1
     title: Introdução ao Alinhamento de Preferências
-  - local: 2_preference_alignment/dpo
+  - local: unit2/2
     title: Otimização Direta de Preferências (DPO)
-  - local: 2_preference_alignment/orpo
+  - local: unit2/3
     title: ORPO (Odds Ratio Preference Optimization)
 
 - title: "3. Fine-tuning Eficiente em Parâmetros"
   sections:
-  - local: 3_parameter_efficient_finetuning/README
+  - local: unit3/1
     title: Introdução ao Fine-tuning Eficiente
-  - local: 3_parameter_efficient_finetuning/lora_adapters
+  - local: unit3/2
     title: Adaptadores LoRA
-  - local: 3_parameter_efficient_finetuning/prompt_tuning
+  - local: unit3/3
     title: Prompt Tuning
 
 - title: "4. Avaliação"
   sections:
-  - local: 4_evaluation/README
+  - local: unit4/1
     title: Introdução à Avaliação
-  - local: 4_evaluation/automatic_benchmarks
+  - local: unit4/2
     title: Benchmarks Automáticos
-  - local: 4_evaluation/custom_evaluation
+  - local: unit4/3
     title: Avaliação Personalizada
