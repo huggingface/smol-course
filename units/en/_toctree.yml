@@ -25,7 +25,7 @@
   - local: unit2/1
     title: Introduction to Model Evaluation
   - local: unit2/2
-    title: VLLM Inference with Hugging Face Models
+    title: vLLM Inference with Hugging Face Models
   - local: unit2/3
     title: Automatic Benchmarks
   - local: unit2/4
