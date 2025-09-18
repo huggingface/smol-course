@@ -51,4 +51,4 @@
   - local: unit4/2
     title: Using Pretrained VLMs
   - local: unit4/3
-    title: Training Vision Language Models
+    title: Fine-Tuning VLMs
