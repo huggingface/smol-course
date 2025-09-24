@@ -2,7 +2,7 @@
 
 # a smol course
 
-This is a practical course on aligning language models for your specific use case. It's a handy way to get started with aligning language models, because everything runs on most local machines. There are minimal GPU requirements and no paid services. The course is based on the [SmolLM3](https://huggingface.co/blog/smollm3) series of models, but you can transfer the skills you learn here to larger models or other small language models.
+This is a practical course on aligning language models for your specific use case. It's a handy way to get started with aligning language models, because everything runs on most local machines. There are minimal GPU requirements and no paid services. The course is built around the [SmolLM3](https://huggingface.co/blog/smollm3) and [SmolVLM2](https://huggingface.co/blog/smolvlm2) models, but the skills you'll learn can be applied to larger models or other small LLMs/VLMs as well.
 
 <div style="background: linear-gradient(to right, #e0f7fa, #e1bee7, orange); padding: 20px; border-radius: 5px; margin-bottom: 20px; color: purple;">
     <h2>smol course v2 is live!</h2>
@@ -35,10 +35,10 @@ This course provides a practical, hands-on approach to working with small langua
 | # | Topic | Description | Released |
 | - | ----- | ----------- | -------- |
 | 1 | Instruction Tuning | Supervised fine-tuning, chat templates, instruction following | ✅ |
-| 2 | Evaluation | Benchmarks and custom domain evaluation | September 2025 |
-| 3 | Preference Alignment | Aligning models to human preferences with algorithms like DPO. | October 2025 |
-| 4 | Reinforcement Learning | Optimizing models with based on reinforcement policies. | October 2025 |
-| 5 | Vision Language Models | Adapt and use multimodal models | November 2025 |
+| 2 | Evaluation | Benchmarks and custom domain evaluation | ✅ |
+| 3 | Preference Alignment | Aligning models to human preferences with algorithms like DPO. | ✅ |
+| 4 | Vision Language Models | Adapt and use multimodal models | ✅ |
+| 5 | Reinforcement Learning | Optimizing models with based on reinforcement policies. | October 2025 |
 | 6 | Synthetic Data | Generate synthetic datasets for custom domains | November 2025 |
 | 7 | Award Ceremony | Showcase projects and celebrate | December 2025 |
 
