@@ -47,7 +47,7 @@ Các phương pháp PEFT có thể được kết hợp với thư viện TRL đ
 
 ```python
 from peft import LoraConfig
-from trl import SFTTrainer
+from transformers import AutoModelForCausalLM
 
 # Tải mô hình với cấu hình PEFT
 lora_config = LoraConfig(
@@ -58,12 +58,16 @@ lora_config = LoraConfig(
     task_type="CAUSAL_LM"
 )
 
-trainer = SFTTrainer(
-    model="your-model-name",
-    train_dataset=dataset["train"]
+# Tải mô hình trên thiết bị cụ thể
+model = AutoModelForCausalLM.from_pretrained(
+    "your-model-name",
+    load_in_8bit=True,  # Tùy chọn: sử dụng độ chính xác 8-bit
+    device_map="auto",
     peft_config=lora_config
 )
 ```
+
+Ở trên, chúng ta đã sử dụng `device_map="auto"` để tự động gán mô hình cho thiết bị phù hợp. Bạn cũng có thể gán thủ công mô hình cho một thiết bị cụ thể bằng cách sử dụng `device_map={"": device_index}`. Bạn cũng có thể mở rộng việc huấn luyện trên nhiều GPU trong khi vẫn giữ việc sử dụng bộ nhớ hiệu quả.
 
 ## Triển khai gộp cơ bản
 

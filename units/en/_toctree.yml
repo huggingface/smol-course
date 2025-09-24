@@ -20,4 +20,27 @@
   - local: unit1/6
     title: Submit your final project!
 
+- title: "2. Model Evaluation"
+  sections:
+  - local: unit2/1
+    title: Introduction to Model Evaluation
+  - local: unit2/2
+    title: vLLM Inference with Hugging Face Models
+  - local: unit2/3
+    title: Automatic Benchmarks
+  - local: unit2/4
+    title: Custom Domain Evaluation
+  - local: unit2/5
+    title: Submit your evaluation results!
+
+- title: "3. Preference Alignment"
+  sections:
+  - local: unit3/1
+    title: Introduction to Preference Alignment
+  - local: unit3/2
+    title: Direct Preference Optimization (DPO)
+  - local: unit3/3
+    title: Advanced DPO Techniques
+  - local: unit3/4
+    title: DPO Hands-on Implementation
 

@@ -47,7 +47,7 @@ PEFTメソッドは、TRL（Transformers Reinforcement Learning）と組み合�
 
 ```python
 from peft import LoraConfig
-from trl import SFTTrainer
+from transformers import AutoModelForCausalLM
 
 # PEFT設定でモデルを読み込む
 lora_config = LoraConfig(
@@ -58,12 +58,16 @@ lora_config = LoraConfig(
     task_type="CAUSAL_LM"
 )
 
-trainer = SFTTrainer(
-    model="your-model-name",
-    train_dataset=dataset["train"]
+# 特定のデバイスにモデルを読み込む
+model = AutoModelForCausalLM.from_pretrained(
+    "your-model-name",
+    load_in_8bit=True,  # オプション: 8ビット精度を使用
+    device_map="auto",
     peft_config=lora_config
 )
 ```
+
+上記では、`device_map="auto"`を使用してモデルを自動的に適切なデバイスに割り当てました。また、`device_map={"": device_index}`を使用してモデルを特定のデバイスに手動で割り当てることもできます。メモリ使用量を効率的に保ちながら、複数のGPUにトレーニングをスケールすることもできます。
 
 ## 基本的な統合実装
 
