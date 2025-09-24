@@ -1,0 +1,58 @@
+- title: "0. Chào mừng đến với 🤗 smol-course"
+  sections:
+  - local: unit0/1
+    title: Chào mừng đến với 🤗 smol-course
+
+- title: "1. Điều chỉnh theo Hướng dẫn"
+  sections:
+  - local: unit1/1
+    title: Giới thiệu Điều chỉnh theo Hướng dẫn
+  - local: unit1/2
+    title: Mẫu Chat
+  - local: unit1/3
+    title: Fine-tuning có giám sát
+
+- title: "2. Căn chỉnh Sở thích"
+  sections:
+  - local: unit2/1
+    title: Giới thiệu Căn chỉnh Sở thích
+  - local: unit2/2
+    title: Tối ưu hóa Sở thích Trực tiếp (DPO)
+  - local: unit2/3
+    title: ORPO (Odds Ratio Preference Optimization)
+
+- title: "3. Fine-tuning Hiệu quả Tham số"
+  sections:
+  - local: unit3/1
+    title: Giới thiệu Fine-tuning Hiệu quả Tham số
+  - local: unit3/2
+    title: Bộ điều chỉnh LoRA
+  - local: unit3/3
+    title: Điều chỉnh Prompt
+
+- title: "4. Đánh giá"
+  sections:
+  - local: unit4/1
+    title: Giới thiệu Đánh giá
+  - local: unit4/2
+    title: Điểm chuẩn Tự động
+  - local: unit4/3
+    title: Đánh giá Tùy chỉnh
+
+- title: "5. Mô hình Ngôn ngữ Thị giác"
+  sections:
+  - local: unit5/1
+    title: Giới thiệu Mô hình Ngôn ngữ Thị giác
+  - local: unit5/2
+    title: Sử dụng VLM
+  - local: unit5/3
+    title: Fine-tuning VLM
+
+- title: "6. Bộ dữ liệu Tổng hợp"
+  sections:
+  - local: unit6/1
+    title: Giới thiệu Bộ dữ liệu Tổng hợp
+  - local: unit6/2
+    title: Bộ dữ liệu Hướng dẫn
+  - local: unit6/3
+    title: Bộ dữ liệu Sở thích

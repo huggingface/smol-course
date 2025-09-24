@@ -17,4 +17,4 @@ jobs:
       package_name: smol-course
       path_to_docs: smol-course/units/
       additional_args: --not_python_module
-      languages: en 
+      languages: en es ja ko pt-br vi 
