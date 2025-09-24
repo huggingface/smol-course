@@ -52,3 +52,5 @@
     title: Using Pretrained VLMs
   - local: unit4/3
     title: Fine-Tuning VLMs
+  - local: unit4/4
+    title: Hands-On Fine-Tuning VLM
