@@ -113,3 +113,4 @@ messages = [
 - [Guía de Plantillas de Chat de Hugging Face](https://huggingface.co/docs/transformers/main/en/chat_templating)
 - [Documentación de Transformers](https://huggingface.co/docs/transformers)
 - [Repositorio de Ejemplos de Plantillas de Chat](https://github.com/chujiezheng/chat_templates)
+```

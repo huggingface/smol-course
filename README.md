@@ -35,10 +35,10 @@ This course provides a practical, hands-on approach to working with small langua
 | # | Topic | Description | Released |
 | - | ----- | ----------- | -------- |
 | 1 | Instruction Tuning | Supervised fine-tuning, chat templates, instruction following | ✅ |
-| 2 | Evaluation | Benchmarks and custom domain evaluation | ✅ |
-| 3 | Preference Alignment | Aligning models to human preferences with algorithms like DPO. | ✅ |
-| 4 | Vision Language Models | Adapt and use multimodal models | ✅ |
-| 5 | Reinforcement Learning | Optimizing models with based on reinforcement policies. | October 2025 |
+| 2 | Evaluation | Benchmarks and custom domain evaluation | September 2025 |
+| 3 | Preference Alignment | Aligning models to human preferences with algorithms like DPO. | October 2025 |
+| 4 | Reinforcement Learning | Optimizing models with based on reinforcement policies. | October 2025 |
+| 5 | Vision Language Models | Adapt and use multimodal models | November 2025 |
 | 6 | Synthetic Data | Generate synthetic datasets for custom domains | November 2025 |
 | 7 | Award Ceremony | Showcase projects and celebrate | December 2025 |
 

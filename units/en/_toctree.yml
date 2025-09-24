@@ -33,4 +33,14 @@
   - local: unit2/5
     title: Submit your evaluation results!
 
+- title: "3. Preference Alignment"
+  sections:
+  - local: unit3/1
+    title: Introduction to Preference Alignment
+  - local: unit3/2
+    title: Direct Preference Optimization (DPO)
+  - local: unit3/3
+    title: Advanced DPO Techniques
+  - local: unit3/4
+    title: DPO Hands-on Implementation
 
