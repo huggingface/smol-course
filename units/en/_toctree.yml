@@ -20,37 +20,29 @@
   - local: unit1/6
     title: Submit your final project!
 
-- title: "2. Model Evaluation"
+- title: "2. Preference Alignment"
   sections:
   - local: unit2/1
-    title: Introduction to Model Evaluation
-  - local: unit2/2
-    title: vLLM Inference with Hugging Face Models
-  - local: unit2/3
-    title: Automatic Benchmarks
-  - local: unit2/4
-    title: Custom Domain Evaluation
-  - local: unit2/5
-    title: Submit your evaluation results!
-
-- title: "3. Preference Alignment"
-  sections:
-  - local: unit3/1
     title: Introduction to Preference Alignment
-  - local: unit3/2
+  - local: unit2/2
     title: Direct Preference Optimization (DPO)
-  - local: unit3/3
+  - local: unit2/3
     title: Advanced DPO Techniques
-  - local: unit3/4
+  - local: unit2/4
     title: DPO Hands-on Implementation
 
-- title: "4. Vision Language Models"
+- title: "3. Vision Language Models"
+  sections:
+  - local: unit3/1
+    title: Introduction to Vision Language Models
+  - local: unit3/2
+    title: Using Pretrained VLMs
+  - local: unit3/3
+    title: Fine-Tuning VLMs
+  - local: unit3/4
+    title: Hands-On Fine-Tuning VLMs
+
+- title: "4. Model Evaluation"
   sections:
   - local: unit4/1
-    title: Introduction to Vision Language Models
-  - local: unit4/2
-    title: Using Pretrained VLMs
-  - local: unit4/3
-    title: Fine-Tuning VLMs
-  - local: unit4/4
-    title: Hands-On Fine-Tuning VLMs
+    title: Coming soon!
