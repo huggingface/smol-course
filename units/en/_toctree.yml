@@ -1,0 +1,48 @@
+- title: "0. Welcome to the Fine-Tuning Course"
+  sections:
+  - local: unit0/1
+    title: Welcome to the Fine-Tuning Course
+    
+- title: "1. Instruction Tuning"
+  sections:
+  - local: unit1/1
+    title: Introduction to Instruction Tuning
+  - local: unit1/2
+    title: Chat Templates
+  - local: unit1/3
+    title: Supervised Fine-Tuning
+  - local: unit1/3a
+    title: LoRA and PEFT
+  - local: unit1/4
+    title: Practical Exercises
+  - local: unit1/5
+    title: Training with Hugging Face Jobs
+  - local: unit1/6
+    title: Submit your final project!
+
+- title: "2. Preference Alignment"
+  sections:
+  - local: unit2/1
+    title: Introduction to Preference Alignment
+  - local: unit2/2
+    title: Direct Preference Optimization (DPO)
+  - local: unit2/3
+    title: Advanced DPO Techniques
+  - local: unit2/4
+    title: DPO Hands-on Implementation
+
+- title: "3. Vision Language Models"
+  sections:
+  - local: unit3/1
+    title: Introduction to Vision Language Models
+  - local: unit3/2
+    title: Using Pretrained VLMs
+  - local: unit3/3
+    title: Fine-Tuning VLMs
+  - local: unit3/4
+    title: Hands-On Fine-Tuning VLMs
+
+- title: "4. Model Evaluation"
+  sections:
+  - local: unit4/1
+    title: Coming soon!

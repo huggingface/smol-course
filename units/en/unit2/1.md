@@ -1,0 +1,41 @@
+# Introduction to Preference Alignment with SmolLM3
+
+Welcome to Unit 3 of the smollest course on fine-tuning! This module will guide you through preference alignment using **SmolLM3**, building on the instruction tuning foundation from Unit 1. You'll learn how to align language models with human preferences using Direct Preference Optimization (DPO) to create more helpful, harmless, and honest AI assistants.
+
+> [!TIP]
+> By the end of this unit you will be aligning an LLM with human preferences using Direct Preference Optimization (DPO). This course is smol but fast! If you're looking for a smoother gradient, check out the [The LLM Course](https://huggingface.co/learn/llm-course/chapter1/1).
+>
+> After completing this unit (and the assignment), don’t forget to test your knowledge with the [quiz](https://huggingface.co/spaces/smol-course/unit_3_quiz)!
+
+## What is Preference Alignment?
+
+While supervised fine-tuning (SFT) teaches models to follow instructions and engage in conversations, preference alignment takes this further by training models to generate responses that match human preferences. It's the process of making AI systems more aligned with what humans actually want, rather than just following instructions literally. In simple terms, it makes language models better for applications in the real world.
+
+Preference alignment addresses several key challenges in AI development. Models trained with preference alignment demonstrate improved behavior across multiple areas. They generate fewer harmful, biased, or inappropriate responses, and their outputs become more useful and relevant to actual human needs. Such models provide more truthful answers while reducing hallucinations, and their responses better reflect human values and ethics. Overall, preference-aligned models exhibit enhanced coherence, relevance, and response quality.
+
+> [!TIP]
+> For a deeper dive into alignment techniques, check out the [Direct Preference Optimization paper](https://huggingface.co/papers/2305.18290) which is the original paper that introduced DPO.
+
+## Direct Preference Optimization (DPO)
+
+DPO revolutionizes preference alignment by eliminating the need for separate reward models and complex reinforcement learning. In this unit, we'll explore this leading technique for aligning language models with human preferences.
+
+The DPO alignment pipeline is much simpler than the Reinforcement Learning from Human Feedback (RLHF) alignment pipeline. The process involves two main stages:
+
+1. Adapt the base model to follow instructions through supervised fine-tuning.
+2. Directly optimize the model using preference data through Direct Preference Optimization.
+
+This streamlined approach allows training on preference data without a separate reward model or complex reinforcement learning, while achieving comparable or better results. Don't worry if this is your first time seeing RLHF, we'll review it in more detail later in the course and see how it compares to DPO.
+
+For exercises in this unit, we will use [SmolLM3](https://hf.co/blog/smollm3) for preference alignment once again. We could use either the instruction tuned model or the result of the unit 1 exercise.
+
+## What You'll Build
+
+Throughout this unit, you'll develop practical skills in preference alignment through hands-on implementation. You'll learn to train SmolLM3 using DPO on preference datasets.
+- You'll master DPO hyperparameter configuration and tuning techniques.
+- You'll compare DPO results with baseline instruction-tuned models.
+- You'll evaluate model safety and alignment quality using standard benchmarks.
+- You'll submit your aligned model to the course leaderboard.
+- Finally, you'll explore how to deploy aligned models for practical applications.
+
+Ready to make your models more aligned with human preferences using DPO? Let's begin!
