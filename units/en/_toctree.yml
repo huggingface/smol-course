@@ -27,9 +27,9 @@
   - local: unit2/2
     title: Direct Preference Optimization (DPO)
   - local: unit2/3
-    title: Advanced DPO Techniques
-  - local: unit2/4
     title: DPO Hands-on Implementation
+  - local: unit2/4
+    title: Submit your final project!
 
 - title: "3. Vision Language Models"
   sections:
