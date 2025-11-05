@@ -31,9 +31,9 @@ LoRAは、効率的なモデル適応のためのエレガントなソリュー�
 
 ## リソース
 - [PEFTドキュメント](https://huggingface.co/docs/peft)
-- [LoRA論文](https://arxiv.org/abs/2106.09685)
-- [QLoRA論文](https://arxiv.org/abs/2305.14314)
-- [プロンプトチューニング論文](https://arxiv.org/abs/2104.08691)
+- [LoRA論文](https://huggingface.co/papers/2106.09685)
+- [QLoRA論文](https://huggingface.co/papers/2305.14314)
+- [プロンプトチューニング論文](https://huggingface.co/papers/2104.08691)
 - [Hugging Face PEFTガイド](https://huggingface.co/blog/peft)
 - [2024年にHugging FaceでLLMを微調整する方法](https://www.philschmid.de/fine-tune-llms-in-2024-with-trl) 
 - [TRL](https://huggingface.co/docs/trl/index)
