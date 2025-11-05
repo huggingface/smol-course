@@ -4,7 +4,7 @@ El ajuste de prompts es un enfoque eficiente en términos de parámetros que mod
 
 ## Entendiendo el Ajuste de Prompts
 
-El ajuste de prompts es una alternativa eficiente en términos de parámetros al fine-tuning del modelo que antepone vectores continuos entrenables (prompts suaves) al texto de entrada. A diferencia de los prompts discretos de texto, estos prompts suaves se aprenden mediante retropropagación mientras el modelo de lenguaje se mantiene congelado. El método fue introducido en ["El poder de la escala para el ajuste de prompts eficiente en parámetros"](https://arxiv.org/abs/2104.08691) (Lester et al., 2021), que demostró que el ajuste de prompts se vuelve más competitivo con el fine-tuning del modelo a medida que aumenta el tamaño del modelo. En el artículo, alrededor de 10 mil millones de parámetros, el ajuste de prompts iguala el rendimiento del fine-tuning del modelo mientras solo modifica unos pocos cientos de parámetros por tarea.
+El ajuste de prompts es una alternativa eficiente en términos de parámetros al fine-tuning del modelo que antepone vectores continuos entrenables (prompts suaves) al texto de entrada. A diferencia de los prompts discretos de texto, estos prompts suaves se aprenden mediante retropropagación mientras el modelo de lenguaje se mantiene congelado. El método fue introducido en ["El poder de la escala para el ajuste de prompts eficiente en parámetros"](https://huggingface.co/papers/2104.08691) (Lester et al., 2021), que demostró que el ajuste de prompts se vuelve más competitivo con el fine-tuning del modelo a medida que aumenta el tamaño del modelo. En el artículo, alrededor de 10 mil millones de parámetros, el ajuste de prompts iguala el rendimiento del fine-tuning del modelo mientras solo modifica unos pocos cientos de parámetros por tarea.
 
 Estos prompts suaves son vectores continuos en el espacio de incrustación del modelo que se optimizan durante el entrenamiento. A diferencia de los prompts discretos tradicionales que usan tokens de lenguaje natural, los prompts suaves no tienen un significado inherente, pero aprenden a provocar el comportamiento deseado del modelo congelado mediante el descenso de gradiente. La técnica es particularmente efectiva para escenarios de múltiples tareas, ya que cada tarea requiere almacenar solo un pequeño vector de prompt (normalmente unos pocos cientos de parámetros) en lugar de una copia completa del modelo. Este enfoque no solo mantiene una huella de memoria mínima, sino que también permite una adaptación rápida de tareas simplemente intercambiando los vectores de prompt sin necesidad de recargar el modelo.
 
@@ -70,5 +70,5 @@ A medida que los modelos se hacen más pequeños, el ajuste de prompts se vuelve
 
 ## Recursos
 - [Documentación de PEFT](https://huggingface.co/docs/peft)
-- [Papel sobre Ajuste de Prompts](https://arxiv.org/abs/2104.08691)
+- [Papel sobre Ajuste de Prompts](https://huggingface.co/papers/2104.08691)
 - [Recetario de Hugging Face](https://huggingface.co/learn/cookbook/prompt_tuning_peft)
