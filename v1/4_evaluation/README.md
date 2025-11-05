@@ -33,7 +33,7 @@ Follow a complete example of building a domain-specific evaluation pipeline. You
 - [Evaluation Guidebook](https://github.com/huggingface/evaluation-guidebook) - Comprehensive guide to LLM evaluation
 - [LightEval Documentation](https://github.com/huggingface/lighteval) - Official docs for the LightEval library
 - [Argilla Documentation](https://docs.argilla.io) - Learn about the Argilla annotation platform
-- [MMLU Paper](https://arxiv.org/abs/2009.03300) - Paper describing the MMLU benchmark
+- [MMLU Paper](https://huggingface.co/papers/2009.03300) - Paper describing the MMLU benchmark
 - [Creating a Custom Task](https://github.com/huggingface/lighteval/wiki/Adding-a-Custom-Task)
 - [Creating a Custom Metric](https://github.com/huggingface/lighteval/wiki/Adding-a-New-Metric)
 - [Using existing metrics](https://github.com/huggingface/lighteval/wiki/Metric-List)
