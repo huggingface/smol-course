@@ -19,7 +19,7 @@ O ORPO cria um novo objetivo ao combinar dois componentes principais:
 
 2. **Função de perda da Razão de Chances**: Um novo componente que penaliza respostas indesejáveis e recompensa as preferidas. Essa função de perda usa índices de probabilidade (razão de chances) para contrastar efetivamente entre respostas favorecidas e desfavorecidas no nível do token.
 
-Juntos, esses componentes orientam o modelo a se adaptar às gerações desejadas para o domínio específico e, ao mesmo tempo, desencorajam ativamente as gerações do conjunto de respostas rejeitadas. O mecanismo de razão de chances oferece uma maneira natural de medir e otimizar a preferência do modelo entre os resultados escolhidos e rejeitados. Se quiser se aprofundar na matemática, você pode ler o [artigo sobre ORPO](https://arxiv.org/abs/2403.07691). Se quiser saber mais sobre o ORPO do ponto de vista da implementação, confira como a função de perda do ORPO é calculada no [módulo TRL](https://github.com/huggingface/trl/blob/b02189aaa538f3a95f6abb0ab46c0a971bfde57e/trl/trainer/orpo_trainer.py#L660).
+Juntos, esses componentes orientam o modelo a se adaptar às gerações desejadas para o domínio específico e, ao mesmo tempo, desencorajam ativamente as gerações do conjunto de respostas rejeitadas. O mecanismo de razão de chances oferece uma maneira natural de medir e otimizar a preferência do modelo entre os resultados escolhidos e rejeitados. Se quiser se aprofundar na matemática, você pode ler o [artigo sobre ORPO](https://huggingface.co/papers/2403.07691). Se quiser saber mais sobre o ORPO do ponto de vista da implementação, confira como a função de perda do ORPO é calculada no [módulo TRL](https://github.com/huggingface/trl/blob/b02189aaa538f3a95f6abb0ab46c0a971bfde57e/trl/trainer/orpo_trainer.py#L660).
 
 ## Desempenho e Resultados
 
@@ -79,6 +79,6 @@ Principais parâmetros a serem considerados:
 ⏩ Experimente o [Tutorial do ORPO](./notebooks/orpo_tutorial.ipynb) para implementar essa abordagem unificada ao alinhamento de preferências.
 
 ## Referências
-- [Artigo sobre ORPO](https://arxiv.org/abs/2403.07691)
+- [Artigo sobre ORPO](https://huggingface.co/papers/2403.07691)
 - [Documentação TRL](https://huggingface.co/docs/trl/index)
 - [Guia Argilla RLHF](https://argilla.io/blog/mantisnlp-rlhf-part-8/) 

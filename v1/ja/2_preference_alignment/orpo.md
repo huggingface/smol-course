@@ -18,7 +18,7 @@ ORPOは、次の2つの主要なコンポーネントを組み合わせて新し
 1. **SFT損失**：負の対数尤度損失を使用して、参照トークンの生成確率を最大化します。これにより、モデルの一般的な言語能力が維持されます。
 2. **オッズ比損失**：望ましくない応答をペナルティし、選好される応答を報酬する新しいコンポーネントです。この損失関数は、トークンレベルで選好される応答と非選好の応答を効果的に対比するためにオッズ比を使用します。
 
-これらのコンポーネントを組み合わせることで、モデルは特定のドメインに対して望ましい生成を適応させながら、非選好の応答を積極的に抑制します。オッズ比メカニズムは、選好された応答と拒否された応答の間のモデルの選好を測定および最適化する自然な方法を提供します。数学的な詳細については、[ORPO論文](https://arxiv.org/abs/2403.07691)を参照してください。実装の観点からORPOについて学びたい場合は、[TRLライブラリ](https://github.com/huggingface/trl/blob/b02189aaa538f3a95f6abb0ab46c0a971bfde57e/trl/trainer/orpo_trainer.py#L660)でORPO損失がどのように計算されるかを確認してください。
+これらのコンポーネントを組み合わせることで、モデルは特定のドメインに対して望ましい生成を適応させながら、非選好の応答を積極的に抑制します。オッズ比メカニズムは、選好された応答と拒否された応答の間のモデルの選好を測定および最適化する自然な方法を提供します。数学的な詳細については、[ORPO論文](https://huggingface.co/papers/2403.07691)を参照してください。実装の観点からORPOについて学びたい場合は、[TRLライブラリ](https://github.com/huggingface/trl/blob/b02189aaa538f3a95f6abb0ab46c0a971bfde57e/trl/trainer/orpo_trainer.py#L660)でORPO損失がどのように計算されるかを確認してください。
 
 ## パフォーマンスと結果
 
@@ -78,6 +78,6 @@ trainer.train()
 ⏩ この統合された選好整合アプローチを実装するための[ORPOチュートリアル](./notebooks/orpo_tutorial.ipynb)を試してみてください。
 
 ## リソース
-- [ORPO論文](https://arxiv.org/abs/2403.07691)
+- [ORPO論文](https://huggingface.co/papers/2403.07691)
 - [TRLドキュメント](https://huggingface.co/docs/trl/index)
 - [ArgillaのRLHFガイド](https://argilla.io/blog/mantisnlp-rlhf-part-8/)

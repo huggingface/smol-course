@@ -39,7 +39,7 @@ Ao implementar métodos PEFT, comece com valores baixos de classificação (4-8)
 
 ## OLoRA
 
-[OLoRA](https://arxiv.org/abs/2406.01775) utiliza decomposição QR para inicializar os adaptadores LoRA. OLoRA traduz os pesos base do modelo por um fator de suas decomposições QR, ou seja, altera os pesos antes de realizar qualquer treinamento sobre eles. Essa abordagem melhora significativamente a estabilidade, acelera a velocidade de convergência e, por fim, alcança um desempenho superior.
+[OLoRA](https://huggingface.co/papers/2406.01775) utiliza decomposição QR para inicializar os adaptadores LoRA. OLoRA traduz os pesos base do modelo por um fator de suas decomposições QR, ou seja, altera os pesos antes de realizar qualquer treinamento sobre eles. Essa abordagem melhora significativamente a estabilidade, acelera a velocidade de convergência e, por fim, alcança um desempenho superior.
 
 ## Usando TRL com PEFT
 

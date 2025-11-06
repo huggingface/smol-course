@@ -39,7 +39,7 @@ Khi triển khai các phương pháp PEFT, hãy bắt đầu với các giá tr�
 
 ## OLoRA
 
-[OLoRA](https://arxiv.org/abs/2406.01775) sử dụng phân rã QR để khởi tạo các adapter LoRA. OLoRA dịch chuyển các trọng số cơ sở của mô hình bằng một hệ số của phân rã QR của chúng, tức là nó thay đổi trọng số trước khi thực hiện bất kỳ huấn luyện nào trên chúng. Cách tiếp cận này cải thiện đáng kể tính ổn định, tăng tốc độ hội tụ và cuối cùng đạt được hiệu suất vượt trội.
+[OLoRA](https://huggingface.co/papers/2406.01775) sử dụng phân rã QR để khởi tạo các adapter LoRA. OLoRA dịch chuyển các trọng số cơ sở của mô hình bằng một hệ số của phân rã QR của chúng, tức là nó thay đổi trọng số trước khi thực hiện bất kỳ huấn luyện nào trên chúng. Cách tiếp cận này cải thiện đáng kể tính ổn định, tăng tốc độ hội tụ và cuối cùng đạt được hiệu suất vượt trội.
 
 ## Sử dụng TRL với PEFT
 

@@ -32,9 +32,9 @@ El *prompt tuning* ofrece un enfoque **aún más ligero** al **añadir tokens en
 
 ## Recursos
 - [Documentación de PEFT](https://huggingface.co/docs/peft)
-- [Artículo de LoRA](https://arxiv.org/abs/2106.09685)
-- [Artículo de QLoRA](https://arxiv.org/abs/2305.14314)
-- [Artículo de *Prompt Tuning*](https://arxiv.org/abs/2104.08691)
+- [Artículo de LoRA](https://huggingface.co/papers/2106.09685)
+- [Artículo de QLoRA](https://huggingface.co/papers/2305.14314)
+- [Artículo de *Prompt Tuning*](https://huggingface.co/papers/2104.08691)
 - [Guía de PEFT en Hugging Face](https://huggingface.co/blog/peft)
 - [Cómo hacer *Fine-Tuning* de LLMs en 2024 con Hugging Face](https://www.philschmid.de/fine-tune-llms-in-2024-with-trl)
 - [TRL](https://huggingface.co/docs/trl/index)
