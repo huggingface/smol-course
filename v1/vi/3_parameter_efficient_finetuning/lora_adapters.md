@@ -4,7 +4,7 @@ LoRA đã trở thành phương pháp PEFT được sử dụng rộng rãi nh�
 
 ## Tìm Hiểu Về LoRA
 
-LoRA (Low-Rank Adaptation) là một kỹ thuật tinh chỉnh hiệu quả tham số, đóng băng các trọng số của mô hình đã huấn luyện trước và đưa thêm các ma trận phân rã hạng (rank decomposition matrices) có thể huấn luyện vào các lớp của mô hình. Thay vì huấn luyện tất cả các tham số mô hình trong quá trình tinh chỉnh, LoRA phân rã việc cập nhật trọng số thành các ma trận nhỏ hơn thông qua phân rã hạng thấp (low-rank decomposition), giảm đáng kể số lượng tham số có thể huấn luyện trong khi vẫn duy trì hiệu suất mô hình. Ví dụ, khi áp dụng cho GPT-3 175B, LoRA giảm số lượng tham số có thể huấn luyện xuống 10.000 lần và yêu cầu bộ nhớ GPU giảm 3 lần so với tinh chỉnh đầy đủ. Bạn có thể đọc thêm về LoRA trong [bài báo nghiên cứu LoRA](https://arxiv.org/pdf/2106.09685).
+LoRA (Low-Rank Adaptation) là một kỹ thuật tinh chỉnh hiệu quả tham số, đóng băng các trọng số của mô hình đã huấn luyện trước và đưa thêm các ma trận phân rã hạng (rank decomposition matrices) có thể huấn luyện vào các lớp của mô hình. Thay vì huấn luyện tất cả các tham số mô hình trong quá trình tinh chỉnh, LoRA phân rã việc cập nhật trọng số thành các ma trận nhỏ hơn thông qua phân rã hạng thấp (low-rank decomposition), giảm đáng kể số lượng tham số có thể huấn luyện trong khi vẫn duy trì hiệu suất mô hình. Ví dụ, khi áp dụng cho GPT-3 175B, LoRA giảm số lượng tham số có thể huấn luyện xuống 10.000 lần và yêu cầu bộ nhớ GPU giảm 3 lần so với tinh chỉnh đầy đủ. Bạn có thể đọc thêm về LoRA trong [bài báo nghiên cứu LoRA](https://huggingface.co/papers/2106.09685).
 
 LoRA hoạt động bằng cách thêm các cặp ma trận phân rã hạng vào các lớp transformer, thường tập trung vào các trọng số attention. Trong quá trình suy luận, các trọng số adapter có thể được gộp với mô hình cơ sở, không gây thêm độ trễ. LoRA đặc biệt hữu ích cho việc điều chỉnh các mô hình ngôn ngữ lớn cho các tác vụ hoặc lĩnh vực cụ thể trong khi không yêu cầu nhiều tài nguyên tính toán.
 
@@ -115,6 +115,6 @@ tokenizer.save_pretrained("path/to/save/merged_model")
 
 # Tài liệu tham khảo
 
-- [LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS](https://arxiv.org/pdf/2106.09685)
+- [LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS](https://huggingface.co/papers/2106.09685)
 - [Tài liệu PEFT](https://huggingface.co/docs/peft)
 - [Bài viết blog của Hugging Face về PEFT](https://huggingface.co/blog/peft)
