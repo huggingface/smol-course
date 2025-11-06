@@ -30,7 +30,7 @@ Sigue un ejemplo completo de cómo construir un flujo de evaluación específico
 - [Guía de Evaluación](https://github.com/huggingface/evaluation-guidebook) - Guía completa para la evaluación de modelos de lenguaje
 - [Documentación de LightEval](https://github.com/huggingface/lighteval) - Documentación oficial de la biblioteca LightEval
 - [Documentación de Argilla](https://docs.argilla.io) - Aprende sobre la plataforma de anotación Argilla
-- [Paper de MMLU](https://arxiv.org/abs/2009.03300) - Artículo sobre el benchmark MMLU
+- [Paper de MMLU](https://huggingface.co/papers/2009.03300) - Artículo sobre el benchmark MMLU
 - [Crear una Tarea Personalizada](https://github.com/huggingface/lighteval/wiki/Adding-a-Custom-Task)
 - [Crear una Métrica Personalizada](https://github.com/huggingface/lighteval/wiki/Adding-a-New-Metric)
 - [Usar métricas existentes](https://github.com/huggingface/lighteval/wiki/Metric-List)
