@@ -24,7 +24,7 @@ Ajuste fino supervisionado (em inglês, SFT - Supervised Fine-Tuning) é um proc
 - [Documentação dos transformadores em modelos de bate-papo](https://huggingface.co/docs/transformers/main/en/chat_templating)
 - [Script para ajuste fino supervisionado em TRL](https://github.com/huggingface/trl/blob/main/examples/scripts/sft.py)
 - [`SFTTrainer` em TRL](https://huggingface.co/docs/trl/main/en/sft_trainer)
-- [Artigo de otimização de preferência direta](https://arxiv.org/abs/2305.18290)
+- [Artigo de otimização de preferência direta](https://huggingface.co/papers/2305.18290)
 - [Ajuste fino supervisionado com TRL](https://huggingface.co/docs/trl/main/en/tutorials/supervised_finetuning)
 - [Como ajustar o Google Gemma com ChatML e Hugging Face TRL](https://www.philschmid.de/fine-tune-google-gemma)
 - [Fazendo o ajuste fino em uma LLM para gerar catálogos de produtos persas em formato JSON](https://huggingface.co/learn/cookbook/en/fine_tuning_llm_to_generate_persian_product_catalogs_in_json_format)
