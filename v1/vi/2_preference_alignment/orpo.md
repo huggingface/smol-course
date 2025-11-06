@@ -23,7 +23,7 @@ ORPO tạo ra một mục tiêu mới bằng cách kết hợp hai thành phần
 
 2. **Odds Ratio Loss**:  Một hàm mất mát mới giúp phạt các phản hồi không mong muốn trong khi thưởng cho các phản hồi được ưu tiên. Hàm mất mát này sử dụng tỷ lệ odds để so sánh hiệu quả giữa các phản hồi được ưa thích và không ưa thích ở cấp độ *token*.
 
-Cùng nhau, các thành phần này hướng dẫn mô hình thích ứng với các phản hồi mong muốn cho lĩnh vực cụ thể trong khi tích cực ngăn chặn các phản hồi từ tập các phản hồi bị từ chối. Cơ chế tỷ lệ odds cung cấp một cách tự nhiên để đo lường và tối ưu hóa ưu tiên của mô hình giữa các đầu ra đã chọn và bị từ chối. Nếu bạn muốn tìm hiểu sâu về phần toán học, bạn có thể đọc [bài báo ORPO](https://arxiv.org/abs/2403.07691). Nếu bạn muốn tìm hiểu về ORPO từ góc độ triển khai, bạn nên xem cách tính toán hàm mất mát cho ORPO trong [thư viện TRL](https://github.com/huggingface/trl/blob/b02189aaa538f3a95f6abb0ab46c0a971bfde57e/trl/trainer/orpo_trainer.py#L660).
+Cùng nhau, các thành phần này hướng dẫn mô hình thích ứng với các phản hồi mong muốn cho lĩnh vực cụ thể trong khi tích cực ngăn chặn các phản hồi từ tập các phản hồi bị từ chối. Cơ chế tỷ lệ odds cung cấp một cách tự nhiên để đo lường và tối ưu hóa ưu tiên của mô hình giữa các đầu ra đã chọn và bị từ chối. Nếu bạn muốn tìm hiểu sâu về phần toán học, bạn có thể đọc [bài báo ORPO](https://huggingface.co/papers/2403.07691). Nếu bạn muốn tìm hiểu về ORPO từ góc độ triển khai, bạn nên xem cách tính toán hàm mất mát cho ORPO trong [thư viện TRL](https://github.com/huggingface/trl/blob/b02189aaa538f3a95f6abb0ab46c0a971bfde57e/trl/trainer/orpo_trainer.py#L660).
 
 ## Hiệu Suất và Kết Quả
 
@@ -84,6 +84,6 @@ Các tham số chính cần xem xét:
 ⏩ Bạn có thể làm theo hướng dẫn trong [Hướng dẫn ORPO](./notebooks/orpo_tutorial.ipynb) để triển khai cách tinh chỉnh ưu tiên này.
 
 ## Resources
-- [Bài báo nghiên cứu về ORPO](https://arxiv.org/abs/2403.07691)
+- [Bài báo nghiên cứu về ORPO](https://huggingface.co/papers/2403.07691)
 - [Tài liệu về thư viện TRL](https://huggingface.co/docs/trl/index)
 - [Hướng dẫn của Argilla](https://argilla.io/blog/mantisnlp-rlhf-part-8/) 
