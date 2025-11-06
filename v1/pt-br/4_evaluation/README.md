@@ -34,7 +34,7 @@ Siga um exemplo completo de construção de um pipeline de avaliação de domín
 - [Guia de Avaliação](https://github.com/huggingface/evaluation-guidebook) - Guia abrangente de avaliação de LLMs
 - [Documentação do LightEval](https://github.com/huggingface/lighteval) - Documentação oficial do módulo LightEval
 - [Documentação do Argilla](https://docs.argilla.io) - Saiba mais sobre a plataforma de anotação Argilla
-- [Artigo do MMLU](https://arxiv.org/abs/2009.03300) - Artigo que descreve o benchmark MMLU
+- [Artigo do MMLU](https://huggingface.co/papers/2009.03300) - Artigo que descreve o benchmark MMLU
 - [Criando uma Tarefa Personalizada](https://github.com/huggingface/lighteval/wiki/Adding-a-Custom-Task)
 - [Criando uma Métrica Personalizada](https://github.com/huggingface/lighteval/wiki/Adding-a-New-Metric)
 - [Usando Métricas Existentes](https://github.com/huggingface/lighteval/wiki/Metric-List)
