@@ -36,5 +36,5 @@ For detailed guidance on fine-tuning VLMs, visit the [VLM Fine-Tuning](./vlm_fin
 - [Hugging Face Blog: Vision Language Models](https://huggingface.co/blog/vlms)
 - [Hugging Face Blog: SmolVLM](https://huggingface.co/blog/smolvlm)  
 - [Hugging Face Model: SmolVLM-Instruct](https://huggingface.co/HuggingFaceTB/SmolVLM-Instruct)
-- [CLIP: Learning Transferable Visual Models from Natural Language Supervision](https://arxiv.org/abs/2103.00020)  
-- [Align Before Fuse: Vision and Language Representation Learning with Momentum Distillation](https://arxiv.org/abs/2107.07651)  
+- [CLIP: Learning Transferable Visual Models from Natural Language Supervision](https://huggingface.co/papers/2103.00020)  
+- [Align Before Fuse: Vision and Language Representation Learning with Momentum Distillation](https://huggingface.co/papers/2107.07651)  

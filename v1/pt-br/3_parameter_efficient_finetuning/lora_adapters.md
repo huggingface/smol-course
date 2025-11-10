@@ -4,7 +4,7 @@ LoRA tornou-se o método PEFT mais amplamente adotado. Ele funciona adicionando 
 
 ## Entendendo o LoRA
 
-LoRA (Adaptação de Baixa Classificação) é uma técnica de ajuste fino eficiente em termos de parâmetros que congela os pesos do modelo pré-treinado e injeta matrizes treináveis de decomposição de classificação nas camadas do modelo. Em vez de treinar todos os parâmetros do modelo durante o ajuste fino, o LoRA decompõe as atualizações de peso em matrizes menores por meio da decomposição de baixa classificação, reduzindo significativamente o número de parâmetros treináveis enquanto mantém o desempenho do modelo. Por exemplo, quando aplicado ao GPT-3 175B, o LoRA reduziu os parâmetros treináveis em 10.000x e os requisitos de memória GPU em 3x em comparação ao ajuste fino completo. Você pode saber mais sobre o LoRA no [Artigo sobre LoRA](https://arxiv.org/pdf/2106.09685).
+LoRA (Adaptação de Baixa Classificação) é uma técnica de ajuste fino eficiente em termos de parâmetros que congela os pesos do modelo pré-treinado e injeta matrizes treináveis de decomposição de classificação nas camadas do modelo. Em vez de treinar todos os parâmetros do modelo durante o ajuste fino, o LoRA decompõe as atualizações de peso em matrizes menores por meio da decomposição de baixa classificação, reduzindo significativamente o número de parâmetros treináveis enquanto mantém o desempenho do modelo. Por exemplo, quando aplicado ao GPT-3 175B, o LoRA reduziu os parâmetros treináveis em 10.000x e os requisitos de memória GPU em 3x em comparação ao ajuste fino completo. Você pode saber mais sobre o LoRA no [Artigo sobre LoRA](https://huggingface.co/papers/2106.09685).
 
 O LoRA funciona adicionando pares de matrizes de decomposição de classificação às camadas do transformer, geralmente focando nos pesos de atenção. Durante a inferência, esses pesos adaptadores podem ser mesclados com o modelo base, resultando em nenhuma sobrecarga adicional de latência. LoRA é particularmente útil para adaptar modelos de linguagem de grande porte a tarefas ou domínios específicos, mantendo os requisitos de recursos gerenciáveis.
 
@@ -39,7 +39,7 @@ Ao implementar métodos PEFT, comece com valores baixos de classificação (4-8)
 
 ## OLoRA
 
-[OLoRA](https://arxiv.org/abs/2406.01775) utiliza decomposição QR para inicializar os adaptadores LoRA. OLoRA traduz os pesos base do modelo por um fator de suas decomposições QR, ou seja, altera os pesos antes de realizar qualquer treinamento sobre eles. Essa abordagem melhora significativamente a estabilidade, acelera a velocidade de convergência e, por fim, alcança um desempenho superior.
+[OLoRA](https://huggingface.co/papers/2406.01775) utiliza decomposição QR para inicializar os adaptadores LoRA. OLoRA traduz os pesos base do modelo por um fator de suas decomposições QR, ou seja, altera os pesos antes de realizar qualquer treinamento sobre eles. Essa abordagem melhora significativamente a estabilidade, acelera a velocidade de convergência e, por fim, alcança um desempenho superior.
 
 ## Usando TRL com PEFT
 
@@ -115,6 +115,6 @@ tokenizer.save_pretrained("path/to/save/merged_model")
 
 # Referências
 
-- [LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS](https://arxiv.org/pdf/2106.09685)
+- [LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS](https://huggingface.co/papers/2106.09685)
 - [Documentação PEFT](https://huggingface.co/docs/peft)
 - [Blog do Hugging Face sobre PEFT](https://huggingface.co/blog/peft)

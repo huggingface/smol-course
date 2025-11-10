@@ -24,7 +24,7 @@
 - [Transformersのチャットテンプレートに関するドキュメント](https://huggingface.co/docs/transformers/main/en/chat_templating)
 - [TRLの教師あり微調整スクリプト](https://github.com/huggingface/trl/blob/main/examples/scripts/sft.py)
 - [TRLの`SFTTrainer`](https://huggingface.co/docs/trl/main/en/sft_trainer)
-- [直接選好最適化に関する論文](https://arxiv.org/abs/2305.18290)
+- [直接選好最適化に関する論文](https://huggingface.co/papers/2305.18290)
 - [TRLを使用した教師あり微調整](https://huggingface.co/docs/trl/main/en/tutorials/supervised_fine_tuning)
 - [ChatMLとHugging Face TRLを使用したGoogle Gemmaの微調整方法](https://www.philschmid.de/fine-tune-google-gemma)
 - [LLMを微調整してペルシャ語の商品カタログをJSON形式で生成する方法](https://huggingface.co/learn/cookbook/en/fine_tuning_llm_to_generate_persian_product_catalogs_in_json_format)

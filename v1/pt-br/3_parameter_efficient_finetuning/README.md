@@ -32,9 +32,9 @@ O ajuste de prompts oferece uma abordagem **ainda mais leve** ao **adicionar tok
 ## Referências
 
 - [Documentação PEFT](https://huggingface.co/docs/peft)
-- [Artigo sobre LoRA](https://arxiv.org/abs/2106.09685)
-- [Artigo sobre QLoRA](https://arxiv.org/abs/2305.14314)
-- [Artigo sobre Ajuste de Prompts](https://arxiv.org/abs/2104.08691)
+- [Artigo sobre LoRA](https://huggingface.co/papers/2106.09685)
+- [Artigo sobre QLoRA](https://huggingface.co/papers/2305.14314)
+- [Artigo sobre Ajuste de Prompts](https://huggingface.co/papers/2104.08691)
 - [Guia PEFT do Hugging Face](https://huggingface.co/blog/peft)
 - [Como ajustar os LLMs em 2024 com o Hugging Face](https://www.philschmid.de/fine-tune-llms-in-2024-with-trl) 
 - [TRL](https://huggingface.co/docs/trl/index)

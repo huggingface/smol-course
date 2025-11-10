@@ -30,8 +30,8 @@ ORPOは、指示調整と選好の整合を単一のプロセスに統合する�
 ## リソース
 
 - [TRLのドキュメント](https://huggingface.co/docs/trl/index) - DPOを含むさまざまな整合技術を実装するためのTransformers Reinforcement Learning（TRL）ライブラリのドキュメント。
-- [DPO論文](https://arxiv.org/abs/2305.18290) - 人間のフィードバックを用いた強化学習の代替として、選好データを使用して言語モデルを直接最適化するシンプルなアプローチを紹介する論文。
-- [ORPO論文](https://arxiv.org/abs/2403.07691) - 指示調整と選好の整合を単一のトレーニングステージに統合する新しいアプローチを紹介する論文。
+- [DPO論文](https://huggingface.co/papers/2305.18290) - 人間のフィードバックを用いた強化学習の代替として、選好データを使用して言語モデルを直接最適化するシンプルなアプローチを紹介する論文。
+- [ORPO論文](https://huggingface.co/papers/2403.07691) - 指示調整と選好の整合を単一のトレーニングステージに統合する新しいアプローチを紹介する論文。
 - [ArgillaのRLHFガイド](https://argilla.io/blog/mantisnlp-rlhf-part-8/) - RLHF、DPOなどのさまざまな整合技術とその実践的な実装について説明するガイド。
 - [DPOに関するブログ記事](https://huggingface.co/blog/dpo-trl) - TRLライブラリを使用してDPOを実装する方法についての実践ガイド。コード例とベストプラクティスが含まれています。
 - [TRLのDPOスクリプト例](https://github.com/huggingface/trl/blob/main/examples/scripts/dpo.py) - TRLライブラリを使用してDPOトレーニングを実装する方法を示す完全なスクリプト例。

@@ -199,6 +199,6 @@ Under the hood, this pipeline has a lot of cool features. It automatically cache
 ## References
 
 - [Distilabel Documentation](https://distilabel.argilla.io/latest/)
-- [Self-instruct](https://arxiv.org/abs/2212.10560)
-- [Evol-Instruct](https://arxiv.org/abs/2304.12244)
-- [Magpie](https://arxiv.org/abs/2406.08464)
+- [Self-instruct](https://huggingface.co/papers/2212.10560)
+- [Evol-Instruct](https://huggingface.co/papers/2304.12244)
+- [Magpie](https://huggingface.co/papers/2406.08464)

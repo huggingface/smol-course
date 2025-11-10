@@ -32,8 +32,8 @@ ORPO introduces a combined approach to instruction tuning and preference alignme
 ## Resources
 
 - [TRL Documentation](https://huggingface.co/docs/trl/index) - Documentation for the Transformers Reinforcement Learning (TRL) library, which implements various alignment techniques including DPO.
-- [DPO Paper](https://arxiv.org/abs/2305.18290) - Original research paper introducing Direct Preference Optimization as a simpler alternative to RLHF that directly optimizes language models using preference data.
-- [ORPO Paper](https://arxiv.org/abs/2403.07691) - Introduces Odds Ratio Preference Optimization, a novel approach that combines instruction tuning and preference alignment in a single training stage.
+- [DPO Paper](https://huggingface.co/papers/2305.18290) - Original research paper introducing Direct Preference Optimization as a simpler alternative to RLHF that directly optimizes language models using preference data.
+- [ORPO Paper](https://huggingface.co/papers/2403.07691) - Introduces Odds Ratio Preference Optimization, a novel approach that combines instruction tuning and preference alignment in a single training stage.
 - [Argilla RLHF Guide](https://argilla.io/blog/mantisnlp-rlhf-part-8/) - A guide explaining different alignment techniques including RLHF, DPO, and their practical implementations.
 - [Blog post on DPO](https://huggingface.co/blog/dpo-trl) - Practical guide on implementing DPO using the TRL library with code examples and best practices.
 - [TRL example script on DPO](https://github.com/huggingface/trl/blob/main/examples/scripts/dpo.py) - Complete example script demonstrating how to implement DPO training using the TRL library.
