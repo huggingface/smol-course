@@ -36,6 +36,6 @@ ORPO introduces a combined approach to instruction tuning and preference alignme
 - [ORPO Paper](https://huggingface.co/papers/2403.07691) - Introduces Odds Ratio Preference Optimization, a novel approach that combines instruction tuning and preference alignment in a single training stage.
 - [Argilla RLHF Guide](https://argilla.io/blog/mantisnlp-rlhf-part-8/) - A guide explaining different alignment techniques including RLHF, DPO, and their practical implementations.
 - [Blog post on DPO](https://huggingface.co/blog/dpo-trl) - Practical guide on implementing DPO using the TRL library with code examples and best practices.
-- [TRL example script on DPO](https://github.com/huggingface/trl/blob/main/examples/scripts/dpo.py) - Complete example script demonstrating how to implement DPO training using the TRL library.
-- [TRL example script on ORPO](https://github.com/huggingface/trl/blob/main/examples/scripts/orpo.py) - Reference implementation of ORPO training using the TRL library with detailed configuration options.
+- [TRL example script on DPO](https://github.com/huggingface/trl/blob/main/trl/scripts/dpo.py) - Complete example script demonstrating how to implement DPO training using the TRL library.
+- [TRL example script on ORPO](https://github.com/huggingface/trl/blob/v1.10.0/examples/scripts/orpo.py) - Reference implementation of ORPO training using the TRL library with detailed configuration options.
 - [Hugging Face Alignment Handbook](https://github.com/huggingface/alignment-handbook) - Resource guides and codebase for aligning language models using various techniques including SFT, DPO, and RLHF.

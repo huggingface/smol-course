@@ -22,7 +22,7 @@ Huấn luyện có giám sát (SFT) là một quá trình cốt lõi để đi�
 ## Tài liệu tham khảo
 
 - [Tài liệu Transformers về định dạng chat](https://huggingface.co/docs/transformers/main/en/chat_templating)
-- [Script cho huấn luyện có giám sát bằng thư viện TRL](https://github.com/huggingface/trl/blob/main/examples/scripts/sft.py)
+- [Script cho huấn luyện có giám sát bằng thư viện TRL](https://github.com/huggingface/trl/blob/main/trl/scripts/sft.py)
 - [`SFTTrainer` trong thư viện TRL](https://huggingface.co/docs/trl/main/en/sft_trainer)
 - [Bài báo Direct Preference Optimization (DPO)](https://huggingface.co/papers/2305.18290)
 - [Huấn luyện có giám sát bằng thư viện TRL](https://huggingface.co/docs/trl/main/en/tutorials/supervised_finetuning)
