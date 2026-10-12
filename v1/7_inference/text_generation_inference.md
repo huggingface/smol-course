@@ -133,4 +133,4 @@ model = AutoModelForCausalLM.from_pretrained(
 - [Text Generation Inference Documentation](https://huggingface.co/docs/text-generation-inference)
 - [TGI GitHub Repository](https://github.com/huggingface/text-generation-inference)
 - [Hugging Face Model Hub](https://huggingface.co/models)
-- [TGI API Reference](https://huggingface.co/docs/text-generation-inference/api_reference)
+- [TGI API Reference](https://huggingface.co/docs/text-generation-inference/reference/api_reference)
