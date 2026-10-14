@@ -1,0 +1,48 @@
+- title: "0. 欢迎来到微调课程"
+  sections:
+  - local: unit0/1
+    title: 欢迎来到微调课程
+
+- title: "1. 指令微调"
+  sections:
+  - local: unit1/1
+    title: 指令微调入门
+  - local: unit1/2
+    title: 对话模板
+  - local: unit1/3
+    title: 监督微调
+  - local: unit1/3a
+    title: LoRA 和 PEFT
+  - local: unit1/4
+    title: 实践练习
+  - local: unit1/5
+    title: 使用 Hugging Face Jobs 训练
+  - local: unit1/6
+    title: 提交你的最终项目！
+
+- title: "2. 偏好对齐"
+  sections:
+  - local: unit2/1
+    title: SmolLM3 偏好对齐简介
+  - local: unit2/2
+    title: 直接偏好优化 (DPO)
+  - local: unit2/3
+    title: 实践练习：使用 SmolLM3 进行 DPO
+  - local: unit2/4
+    title: 提交你的最终项目！
+
+- title: "3. 视觉语言模型"
+  sections:
+  - local: unit3/1
+    title: 视觉语言模型简介
+  - local: unit3/2
+    title: 使用预训练的 VLM
+  - local: unit3/3
+    title: 微调 VLM
+  - local: unit3/4
+    title: 实践练习：微调 SmolVLM2-2.2B-Instruct
+
+- title: "4. 模型评估"
+  sections:
+  - local: unit4/1
+    title: 即将推出！
